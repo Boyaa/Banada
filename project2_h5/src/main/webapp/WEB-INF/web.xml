@@ -4,6 +4,20 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+<<<<<<< HEAD
+ <servlet>
+  	<servlet-name>JoinCon</servlet-name>
+  	<display-name>JoinCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.JoinCon</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>JoinCon</servlet-name>
+  	<url-pattern>/JoinCon</url-pattern>
+  </servlet-mapping>
+ 
+ 
+=======
   <servlet>
   	<servlet-name>JoinCon</servlet-name>
   	<display-name>JoinCon</display-name>
@@ -20,8 +34,12 @@
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
   <servlet-mapping>
   	<servlet-name>SafetyCon</servlet-name>
   	<url-pattern>/SafetyCon</url-pattern>
   </servlet-mapping>
+=======
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-4/project2_h5.git
+>>>>>>> branch 'master' of https://github.com/2022-SMHRD-KDT-BigData-4/project2_h5.git
 </web-app>
