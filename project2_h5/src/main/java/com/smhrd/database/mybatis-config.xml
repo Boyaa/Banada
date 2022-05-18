@@ -17,6 +17,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     </environments>
     <mappers>
     	<mapper resource="com/smhrd/database/UserMapper.xml"/>
+    	<mapper resource="com/smhrd/database/SafetyMapper.xml"/>
     </mappers>
  
 </configuration>

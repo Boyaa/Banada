@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="main.jsp"><input type="button" value="메인페이지로"></a>
+<a href="main.jsp">회원가입 성공<input type="button" value="메인페이지로"></a>
 </body>
 </html>
