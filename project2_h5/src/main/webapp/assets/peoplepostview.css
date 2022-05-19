@@ -1,0 +1,297 @@
+@font-face {
+    font-family: 'jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'paybooc';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'OTW';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* 얇은 ibm */
+@font-face {
+    font-family: 'IBMPlexSansKR-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 굵은 ibm */
+@font-face {
+  font-family: 'IBM';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+#content{
+    width:700px;
+    margin:auto;
+    padding-bottom : 5px;
+}
+.img{
+    text-align: center;
+    position: relative;
+    margin: auto;
+    height: 500px;
+    width:700px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.img-con{
+    border-radius: 8px;
+    position: relative;
+    min-width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: transparent;
+}
+
+.nav{
+    height : 70px;
+    display:flex;
+    justify-content:space-around;
+    margin:auto;
+    margin-bottom : 50px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.logo a{
+    margin-left : 200px;
+    font-size: 40px;
+    font-family : "jalnan";
+    color : #ffc107;
+    text-decoration: none;
+    align-items:center;
+
+}
+
+.nav_but{
+    font-family : ibms;
+    font-size : 15px;
+    padding-top:40px;
+}
+.nav .nav_but a{
+    text-decoration : none;
+    margin-left:50px;
+    color:#000;
+}
+
+.pro{
+    margin-top:10px;
+    width: 700px;
+    padding-top: 10px;
+    padding-bottom:10px;
+    margin-left:auto;
+    margin-right:auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 2px solid #eaeaea;
+    border-bottom: 2px solid #eaeaea;
+    font-size: 18px;
+}
+
+.article-description {
+    padding: 16px 0;
+    width: 700px;
+    margin: 0 auto;
+}
+
+#id{
+    font-family:ibm;
+    font-size:18px;
+    margin-bottom:0px;
+}
+#live{
+    margin-top:2px;
+    font-size:13px;
+}
+.article-load{
+    margin-bottom:8px;
+    margin-bottom:16px;
+}
+
+.btn {
+    font-family:ibms;
+    border: 1px solid rgba(0, 0, 0, 0.713);
+    padding : 5px 10px 5px 10px;
+    text-decoration: none;
+    font-size:15px;
+    color:black;
+    display:inline-block;
+    border-radius: 10px;
+    margin-left:10px;
+}
+
+#good{
+    border: 1px solid rgba(0, 0, 0, 0.713);
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+    background-color : white;
+    font-family : ibms;
+    cursor:pointer;
+}
+#good:hover {
+    padding: 5px 10px 5px 10px;
+    border-radius: 3px;
+    background-color: rgb(220, 216, 216);
+    font-family: ibms;
+}
+
+.article-description #article-detail{
+    border-bottom: 2px solid #eaeaea;
+    margin-top:20px;
+    height:200px;
+}
+
+#article-detail p{
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.header{
+    margin-left:200px;
+    margin-right:200px;
+    background-color:bisque;
+    background-position:center;
+    background-size : cover;
+    height : 500px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.header .title{
+    text-align : center;
+}
+
+.header .title img{
+    width:100px;
+}
+
+.container{
+    margin:auto;
+    width:700px;
+    padding-bottom:10px;
+    display:flex;
+    align-items: center;
+}
+
+
+
+footer .container .right .list ul li:hover{
+    background: #222;
+}
+
+.serv_list .container .item_list{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-around;
+}
+
+.card{
+    border : 1px solid #eee;
+    padding : 10px;
+    margin-bottom : 20px;
+}
+
+.text{
+    text-align:center;
+}
+.serv_list .container .iten_list .card{
+    border : 1px solid #eee;
+    border-radius:5px;
+    height:350px;
+    width:250px;
+    padding : 5px;
+    margin-bottom: 0px;
+}
+.serv_list .container .item_list .card img{
+    height:200px;
+    width:250px;
+}
+
+.serv_list .container .item_list .card .text p{
+    opacity:.8;
+}
+
+.serv_list .container .item_list .card .text p{
+    text-align : center;
+    background : #ffb007;
+    color : white;
+    border : 2px solid white;
+    border-radius : 5px;
+    padding : 5px 10px;
+    font-size : 15px;
+    font-weight:bolder;
+    transition : .5s ease;
+}
+
+.serv_list .contaiber .item_list .card .text button:hover{
+    transition : .5s ease;
+    border : 2px solid black;
+    background : transparent;
+    color : black;
+
+}
+
+.title{
+    font-family:ibm;
+    text-align : center;
+    margin : 50px 200px 50px 200px;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+ul{
+    width : 500px;
+    list-style : none;
+    margin-left: auto;
+    margin-right: auto;
+}
+.list li{
+    padding-left : 20px;
+    float : left;
+}
+.footer {
+    background-color: #e5e5e5;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    box-sizing: border-box;
+    text-align :center;
+    margin-top : 180px;
+}
+
+.list-object a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+/*더보기*/
+.more {
+    height: 25px;
+    width:700px;
+    margin:auto;
+    padding-bottom: 10px;
+}
+.more a{
+    font-family: ibm;
+    font-size: 20px;
+    text-decoration: none;
+    color:black;
+    float:right;
+}

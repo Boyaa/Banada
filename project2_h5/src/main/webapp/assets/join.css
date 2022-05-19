@@ -1,0 +1,199 @@
+* {
+    margin:  0px;
+    padding: 0px;
+  }
+  
+  body {
+    background-color: white;
+    height: 100vh;
+  }
+  /* 폰트 */
+  @font-face {
+    font-family: 'paybooc';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OTW';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+
+.join-in{
+  font-family : jalnan;
+  font-size : 100px;
+}
+  p {
+    padding-top : 5px;
+    padding-bottom : 5px;
+    font-size: 12px;
+    width: 400px;
+    white-space: nowrap;
+  }
+
+ #pw1 {
+   font-size: 12px;
+   width: 240px;
+   white-space: nowrap;
+   
+  }
+
+  #pw2 {
+    font-size: 12px;
+    
+   }
+
+  .joinForm {
+    position:absolute;
+    width:400px;
+    height:650px;
+    padding: 30px, 20px;
+    background-color:#FFFFFF;
+    text-align:center;
+    top:40%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border-radius: 15px;
+    top:40%
+  }
+  
+  .joinForm h2 {
+    color:#ffc107;
+    text-align: center;
+    margin: 30px;
+  }
+  
+  .textForm {
+    border-bottom: 1px solid #ffc107;
+    padding: 10px 10px 10px;
+  }
+  
+  button {
+    font-family:paybooc;
+    border : 1px solid #eaeaea;
+    width: 70px;
+    height: 50px;
+    background: white;
+    color: rgb(0, 0, 0);
+    font-weight: 900px;
+    font-size: 15px;
+    cursor: pointer;
+}
+  
+  .id {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+  .id-bt{
+    float: right;
+  }
+  .id-in{
+    height: 40px;
+    width: 400px;
+    border: 1px solid #1b5ac2;
+    background: #ffffff;
+    }
+
+  .id-line{
+    font-size: 16px;
+    width: 325px;
+    padding: 20px 10px 10px;
+    border : none;
+    border-bottom: 1px solid #ffc107;
+    outline: none;
+    float: left;
+   }
+
+  .pw {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+  
+  .name {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+  
+  .email {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+  
+  .nickname {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+  
+  .Address {
+    width: 100%;
+    border:none;
+    outline:none;
+    color: #636e72;
+    font-size:16px;
+    height:25px;
+    background: none;
+  }
+  
+
+
+  
+  .btn {
+    left:40%;
+    margin-top : 30px;
+    margin-bottom: 30px;
+    width:80%;
+    height:50px;
+    color:black;
+    font-size:22px;
+    font-weight:bold;
+    border: 1px solid #eaeaea;
+    cursor:pointer;
+    border-radius: 25px;
+    transition: 0.4s;
+    display:inline;
+  }
+
+.textForm input:focus + label,
+.textForm input:valid + label {
+    top : -2px;
+    font-size: 13px; color: #166cea;
+}
+  
+  .btn:hover {
+    background-position: right;
+  }
+
