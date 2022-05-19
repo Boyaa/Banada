@@ -76,13 +76,55 @@ public class Safety {
 	public String getSafetyMemo() {
 		return safetyMemo;
 	}
-	
-	
-	
-	
 
-	
 
+
+
+	public void setSafetyNum(BigDecimal safetyNum) {
+		this.safetyNum = safetyNum;
+	}
+
+
+
+
+	public void setSafetyUser1(String safetyUser1) {
+		this.safetyUser1 = safetyUser1;
+	}
+
+
+
+
+	public void setSafetyUser2(String safetyUser2) {
+		this.safetyUser2 = safetyUser2;
+	}
+
+
+
+
+	public void setSafetyAddr(String safetyAddr) {
+		this.safetyAddr = safetyAddr;
+	}
+
+
+
+
+	public void setMeetingTime(String meetingTime) {
+		this.meetingTime = meetingTime;
+	}
+
+
+
+
+	public void setMeetingTime2(String meetingTime2) {
+		this.meetingTime2 = meetingTime2;
+	}
+
+
+
+
+	public void setSafetyMemo(String safetyMemo) {
+		this.safetyMemo = safetyMemo;
+	}
 	
 	
 }

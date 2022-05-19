@@ -18,6 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     <mappers>
     	<mapper resource="com/smhrd/database/UserMapper.xml"/>
     	<mapper resource="com/smhrd/database/SafetyMapper.xml"/>
+    	<mapper resource="com/smhrd/database/GradeMapper.xml"/>
     </mappers>
  
 </configuration>

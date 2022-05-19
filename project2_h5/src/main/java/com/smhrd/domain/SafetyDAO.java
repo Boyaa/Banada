@@ -9,7 +9,7 @@ public class SafetyDAO {
 SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
 	
-	//회원가입
+	//안심서비스 등록
 	public int insertSafety(Safety safety) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		int cnt = 0;
