@@ -1,7 +1,6 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
-import java.sql.Timestamp;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -11,16 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.smhrd.domain.Safety;
 import com.smhrd.domain.SafetyDAO;
-import com.smhrd.domain.User;
-import com.smhrd.domain.UserDAO;
 
 
 public class SafetyCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		System.out.println("[SafetyCon]");
 		request.setCharacterEncoding("UTF-8");
 		
@@ -49,6 +44,6 @@ public class SafetyCon extends HttpServlet {
 		}
 		
 	}
-	}
+	
 
-
+}

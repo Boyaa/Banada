@@ -23,6 +23,7 @@
 					<li><input type="text" name="safetyUser1" placeholder="내 ID를 입력하세요" ></li>
 					<li><input type="text" name="safetyUser2" placeholder="상대방 ID를 입력하세요" ></li>
 					<li><input type="datetime-local" name="meetingTime" placeholder="약속 날짜를 입력하세요" ></li>
+					<li><input type="text" name="safetyAddr" placeholder="만남 장소를 입력하세요" ></li>
 					<li><input type="text" name="safetyMemo" placeholder="메모" ></li>
 					<li><input type="submit" value="안심서비스 등록" class="button fit"></li>
 				</form>

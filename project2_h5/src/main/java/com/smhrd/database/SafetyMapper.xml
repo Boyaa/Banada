@@ -5,7 +5,7 @@
         
 <mapper namespace="com.smhrd.domain.SafetyDAO">
 	<insert id="insertSafety" parameterType="com.smhrd.domain.Safety">
-		insert into tbl_safety values (tbl_safety_seq.nextval, #{safetyUser1}, #{safetyUser2}, #{safetyAddr}, to_date(#{meetingTime2}, 'YYYY-MM-DD HH24:MI:SS'), #{safeMemo})
+		insert into tbl_safety values (tbl_safety_seq.nextval, #{safetyUser1}, #{safetyUser2}, #{safetyAddr}, to_date(#{meetingTime2}, 'YYYY-MM-DD HH24:MI:SS'), #{safetyMemo})
    </insert>
    
 </mapper>
