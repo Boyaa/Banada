@@ -1,0 +1,108 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+    
+  
+}
+/* 폰트 */
+@font-face {
+    font-family: 'paybooc';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OTW';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font{
+    font-family:paybooc;
+}
+
+body::before {
+    content: "";
+    position: absolute; 
+    z-index: 1;
+    top: 0; right: 0; bottom: 0; left: 0;
+    
+}
+
+.login-form {position: relative; z-index: 2;
+
+
+}
+.login-form h1{
+    font-family : jalnan;
+    font-size: 100px;
+    color: #ffc107;
+    text-align: center;
+    margin-bottom: 60px;
+}
+.int-area {
+
+    width: 400px; position: relative;
+    margin-top: 20px;
+}
+.int-area:first-child {margin-top: 0;}
+.int-area input {
+    text-align : left;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #ffc107;
+    font-size: 18px; color: black;
+    outline: none;
+}
+.int-area label {
+    position: absolute; left: 10px; top: 15px; 
+    font-size: 18px; color: #999;
+    transition: all .5s ease;
+}
+
+.int-area input:focus + label,
+.int-area input:valid + label {
+    top : -2px;
+    font-size: 13px; color: #166cea;
+}
+
+.btn-area {
+    margin-top: 30px;
+    text-align : center;
+}
+.btn-area button {
+    width: 50%; 
+    height: 50px;
+    background: #ffc107;
+    color: #fff;
+    font-weight : bold;
+    font-size: 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.caption {
+    margin-top: 20px;
+    text-align: center;
+}
+.caption a {
+    font-family : otw;
+    font-size: 15px; color: black;
+    text-decoration: none;
+    font-weight:bold;
+}

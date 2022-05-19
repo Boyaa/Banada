@@ -1,0 +1,294 @@
+@import "//cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css";
+
+/*폰트*/
+@font-face {
+    font-family: 'jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'paybooc';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/paybooc-Bold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'OTW';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/OTWelcomeBA.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+/* 얇은 ibm */
+@font-face {
+    font-family: 'IBMPlexSansKR-Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* 굵은 ibm */
+@font-face {
+  font-family: 'IBM';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-SemiBold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.nav{
+    height : 70px;
+    display:flex;
+    justify-content:space-between;
+    margin:auto;
+    margin-bottom : 50px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.logo a{
+    margin-left : 200px;
+    font-size: 40px;
+    font-family : "jalnan";
+    color : #ffc107;
+    text-decoration: none;
+    align-items:center;
+
+}
+
+.nav_but{
+    font-family : ibms;
+    font-size : 15px;
+    padding-top:40px;
+}
+.nav .nav_but a{
+    text-decoration : none;
+    margin-left:50px;
+    color:#000;
+}
+
+.title-section{
+  width:700px; 
+  height:100px; 
+  margin:auto;
+
+  text-align: center;
+  padding-top : 20px;
+  margin-bottom:20px;
+
+}
+
+body {
+    
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: white !important;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+h2 {
+    font-size: 20px !important
+}
+.editor-contents{
+    height: 50px;
+    margin:auto;
+    width:700px; 
+    display:flex; 
+    align-items:center; 
+    justify-content: center; 
+    flex-direction: row; 
+    flex-wrap: wrap; 
+}
+
+#tip-title-box{ 
+    width:100%; 
+    display:flex; 
+    justify-content: center;
+}
+
+#tip-title{ 
+    width:450px; 
+    height:40px; 
+    border:1px #D8D8D8 solid; 
+    border-radius: 5px; 
+    margin:0; 
+    padding:0 10px; 
+    margin-bottom:10px; 
+    font-family: 'Apple SD Gothic Neo';
+    font-size:14px; 
+}
+
+
+.radio{
+    display: inline !important;
+  
+}
+
+#btn-box{ 
+    width:200px; 
+    display:flex; 
+    justify-content: center; 
+}
+#btn-box-center{ 
+    width:150px; 
+}
+#cancel-btn{ 
+    width:160px; 
+    height:40px; 
+    border-radius:7px; 
+    border: 1px #D8D8D8 solid; 
+    float:left; 
+    display:flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+#submit-btn{ 
+    width:160px; 
+    height:60px; 
+    border-radius:7px; 
+    background-color:#5882FA; 
+    color:white; 
+    
+    display:flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+
+.form-group {
+    width: 700px;
+    margin:auto;
+    font-family: 'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',arial,sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: black;
+    border-radius: 10px;
+    background: white;
+    clear: both;
+    
+     
+}
+
+.formname {
+    width:300px;
+    height:300px;
+    margin:0 auto;
+
+}
+
+.form-title {
+    border-collapse: collapse;
+    font-size: 13px;
+    line-height: 1.5;
+    box-sizing: border-box;
+    transition: border .4s;
+    display: inline-block;
+    margin: 0;
+    padding: 4px 6px;
+    border-radius: 3px;
+    height: 28px;
+    margin-bottom: 10px;
+    color: black;
+    border-color: #666;
+    box-shadow: none;
+    
+ 
+   
+    
+    
+   
+}
+
+.pull-right {
+  font-family:ibm;
+    width: 150px; 
+    height: 50px;
+    background: white;
+    color: #000;
+    font-size: 20px;
+    border-radius: 25px;
+    border-width: 1px;
+    cursor: pointer;
+    margin:auto;
+}
+
+/* radio */
+[type="radio"]:checked,
+[type="radio"]:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+[type="radio"]:checked + label,
+[type="radio"]:not(:checked) + label
+{
+  position: relative;
+  padding-left: 28px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: #666;
+}
+[type="radio"]:checked + label:before,
+[type="radio"]:not(:checked) + label:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border:2px solid #ddd;
+  border-radius: 100%;
+  background: #fff;
+}
+[type="radio"]:checked + label:before {
+  border:2px solid #9f9cff;
+  border-radius: 100%;
+}
+[type="radio"]:checked + label:after,
+[type="radio"]:not(:checked) + label:after {
+  content: '';
+  width: 7.5px;
+  height:7.5px;
+  background: #9f9cff;
+  position: absolute;
+  top:3.5px;
+  left:3.5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+[type="radio"]:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+[type="radio"]:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.footer {
+  background-color: #e5e5e5;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  box-sizing: border-box;
+  text-align :center;
+}
+
+.list-object a{
+  text-decoration: none;
+  color: #000;
+}
+
+ul{
+  width : 500px;
+  list-style : none;
+  margin-left: auto;
+  margin-right: auto;
+}
+.list li{
+  padding-left : 20px;
+  float : left;
+}
