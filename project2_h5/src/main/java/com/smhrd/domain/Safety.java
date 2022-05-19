@@ -8,43 +8,38 @@ public class Safety {
 	public BigDecimal safetyNum;
 	public String safetyUser1;
 	public String safetyUser2;
-	public float latitude;
-	public float longitude;
+	public String safetyAddr;
 	public String meetingTime;
 	public String meetingTime2;
 	public String safetyMemo;
-	public String adminId;
 	
 	
-	
-	
-
-	
-
-	public Safety(BigDecimal safetyNum, String safetyUser1, String safetyUser2, float latitude, float longitude,
-			String meetingTime, String meetingTime2, String safetyMemo, String adminId) {
+	public Safety(BigDecimal safetyNum, String safetyUser1, String safetyUser2, String safetyAddr, String meetingTime,
+			String meetingTime2, String safetyMemo) {
 		super();
 		this.safetyNum = safetyNum;
 		this.safetyUser1 = safetyUser1;
 		this.safetyUser2 = safetyUser2;
-		this.latitude = latitude;
-		this.longitude = longitude;
+		this.safetyAddr = safetyAddr;
 		this.meetingTime = meetingTime;
 		this.meetingTime2 = meetingTime2;
 		this.safetyMemo = safetyMemo;
-		this.adminId = adminId;
 	}
 
 
+	
 
-	public Safety(String safetyUser1, String safetyUser2, String meetingTime, String meetingTime2, String safetyMemo) {
+	public Safety(String safetyUser1, String safetyUser2, String safetyAddr, String meetingTime, String meetingTime2,
+			String safetyMemo) {
 		super();
 		this.safetyUser1 = safetyUser1;
 		this.safetyUser2 = safetyUser2;
+		this.safetyAddr = safetyAddr;
 		this.meetingTime = meetingTime;
 		this.meetingTime2 = meetingTime2;
 		this.safetyMemo = safetyMemo;
 	}
+
 
 
 
@@ -53,11 +48,9 @@ public class Safety {
 	}
 
 
-
 	public String getSafetyUser1() {
 		return safetyUser1;
 	}
-
 
 
 	public String getSafetyUser2() {
@@ -65,17 +58,9 @@ public class Safety {
 	}
 
 
-
-	public float getLatitude() {
-		return latitude;
+	public String getSafetyAddr() {
+		return safetyAddr;
 	}
-
-
-
-	public float getLongitude() {
-		return longitude;
-	}
-
 
 
 	public String getMeetingTime() {
@@ -83,24 +68,20 @@ public class Safety {
 	}
 
 
-
 	public String getMeetingTime2() {
 		return meetingTime2;
 	}
 
 
-
 	public String getSafetyMemo() {
 		return safetyMemo;
 	}
+	
+	
+	
+	
 
-
-
-	public String getAdminId() {
-		return adminId;
-	}
-
-
+	
 
 	
 	

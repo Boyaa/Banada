@@ -26,11 +26,12 @@ public class SafetyCon extends HttpServlet {
 		
 		String safetyUser1 = request.getParameter("safetyUser1");
 		String safetyUser2 = request.getParameter("safetyUser2");
+		String safetyAddr = request.getParameter("safetyAddr");
 		String meetingTime = request.getParameter("meetingTime");
 		String meetingTime2 = String.valueOf(meetingTime.replace("T"," "));
 		String safetyMemo = request.getParameter("safetyMemo");
 		
-		Safety s_vo = new Safety(safetyUser1, safetyUser2, meetingTime, meetingTime2, safetyMemo);
+		Safety s_vo = new Safety(safetyUser1, safetyUser2, safetyAddr, meetingTime, meetingTime2, safetyMemo);
 
 		SafetyDAO dao = new SafetyDAO();
 		int cnt = dao.insertSafety(s_vo);

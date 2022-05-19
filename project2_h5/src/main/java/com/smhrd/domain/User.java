@@ -9,13 +9,10 @@ public class User {
 	public String addr;
 	public int manner;
 	public Timestamp joinDate;
-	public String type;
-	public float latitude;
-	public float longitude;
+
 	
 	
-	public User(String id, String pw, String nick, String addr, int manner, Timestamp joinDate, String type,
-			float latitude, float longitude) {
+	public User(String id, String pw, String nick, String addr, int manner, Timestamp joinDate) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -23,12 +20,9 @@ public class User {
 		this.addr = addr;
 		this.manner = manner;
 		this.joinDate = joinDate;
-		this.type = type;
-		this.latitude = latitude;
-		this.longitude = longitude;
 	}
 
-	
+
 
 	public User(String id, String pw) {
 		super();
@@ -53,9 +47,11 @@ public class User {
 	}
 
 
+
 	public String getPw() {
 		return pw;
 	}
+
 
 
 	public String getNick() {
@@ -63,9 +59,11 @@ public class User {
 	}
 
 
+
 	public String getAddr() {
 		return addr;
 	}
+
 
 
 	public int getManner() {
@@ -73,24 +71,13 @@ public class User {
 	}
 
 
-	public Timestamp getjoinDate() {
+
+	public Timestamp getJoinDate() {
 		return joinDate;
 	}
 
-
-	public String getType() {
-		return type;
-	}
-
-
-	public float getLatitude() {
-		return latitude;
-	}
-
-
-	public float getLongitude() {
-		return longitude;
-	}
 	
+
+
 	
 }
