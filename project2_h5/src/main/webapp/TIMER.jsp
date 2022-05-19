@@ -30,6 +30,7 @@ String MT = (String)request.getAttribute("MT");
     </style>
 </head>
 <body>
+  약속시간 까지 <div id="countdown"></div><br>
 <script type="text/javascript">
 
 CountDownTimer('${MT}', 'countdown');
@@ -97,6 +98,6 @@ function CountDownTimer(dt, id) {
 }
 </script>
  
-  약속시간 까지 <div id="countdown"></div><br>
+
 </body>
 </html>

@@ -12,7 +12,16 @@ public class GradeCon extends HttpServlet {
 
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
+		
+		System.out.println("[GradeCon]");
+		request.setCharacterEncoding("UTF-8");
+		
+		String g_nick = request.getParameter("g_nick");
+		String user_nick = request.getParameter("user_nick");
+		String g_review = request.getParameter("g_review");
+		
+		
+		
 	}
 
 }
