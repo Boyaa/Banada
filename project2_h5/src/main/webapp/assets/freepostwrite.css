@@ -23,7 +23,7 @@
   }
 /* 얇은 ibm */
 @font-face {
-    font-family: 'IBMPlexSansKR-Light';
+    font-family: 'IBMs';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Light.woff') format('woff');
     font-weight: normal;
     font-style: normal;
@@ -155,9 +155,22 @@ h2 {
     align-items: center; 
 }
 
+.form-main{
+    width: 700px;
+    margin:auto;
+    font-family: 'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',arial,sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: black;
+    border-radius: 10px;
+    background: white;
+    clear: both;
+    
+     
+}
 
 .form-group {
-    width: 700px;
+	width:auto;
     margin:auto;
     font-family: 'Apple SD Gothic Neo','Malgun Gothic','맑은 고딕',arial,sans-serif;
     font-size: 13px;
@@ -193,16 +206,12 @@ h2 {
     border-color: #666;
     box-shadow: none;
     
- 
-   
-    
-    
-   
+
 }
 
 .pull-right {
-  font-family:ibm;
-    width: 150px; 
+ 	font-family:ibm;
+    width: 50px; 
     height: 50px;
     background: white;
     color: #000;
@@ -211,6 +220,7 @@ h2 {
     border-width: 1px;
     cursor: pointer;
     margin:auto;
+    margin-bottom:40px;
 }
 
 /* radio */
@@ -273,8 +283,9 @@ h2 {
   background-color: #e5e5e5;
   padding-top: 4rem;
   padding-bottom: 4rem;
-  box-sizing: border-box;
-  text-align :center;
+  box-sizing:border-box;
+  text-align:center;
+  margin-top:200px;
 }
 
 .list-object a{

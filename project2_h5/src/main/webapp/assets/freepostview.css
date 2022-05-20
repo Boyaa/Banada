@@ -245,12 +245,6 @@ textarea {
     width: 700px;  
 }
 
-#select {
-    display: inline-block; margin: 0 0px; 
-    float: right;
-    border-radius: 5px; 
-    background-color: #ffb007;
-}
 .cot{
     width:700px;
     line-height: 1.5;
