@@ -11,13 +11,13 @@ public class MapDAO {
 	
 	SqlSessionFactory sqlSessionFactory = SqlSessionManager.getSqlSession();
 	
-	public  List<User> selectAddr(String user_addr){
+	public  List<User> selectAddr(){
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		List<User> markerList = null;
 		
-		try {
-			markerList = sqlSession.selectList("com.smhrd.domain.MapDAO.selectAddr",user_addr);
+		try {															// mapper에 들어있는ㄴsql실행문 name값
+			markerList = sqlSession.selectList("com.smhrd.domain.MapDAO.selectAddr");
 			if(markerList != null) {
 				sqlSession.commit();
 			}else {

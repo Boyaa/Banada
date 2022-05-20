@@ -20,4 +20,6 @@
       select user_nick from tbl_user where user_nick=#{user_nick}
    </select>
    
+  
+   
 </mapper>

@@ -1,3 +1,27 @@
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.MapDAO"%>
+<%@page import="com.smhrd.domain.User"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+  
+<%
+//boardNum가지고 오는 작업 필요!
+MapDAO dao = new MapDAO();//messageDAO 객체 생성하기
+
+//현재 보고있는 게시물에 작성된 댓글 전부 불러오기(메소드 호출할때는 현재 게시물 번호를 매개인자로) dao.selectAllComm(1)
+//List<User> MarkerList = (List<User>) dao.selectAddr(user_addr); //-> dao에 selectAllComm 메소드 만들어놓기
+//list를 반환받을건데 그 리스트안에는 댓글들정보가 담겨있음 
+//그리고 이 리스트를 활용해서 아래쪽에 출력을 해줄거다
+
+  
+List<User> markerList = dao.selectAddr();
+pageContext.setAttribute("markerList",markerList);   // el 표기법쓰기위한 설정
+System.out.println("맵리스트 확인 : "+ markerList);
+
+
+
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
