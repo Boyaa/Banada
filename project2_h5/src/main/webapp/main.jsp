@@ -1,4 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@page import="com.smhrd.domain.UserDAO"%>
+<%@page import="com.smhrd.domain.User"%>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -26,8 +29,16 @@
                 <a class="navbar-brand" style = "font-family : jalnan" href="main.html">바나다</a>
             </div>
             <div class="nav_but" style = "padding-top:40px;">
-                <a href ="login.jsp">로그인</a>
-                <a href ="join.jsp" style ="margin-right:200px">회원가입</a>
+            <c:choose>
+               <c:when test="${empty loginUser}">
+                  <a href="login.jsp">로그인</a>
+                  <a href="join.jsp">회원가입</a>
+               </c:when>
+             
+               <c:otherwise>
+                  <a href="LogoutCon">로그아웃</a>
+               </c:otherwise>
+            </c:choose>
             </div>
         </nav>
         <!-- 중앙 검색창-->

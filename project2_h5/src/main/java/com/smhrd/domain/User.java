@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
 
 public class User {
@@ -7,12 +8,12 @@ public class User {
 	public String pw;
 	public String nick;
 	public String addr;
-	public int manner;
+	public BigDecimal manner;
 	public Timestamp joinDate;
 
 	
 	
-	public User(String id, String pw, String nick, String addr, int manner, Timestamp joinDate) {
+	public User(String id, String pw, String nick, String addr, BigDecimal manner, Timestamp joinDate) {
 		super();
 		this.id = id;
 		this.pw = pw;
@@ -24,11 +25,17 @@ public class User {
 
 
 
+	
+	
+
 	public User(String id, String pw) {
 		super();
 		this.id = id;
 		this.pw = pw;
 	}
+
+
+
 
 
 
@@ -40,6 +47,7 @@ public class User {
 		this.addr = addr;
 	}
 
+	
 
 
 	public String getId() {
@@ -66,7 +74,7 @@ public class User {
 
 
 
-	public int getManner() {
+	public BigDecimal getManner() {
 		return manner;
 	}
 

@@ -33,11 +33,11 @@ public class UserDAO {
 	// 로그인 기능
 	public User selectUser(User user) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		User loginMember = null;
+		User loginUser = null;
 		try {
-			loginMember = sqlSession.selectOne("com.smhrd.domain.UserDAO.selectUser", user);
+			loginUser = sqlSession.selectOne("com.smhrd.domain.UserDAO.selectUser", user);
 
-			if (loginMember != null) {
+			if (loginUser != null) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
@@ -47,7 +47,7 @@ public class UserDAO {
 		} finally {
 			sqlSession.close();
 		}
-		return loginMember;
+		return loginUser;
 	}
 
 }

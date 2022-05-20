@@ -8,7 +8,7 @@
 <script src = "jquery-3.6.0.js"></script>
 </head>
 <body>
-<form class = "login-form" action ="">
+<form class = "login-form" action ="LoginCon">
    <h1 class = "font">바나다</h1>
    <section >
       <div class="int-area">
@@ -22,7 +22,7 @@
       </div>
         
         <div class="btn-area">
-            <button type="submit" onClick="location.href='main.html'">Login</button>
+            <button type="submit" >Login</button>
         </div>
       </section>
       <div class = "caption">

@@ -9,7 +9,7 @@
    </insert>
 
 	<select id="selectUser" parameterType="com.smhrd.domain.User" resultType="com.smhrd.domain.User">
-		select * from tbl_user where id=#{id} and pw=#{pw}
+		select * from tbl_user where user_id=#{id} and user_pw=#{pw}
    </select>
 
 </mapper>
