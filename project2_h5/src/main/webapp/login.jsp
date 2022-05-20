@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,7 @@
 <body>
 <form class = "login-form" action ="">
    <h1 class = "font">바나다</h1>
-   <form>
-   <section action="">
+   <section >
       <div class="int-area">
          <input type = "text" name="id" id="id" autocomplete="off" required>
          <label for = "id">아이디</label>   
@@ -24,11 +24,11 @@
         <div class="btn-area">
             <button type="submit" onClick="location.href='main.html'">Login</button>
         </div>
+           </section>
       </form>
       <div class = "caption">
          <a href="join.html">아이디가 없으신가요?</a>
       </div>
-   </section>
-</form>
+
 </body>
 </html>
