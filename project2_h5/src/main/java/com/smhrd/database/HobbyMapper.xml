@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.domain.HobbyDAO">
+	<insert id="insertHobby" parameterType="com.smhrd.domain.Hobby">
+		insert into TBL_hobby values (tbl_hobby_seq.nextval, #{h_title}, 's', #{h_cate}, #{h_content}, sysdate, #{h_maxpeople}, 0)
+	</insert>
+	<select id="selectHobby" parameterType="com.smhrd.domain.Hobby" resultType="com.smhrd.domain.Hobby">
+		select * from TBL_hobby where h_seq=#{h_seq}
+	</select>
+	<select id="getHobbyNum" resultType="int">
+        select MAX(h_seq) from tbl_hobby where h_nick=#{h_nick} 
+    </select>
+    
+</mapper>
