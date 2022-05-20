@@ -34,7 +34,7 @@
     <!-- 글쓰기 눌렀을때 로그인이 안되어 있으면 로그인요청 alert 표시 -->
     <form>
     <section class="write">
-        <a href="objectpostwrite123.jsp" >글쓰기</a>
+        <a href="Hobby.jsp" >글쓰기</a>
     </section>
     </form>
 
