@@ -93,10 +93,7 @@
                             <div class="features-icons-icon d-flex">
                                 <img style="margin-left: 100px; margin-bottom:10px; border-radius: 30%;" src="assets/main_img/hobby.png" >
                             </div>
-
-                            <a href="object.jsp" class="mini-category"s>취미공유</a>
                             <a href="peoplecategory.jsp" class="mini-category"s>취미공유</a>
-
                         </div>
                     </div>
                     <div class="col-lg-4">
