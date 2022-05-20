@@ -10,6 +10,8 @@ public class User {
 	public String user_addr;
 	public BigDecimal user_manner;
 	public Timestamp user_joinDate;
+	
+	public String a; //임의의 값 선언
 
 	
 	
@@ -32,6 +34,15 @@ public class User {
 		this.user_pw = user_pw;
 	}
 
+
+
+	public User(String user_nick, String user_addr, String a) {
+		super();
+		this.user_nick = user_nick;
+		this.user_addr = user_addr;
+		//this.a = a; 얘도 꼭넣어줘야하나?? 
+		
+	}
 
 
 	public User(String user_id, String user_pw, String user_nick, String user_addr) {
