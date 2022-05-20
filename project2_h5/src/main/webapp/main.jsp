@@ -26,8 +26,8 @@
                 <a class="navbar-brand" style = "font-family : jalnan" href="main.html">바나다</a>
             </div>
             <div class="nav_but" style = "padding-top:40px;">
-                <a href ="login.html">로그인</a>
-                <a href ="join.html" style ="margin-right:200px">회원가입</a>
+                <a href ="login.jsp">로그인</a>
+                <a href ="join.jsp" style ="margin-right:200px">회원가입</a>
             </div>
         </nav>
         <!-- 중앙 검색창-->

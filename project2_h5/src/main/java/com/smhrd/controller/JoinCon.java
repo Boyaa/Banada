@@ -22,7 +22,7 @@ public class JoinCon extends HttpServlet {
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
 		String nick = request.getParameter("nick");
-		String addr = request.getParameter("addr");
+		String addr = request.getParameter("address");
 		
 		User u_vo = new User(id, pw, nick, addr);
 

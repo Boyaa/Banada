@@ -27,7 +27,7 @@
            </section>
       </form>
       <div class = "caption">
-         <a href="join.html">아이디가 없으신가요?</a>
+         <a href="join.jsp">아이디가 없으신가요?</a>
       </div>
 
 </body>
