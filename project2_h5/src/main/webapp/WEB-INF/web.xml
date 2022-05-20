@@ -46,6 +46,18 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.NickCheckCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>HobbyCon</servlet-name>
+  	<display-name>HobbyCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.HobbyCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>HobbyreadOne</servlet-name>
+  	<display-name>HobbyreadOne</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.HobbyreadOne</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -73,6 +85,14 @@
   <servlet-mapping>
   	<servlet-name>NickCheckCon</servlet-name>
   	<url-pattern>/NickCheckCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HobbyCon</servlet-name>
+  	<url-pattern>/HobbyCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HobbyreadOne</servlet-name>
+  	<url-pattern>/HobbyreadOne</url-pattern>
   </servlet-mapping>
   
 
