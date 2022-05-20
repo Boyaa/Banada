@@ -52,14 +52,6 @@ public class User {
 	}
 
 
-	public String getUser_id() {
-		return user_id;
-	}
-
-
-
-
-
 	public String getUser_pw() {
 		return user_pw;
 	}
