@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/join.css">
-    <script src = "jquery-3.6.0.js"></script>
+    
 </head>
 <body>
    <body>
@@ -20,7 +20,8 @@
         <section class = "join-box">
         <div class="textForm" dir="ltr" style="border-top: 1px solid #ffc107; text-align: left;">
           <input name="id" style="width:300px; height:25px; " type="text" class="id" placeholder="아이디" />
-        <input type="button" value="중복체크"/>
+        <input type="button" value="중복체크" onclick="idCheck()"/>
+        <li><span id="idCheck"></span></li>
         </div>
         <p style="text-align:center; border-bottom: 1px solid #ffc107;" >
           4~12자의 영문 대소문자와 숫자로만 입력 하세요.
@@ -33,7 +34,8 @@
          </div>
         <div class="textForm" style="text-align: left;">
            <input name="nick"  style="width:300px; height:25px;" class="pw" placeholder="닉네임">
-           <input type="button" value="중복체크" />
+           <input type="button" value="중복체크" onclick="nickCheck()"/>
+           <li><span id="nickCheck"></span></li>
          </div>
         <p id = "pw2" style="text-align:center; border-bottom: 1px solid #ffc107;">
           닉네임은 2~8글자 이내여야 합니다.
@@ -52,6 +54,10 @@
 
   </div>
 </body>
+			<script src = "jquery-3.6.0.js"></script>
+
+
+
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js?"></script>
 		<script>
 		window.onload = function(){
@@ -65,4 +71,33 @@
 		    });
 		}
 </script>
+<script>
+				function idCheck(){
+					let id = $('.id').val();
+					
+					// jquery로 ajax(비동기통신) 작성
+					$.ajax({
+						// 전송데이터(json)
+						data : {'user_id': id},
+						// 요청 경로(url 매핑값)
+						url : 'IdCheckCon',
+						// 요청 방식(get/post)
+						method : 'get',
+						//전송데이터 정보(형식, 인코딩 방식)
+						contentType : 'application/json; charset=utf-8',
+						//응답데이터 형식지정
+						dataType : 'text',
+						success : function(data){ //'사용할 수 있다'(응답) -> data('사용할 수 있다')
+							if(data=='true'){
+								$('#idCheck').text('사용할 수 있는 아이디')				
+							}else{
+								$('#idCheck').text('사용할 수 없는 아이디')
+							}							
+						},
+						error : function(){
+							alert("통신실패!")
+						}
+					})
+				}
+			</script>
 </html>

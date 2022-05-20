@@ -19,12 +19,12 @@ public class JoinCon extends HttpServlet {
 		System.out.println("[JoinCon]");
 		request.setCharacterEncoding("UTF-8");
 		
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		String nick = request.getParameter("nick");
-		String addr = request.getParameter("address");
+		String user_id = request.getParameter("id");
+		String user_pw = request.getParameter("pw");
+		String user_nick = request.getParameter("nick");
+		String user_addr = request.getParameter("address");
 		
-		User u_vo = new User(id, pw, nick, addr);
+		User u_vo = new User(user_id, user_pw, user_nick, user_addr);
 
 		UserDAO dao = new UserDAO();
 		int cnt = dao.insertUser(u_vo);
@@ -32,7 +32,7 @@ public class JoinCon extends HttpServlet {
 		if (cnt > 0) { // 회원가입 성공
 			System.out.println("회원가입 성공");
 			RequestDispatcher rd = request.getRequestDispatcher("joinSuccess.jsp");
-			request.setAttribute("joinId", id);
+			request.setAttribute("joinId", user_id);
 			rd.forward(request, response);
 
 		} else { // 회원가입 실패

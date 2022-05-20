@@ -5,11 +5,19 @@
         
 <mapper namespace="com.smhrd.domain.UserDAO">
 	<insert id="insertUser" parameterType="com.smhrd.domain.User">
-		insert into tbl_user values (#{id}, #{pw}, #{nick}, #{addr}, 1, sysdate)
+		insert into tbl_user values (#{user_id}, #{user_pw}, #{user_nick}, #{user_addr}, 1, sysdate)
    </insert>
 
 	<select id="selectUser" parameterType="com.smhrd.domain.User" resultType="com.smhrd.domain.User">
-		select * from tbl_user where user_id=#{id} and user_pw=#{pw}
+		select * from tbl_user where user_id=#{user_id} and user_pw=#{user_pw}
    </select>
 
+	<select id="selectId" parameterType="String" resultType="String">
+      select user_id from tbl_user where user_id=#{user_id}
+   </select>
+	
+	<select id="selectNick" parameterType="String" resultType="String">
+      select user_nick from tbl_user where user_nick=#{user_nick}
+   </select>
+   
 </mapper>

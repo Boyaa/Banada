@@ -19,11 +19,11 @@ public class LoginCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 
 
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
+		String user_id = request.getParameter("id");
+		String user_pw = request.getParameter("pw");
 
 		
-		User u_vo = new User(id, pw);
+		User u_vo = new User(user_id, user_pw);
 
 		UserDAO dao = new UserDAO();
 		User loginUser = dao.selectUser(u_vo);
