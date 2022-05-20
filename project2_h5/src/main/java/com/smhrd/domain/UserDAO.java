@@ -51,20 +51,20 @@ public class UserDAO {
 	}
 	
 	// id체크 기능
-	public boolean idCheck(String id) {
+	public boolean idCheck(String user_id) {
 	      SqlSession sqlSession = sqlSessionFactory.openSession();
-	      boolean checkId = false; //사용할 수 있으면(db에 값이 없다) - true
+	      boolean check = false; //사용할 수 있으면(db에 값이 없다) - true
 	                             //사용할 수 없으면(db에 값이 있다) - false
 	      try {
 	         //email2 <- 이미 있는 이메일 입력한 경우에는 해당하는 이메일이 그대로 반환
 	         //       <- 없는 이메일 입력한 경우에는 null 반환
-	         String id2 = sqlSession.selectOne("com.smhrd.domain.UserDAO.selectId",id);
+	         String user_id2 = sqlSession.selectOne("com.smhrd.domain.UserDAO.selectId",user_id);
 	         
-	         if(id!=null) {
-	            checkId = false;
+	         if(user_id2!=null) {
+	            check = false;
 	            sqlSession.commit();
 	         }else {
-	            checkId = true;
+	            check = true;
 	            sqlSession.commit();  //select는 commit/rollback 생략해도 됨
 	         }
 	      }catch(Exception e){
@@ -72,24 +72,24 @@ public class UserDAO {
 	      }finally {
 	         sqlSession.close();
 	      }
-	      return checkId;
+	      return check;
 	   }
 	
 	// nick체크 기능
-	public boolean emailCheck(String nick) {
+	public boolean nickCheck(String user_nick) {
 	      SqlSession sqlSession = sqlSessionFactory.openSession();
-	      boolean checkNick = false; //사용할 수 있으면(db에 값이 없다) - true
+	      boolean check = false; //사용할 수 있으면(db에 값이 없다) - true
 	                             //사용할 수 없으면(db에 값이 있다) - false
 	      try {
 	         //email2 <- 이미 있는 이메일 입력한 경우에는 해당하는 이메일이 그대로 반환
 	         //       <- 없는 이메일 입력한 경우에는 null 반환
-	         String nick2 = sqlSession.selectOne("com.smhrd.domain.UserDAO.selectNick",nick);
+	         String user_nick2 = sqlSession.selectOne("com.smhrd.domain.UserDAO.selectNick",user_nick);
 	         
-	         if(nick2!=null) {
-	            checkNick = false;
+	         if(user_nick2!=null) {
+	            check = false;
 	            sqlSession.commit();
 	         }else {
-	            checkNick = true;
+	            check = true;
 	            sqlSession.commit();  //select는 commit/rollback 생략해도 됨
 	         }
 	      }catch(Exception e){
@@ -97,7 +97,7 @@ public class UserDAO {
 	      }finally {
 	         sqlSession.close();
 	      }
-	      return checkNick;
+	      return check;
 	   }
 
 }
