@@ -23,6 +23,11 @@
         </div>
     </div>
     
+    <div class = "title">
+        <h1>< 재능 정보 ></h1>
+        <p style="font-size:20px">스포츠</p>
+    </div>
+    
     <section class="category">
       <div id="cateimg">
         <a href="people1sports.jsp">

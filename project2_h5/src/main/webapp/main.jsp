@@ -26,7 +26,7 @@
         <!--상단바-->
         <nav class="navbar navbar-light bg-light static-top" style = "border-bottom: 1px solid #eaeaea;">
             <div class="left">
-                <a class="navbar-brand" style = "font-family : jalnan" href="main.html">바나다</a>
+                <a class="navbar-brand" style = "font-family : jalnan" href="main.jsp">바나다</a>
             </div>
             <div class="nav_but" style = "padding-top:40px;">
             <c:choose>
