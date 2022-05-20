@@ -74,7 +74,7 @@
                             <div class="features-icons-icon d-flex" ">
                                 <img style="margin-left: 100px; margin-bottom:10px; border-radius: 30%;" src="assets/main_img/nanum.png" >
                             </div>
-                            <a href="object.html" class="mini-category">소분해요</a>
+                            <a href="object.jsp" class="mini-category">소분해요</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -82,7 +82,7 @@
                             <div class="features-icons-icon d-flex">
                                 <img style="margin-left: 100px; margin-bottom:10px; border-radius: 30%;" src="assets/main_img/hobby.png" >
                             </div>
-                            <a href="peoplecategory.html" class="mini-category"s>취미공유</a>
+                            <a href="peoplecategory.jsp" class="mini-category"s>취미공유</a>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -90,7 +90,7 @@
                             <div class="features-icons-icon d-flex">
                                 <img style="margin-left: 100px; margin-bottom:10px;border-radius: 30%;" src="assets/main_img/gesi.png" >
                             </div>
-                            <a href="post.html" class="mini-category">자유게시판</a>
+                            <a href="post.jsp" class="mini-category">자유게시판</a>
                         </div>
                     </div>
                 </div>

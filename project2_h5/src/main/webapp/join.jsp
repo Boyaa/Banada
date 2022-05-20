@@ -20,7 +20,7 @@
         <section class = "join-box">
         <div class="textForm" dir="ltr" style="border-top: 1px solid #ffc107; text-align: left;">
           <input name="id" style="width:300px; height:25px; " type="text" class="id" placeholder="아이디" />
-        <!--   <input type="submit" value="중복체크"/>  -->
+        <input type="button" value="중복체크"/>
         </div>
         <p style="text-align:center; border-bottom: 1px solid #ffc107;" >
           4~12자의 영문 대소문자와 숫자로만 입력 하세요.
@@ -31,13 +31,10 @@
          <div class="textForm">
            <input name="pw" type="password" class="pw" placeholder="비밀번호 확인">
          </div>
-        <!--   <div class="textForm">
-           <input name="name" type="text" class="name" placeholder="이름">
-          </div>  -->
-        <div class="textForm" dir="ltr" style=" text-align: left;">
-          <input name="nick" style="width:300px; height:25px;" type="text" class="nick" placeholder="닉네임"/>
-         <!--  <input type="submit" value="중복체크" />  -->
-        </div>
+        <div class="textForm" style="text-align: left;">
+           <input name="nick"  style="width:300px; height:25px;" class="pw" placeholder="닉네임">
+           <input type="button" value="중복체크" />
+         </div>
         <p id = "pw2" style="text-align:center; border-bottom: 1px solid #ffc107;">
           닉네임은 2~8글자 이내여야 합니다.
         </p>

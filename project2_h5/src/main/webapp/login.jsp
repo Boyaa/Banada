@@ -24,11 +24,11 @@
         <div class="btn-area">
             <button type="submit" onClick="location.href='main.html'">Login</button>
         </div>
-           </section>
-      </form>
+      </section>
       <div class = "caption">
          <a href="join.jsp">아이디가 없으신가요?</a>
       </div>
+</form>
 
 </body>
 </html>
