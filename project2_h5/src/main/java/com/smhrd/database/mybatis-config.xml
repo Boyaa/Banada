@@ -20,6 +20,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     	<mapper resource="com/smhrd/database/SafetyMapper.xml"/>
     	<mapper resource="com/smhrd/database/GradeMapper.xml"/>
     	<mapper resource="com/smhrd/database/HobbyMapper.xml"/>
+    	<mapper resource="com/smhrd/database/MapMapper.xml"/>
     </mappers>
  
 </configuration>
