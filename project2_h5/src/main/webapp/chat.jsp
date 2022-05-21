@@ -9,15 +9,19 @@
     <title>Document</title>
     <script src = "js/jquery-3.6.0.js"></script>
     <script src = "js/chat.js"></script>
+    <script language="JavaScript">
+	function openNewWindow(window) { 
+		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=550, height=500"); 
+		}
+</script>
     <link rel="stylesheet" href="assets/chat.css">
 </head>
 <body>
     
-    
     <div class="chat_wrap">
         <div class="header">
             CHAT
-            <button class="safe">안심 등록</button>
+            <button class="safe" onclick="javascript:openNewWindow('ansim.jsp')">안심 등록</button>
         </div>
         <div class="anotherMsg">
             <br><br><br>

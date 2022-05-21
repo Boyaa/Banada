@@ -57,7 +57,7 @@
             <p class ="count">0</p>
             </div>
             <div>
-            <a href="" type = "button" class="btn">채팅요청</a>
+            <a href="chat.jsp" type = "button" class="btn">채팅요청</a>
             </div>
         </section>
 

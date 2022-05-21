@@ -53,7 +53,7 @@
             <p class ="count">0</p>
             </div>
             <div>
-            <a href="" type = "submit" class="btn">채팅요청</a>
+            <a href="chat.jsp" type = "submit" class="btn">채팅요청</a>
             </div>
         </section>
 
