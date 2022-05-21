@@ -135,16 +135,6 @@
               <span>작성일</span>
             </li>
           </ul>
-
-<c:forEach var="msg" items="${msList}" varStatus="status">
-								<tr>
-									<td> ${status.count}</td>
-									<td> <c:out value="${msg.sendEmail}"/> </td>
-									<td> <c:out value="${msg.message}"/> </td>
-									<td> <c:out value="${msg.date}"/> </td>
-									<td> <a href="DeleteMessageCon?msgNum=${msg.num}">삭제</a></td>
-								</tr>
-							</c:forEach>
 							
           <!--{{#each contents}}-->
           <a href="#" class="List-1 flex">
