@@ -22,7 +22,7 @@
  	<div class="place" style="display:flex; width:300px; height:50px;  border-bottom:1px solid gray;font-family:ibm;">
  		<div style="border-right:1px solid gray; margin: 0 0 0 12px; padding-right:12px;">
  			<div> 상대</div>
- 			<div> 입력</div> 
+ 			<div> 이름</div> 
  		</div>
  		<div style="margin-left:10px; padding-top:8px;">			
           <input name="safetyUser2" style="width:200px; height:20px; padding:5px; border:1px solid gray; " 
