@@ -9,7 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/people.css">
 </head>
-<body>
+<body >
     <!-- nav -->
     <div class = "nav">
         <div class = "logo">
@@ -31,8 +31,8 @@
 				<a href ="post.jsp">자유게시판</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
-            </c:choose>    
-              
+            </c:choose>      
+
         </div>
     </div>
     
@@ -40,8 +40,7 @@
         <h1>< 재능 정보 ></h1>
         <p style="font-size:20px">요리/베이킹</p>
     </div>
-    
-    <section class="category">
+   <section class="category">
       <div id="cateimg">
         <a href="people1sports.jsp">
         <img title="스포츠" src ="assets/category/2.png">
@@ -191,7 +190,7 @@
             <a href="peoplepostwrite123.jsp">글쓰기</a>
         </section>
       </div>
-
+        
 
     <!-- footer -->
     <footer class = "footer">

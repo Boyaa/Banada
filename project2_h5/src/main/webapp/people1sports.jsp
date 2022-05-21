@@ -1,9 +1,5 @@
-<%@page import="com.smhrd.domain.Hobby"%>
-<%@page import="java.util.List"%>
-<%@page import="com.smhrd.domain.HobbyDAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,11 +15,23 @@
         <div class = "logo">
           <a href ="main.jsp">바나다</a>
         </div>
-        <div class ="nav_but">
-            <a href ="object.jsp">소분해요</a>
-            <a href ="peoplecategory.jsp">재능나눔</a>
-            <a href ="post.jsp">자유게시판</a>
-            <a href ="" style ="margin-right:200px">로그아웃</a>
+        <div class ="nav_but" style ="display: flex; justify-content: space-between;">
+			<c:choose>
+               <c:when test="${empty loginUser}">
+				<a href ="object.jsp">소분해요</a>
+				<a href ="peoplecategory.jsp">재능나눔</a>
+				<a href ="post.jsp">자유게시판</a>
+                <a href="login.jsp">로그인</a>
+                <a href="join.jsp" >회원가입</a>
+               </c:when>
+             
+               <c:otherwise>
+				<a href ="object.jsp">소분해요</a>
+				<a href ="peoplecategory.jsp">재능나눔</a>
+				<a href ="post.jsp">자유게시판</a>
+				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
+               </c:otherwise>
+            </c:choose>
         </div>
     </div>
     
@@ -32,6 +40,7 @@
         <p style="font-size:20px">스포츠</p>
     </div>
     
+   
     <section class="category">
       <div id="cateimg">
         <a href="people1sports.jsp">
@@ -101,7 +110,6 @@
 
 
   <!-- maps -->
-
     <section class ="header">
         <div class="title">
             <img src="" alt="">
@@ -109,11 +117,6 @@
     </section>
 
 
-	<% 
-		HobbyDAO dao = new HobbyDAO();
-		List<Hobby> hBoardList = dao.selecthboard();
-		pageContext.setAttribute("hBoardList",hBoardList);
-	%>
 
 
 
@@ -121,7 +124,6 @@
         <!--목록-->
         <div class="List-Box box-height">
           <ul >
-          
             <li>
               <span>목록</span>
             </li>
@@ -135,33 +137,31 @@
               <span>작성일</span>
             </li>
           </ul>
-							
+
           <!--{{#each contents}}-->
-          <a href="#" class="List-1 flex">
-          <c:forEach var="hBoard" items="${hBoardList}" varStatus="status">
+          <a href="peoplepostview.jsp" class="List-1 flex">
             <div>
               <span>
-                ${status.count}
+                01
               </span>
             </div>
             <div>
               <span>
-                <c:out value="${hBoard.h_nick}"/>
+                facere
               </span>
             </div>
             <div>
               <span>
-                <c:out value="${hBoard.h_title}"/>
+                오늘 날씨가 너무 좋네요~
               </span>
             </div>
             <div>
               <span>
-                <c:out value="${hBoard.h_date}"/>
+                2021.09.27 15 : 00
               </span>
             </div>
-           </c:forEach>
           </a>
-          <!--2
+          <!--2-->
           <a href="#" class="List-1 flex">
             <div>
               <span>
@@ -183,17 +183,14 @@
                 2021.09.27 15 : 00
               </span>
             </div>
-          </a> -->
-
+          </a>
           <!--{{/each}}-->
-          
-        <div>
+        </div>
 
-      <section class="write">
-            <a href="peoplepostwrite123.html">글쓰기</a>
-       </section>
+        <section class="write">
+            <a href="peoplepostwrite123.jsp">글쓰기</a>
+        </section>
       </div>
-
         
 
     <!-- footer -->

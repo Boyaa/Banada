@@ -1,9 +1,6 @@
-<%@page import="com.smhrd.domain.Hobby"%>
-<%@page import="java.util.List"%>
-<%@page import="com.smhrd.domain.HobbyDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,14 +16,14 @@
         <div class = "logo">
             <a href ="main.jsp">바나다</a>
         </div>
-        <div class ="nav_but">
+        <div class ="nav_but" style ="display: flex; justify-content: space-between;">
 			<c:choose>
                <c:when test="${empty loginUser}">
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
 				<a href ="post.jsp">자유게시판</a>
                 <a href="login.jsp">로그인</a>
-                <a href="join.jsp">회원가입</a>
+                <a href="join.jsp" >회원가입</a>
                </c:when>
              
                <c:otherwise>

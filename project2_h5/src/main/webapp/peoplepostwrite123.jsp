@@ -1,9 +1,5 @@
-<%@page import="com.smhrd.domain.Hobby"%>
-<%@page import="java.util.List"%>
-<%@page import="com.smhrd.domain.HobbyDAO"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,11 +14,23 @@
         <div class = "logo">
             <a href ="main.jsp">바나다</a>
         </div>
-        <div class ="nav_but">
-            <a href ="object.jsp">소분해요</a>
-            <a href ="peoplecategory.jsp">재능나눔</a>
-            <a href ="post.jsp">자유게시판</a>
-            <a href ="" style ="margin-right:200px">로그아웃</a>
+        <div class ="nav_but" style ="display: flex; justify-content: space-between;">
+			<c:choose>
+               <c:when test="${empty loginUser}">
+				<a href ="object.jsp">소분해요</a>
+				<a href ="peoplecategory.jsp">재능나눔</a>
+				<a href ="post.jsp">자유게시판</a>
+                <a href="login.jsp">로그인</a>
+                <a href="join.jsp" >회원가입</a>
+               </c:when>
+             
+               <c:otherwise>
+				<a href ="object.jsp">소분해요</a>
+				<a href ="peoplecategory.jsp">재능나눔</a>
+				<a href ="post.jsp">자유게시판</a>
+				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
+               </c:otherwise>
+            </c:choose>   
         </div>
     </div>
 
@@ -30,7 +38,7 @@
         <p style="font-family: ibm; font-size: 60px;  margin: 20px; ">게시판 작성</p>
     </form>
 
-    <form class="container" action="HobbyCon">
+    <form class="container" action="">
         <div id="category" style = "display:flex;">
             <div id = "box">카테고리</div>
             <div id = "right-box">
