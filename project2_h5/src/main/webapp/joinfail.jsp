@@ -12,7 +12,7 @@
 </head>
 <body>
 <section class = "success-form">
-   <form action="">
+ 
       <div class="int-area">
          <name="id" id="id">
          <label for = "id" style="padding-left: 15px;">가입에 실패했습니다.</label>   
@@ -30,7 +30,7 @@
         <div class="btn-area">
             <input type= button onclick="location.href='main.jsp'" value="메인으로 이동">
         </div>
-    </form>
+   
       
 </section>
 

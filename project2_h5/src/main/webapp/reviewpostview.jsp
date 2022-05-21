@@ -34,7 +34,7 @@ pageContext.setAttribute("list", commList);
                <c:when test="${empty loginUser}">
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">자유게시판</a>
+				<a href ="reviewpost.jsp">나눔후기</a>
                 <a href="login.jsp">로그인</a>
                 <a href="join.jsp" >회원가입</a>
                </c:when>
@@ -42,7 +42,7 @@ pageContext.setAttribute("list", commList);
                <c:otherwise>
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">자유게시판</a>
+				<a href ="reviewpost.jsp">나눔후기</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
             </c:choose>      

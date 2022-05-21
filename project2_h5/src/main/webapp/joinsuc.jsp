@@ -12,7 +12,7 @@
 </head>
 <body>
 <section class = "success-form">
-   <form action="">
+
       <div class="int-area">
          <name="id" id="id">
          <label for = "id" style="padding-left: 25px;">가입을 축하합니다!</label>   
@@ -29,7 +29,7 @@
         <div class="btn-area">
             <button type="submit" onclick="location.href='main.jsp'">메인으로 이동</button>
         </div>
-      </form>
+
       
 </section>
 
