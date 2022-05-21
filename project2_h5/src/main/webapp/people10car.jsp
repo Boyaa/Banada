@@ -109,7 +109,11 @@
     </section>
 
 
-
+	<% 
+		HobbyDAO dao = new HobbyDAO();
+		List<Hobby> hBoardList = dao.selecthboard();
+		pageContext.setAttribute("hBoardList",hBoardList);
+	%>
 
 
 
@@ -117,6 +121,7 @@
         <!--목록-->
         <div class="List-Box box-height">
           <ul >
+          
             <li>
               <span>목록</span>
             </li>
@@ -131,30 +136,42 @@
             </li>
           </ul>
 
+<c:forEach var="msg" items="${msList}" varStatus="status">
+								<tr>
+									<td> ${status.count}</td>
+									<td> <c:out value="${msg.sendEmail}"/> </td>
+									<td> <c:out value="${msg.message}"/> </td>
+									<td> <c:out value="${msg.date}"/> </td>
+									<td> <a href="DeleteMessageCon?msgNum=${msg.num}">삭제</a></td>
+								</tr>
+							</c:forEach>
+							
           <!--{{#each contents}}-->
           <a href="#" class="List-1 flex">
+          <c:forEach var="hBoard" items="${hBoardList}" varStatus="status">
             <div>
               <span>
-                01
+                ${status.count}
               </span>
             </div>
             <div>
               <span>
-                facere
+                <c:out value="${hBoard.h_nick}"/>
               </span>
             </div>
             <div>
               <span>
-                오늘 날씨가 너무 좋네요~
+                <c:out value="${hBoard.h_title}"/>
               </span>
             </div>
             <div>
               <span>
-                2021.09.27 15 : 00
+                <c:out value="${hBoard.h_date}"/>
               </span>
             </div>
+           </c:forEach>
           </a>
-          <!--2-->
+          <!--2
           <a href="#" class="List-1 flex">
             <div>
               <span>
@@ -176,10 +193,11 @@
                 2021.09.27 15 : 00
               </span>
             </div>
-          </a>
+          </a> -->
 
           <!--{{/each}}-->
-        </div>
+          
+        <div>
 
       <section class="write">
             <a href="peoplepostwrite123.html">글쓰기</a>
