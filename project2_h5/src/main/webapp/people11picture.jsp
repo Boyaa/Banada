@@ -41,7 +41,7 @@
     
     <div class = "title">
         <h1>< 재능 정보 ></h1>
-        <p style="font-size:20px">차/오토바이</p>
+        <p style="font-size:20px">사진/영상</p>
     </div>
     
     <section class="category">
