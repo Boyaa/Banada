@@ -35,6 +35,13 @@ public class Hobby {
 		this.h_maxpeople = h_maxpeople;
 		this.h_like = h_like;
 	}
+     
+     public Hobby(String h_title, String h_nick, Timestamp h_date) {
+ 		super();
+ 		this.h_title = h_title;
+ 		this.h_nick = h_nick;
+ 		this.h_date = h_date;
+ 	}
 
 
 

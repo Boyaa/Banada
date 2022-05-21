@@ -12,5 +12,8 @@
 	<select id="getHobbyNum" resultType="int">
         select MAX(h_seq) from tbl_hobby where h_nick=#{h_nick} 
     </select>
+	<select id="selecthboard" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby
+	</select>
     
 </mapper>
