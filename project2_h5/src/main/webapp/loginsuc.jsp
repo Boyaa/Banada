@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +12,7 @@
 </head>
 <body>
 <section class = "success-form">
-   <form action="">
+  
       <div class="int-area">
          <name="id" id="id">
          <label for = "id" style="padding-left: 25px;">로그인 성공!!</label>   
@@ -26,7 +27,7 @@
         <div class="btn-area">
             <input type =button value="메인으로 이동" onclick="location.href='main.jsp'">
         </div>
-      </form>
+     
       
 </section>
 
