@@ -30,7 +30,7 @@
         <p style="font-family: ibm; font-size: 60px;  margin: 20px; ">게시판 작성</p>
     </form>
 
-    <form class="container" action="">
+    <form class="container" action="HobbyCon">
         <div id="category" style = "display:flex;">
             <div id = "box">카테고리</div>
             <div id = "right-box">

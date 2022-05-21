@@ -19,11 +19,23 @@
         <div class = "logo">
           <a href ="main.jsp">바나다</a>
         </div>
-        <div class ="nav_but">
-            <a href ="object.jsp">소분해요</a>
-            <a href ="peoplecategory.jsp">재능나눔</a>
-            <a href ="post.jsp">자유게시판</a>
-            <a href ="" style ="margin-right:200px">로그아웃</a>
+        <div class ="nav_but" style ="display: flex; justify-content: space-between;">
+			<c:choose>
+               <c:when test="${empty loginUser}">
+				<a href ="object.jsp">소분해요</a>
+				<a href ="peoplecategory.jsp">재능나눔</a>
+				<a href ="post.jsp">자유게시판</a>
+                <a href="login.jsp">로그인</a>
+                <a href="join.jsp" >회원가입</a>
+               </c:when>
+             
+               <c:otherwise>
+				<a href ="object.jsp">소분해요</a>
+				<a href ="peoplecategory.jsp">재능나눔</a>
+				<a href ="post.jsp">자유게시판</a>
+				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
+               </c:otherwise>
+               </c:choose>
         </div>
     </div>
     
@@ -135,6 +147,16 @@
               <span>작성일</span>
             </li>
           </ul>
+
+<c:forEach var="msg" items="${msList}" varStatus="status">
+								<tr>
+									<td> ${status.count}</td>
+									<td> <c:out value="${msg.sendEmail}"/> </td>
+									<td> <c:out value="${msg.message}"/> </td>
+									<td> <c:out value="${msg.date}"/> </td>
+									<td> <a href="DeleteMessageCon?msgNum=${msg.num}">삭제</a></td>
+								</tr>
+							</c:forEach>
 							
           <!--{{#each contents}}-->
           <a href="#" class="List-1 flex">
