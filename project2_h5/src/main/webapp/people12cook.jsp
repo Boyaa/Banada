@@ -31,7 +31,8 @@
 				<a href ="post.jsp">자유게시판</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
-            </c:choose>      
+            </c:choose>    
+              
         </div>
     </div>
     
