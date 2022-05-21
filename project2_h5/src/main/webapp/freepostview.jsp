@@ -101,12 +101,16 @@ pageContext.setAttribute("list", commList);
             <div class="con">
                 <button type = "button" class= "writeCom" style="margin-top:10px; cursor: pointer;  float: right; background:white;">등록</button>
             </div>
-        </section>
-		<div id="comm_content">
+        
+        <div id="comm_content" style="margin-top:50px; border-top: 1px solid #eaeaea;" >
 				<c:forEach var="comm" items="${list }"> 
-				<p><c:out value="${comm.comm_content }"/><button class = 'removeCom' id = '${comm.comm_seq}'>댓글삭제</button>
+				<p style="border: 1px solid #eaeaea; padding:5px;"><c:out value="${comm.comm_content }"/>
+				<button style="float:right; border:none; background-color:white; cursor: pointer;" class = 'removeCom' id = '${comm.comm_seq}'>X</button>
 				</c:forEach>
 		</div>
+        
+        </section>
+		
     </alticle>
         
     <script>
