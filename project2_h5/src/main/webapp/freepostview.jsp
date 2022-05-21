@@ -93,34 +93,36 @@ pageContext.setAttribute("list", commList);
         <!--댓글기능-->
         <p id="content">댓글 쓰기</p>
         
-        <form action="">
+        
         <section class="comment-on">
-            <textarea id="comm_content" placeholder=" 댓글을 입력하세요.">
-            	<c:forEach var="comm" items="${list }"> 
-				<p><c:out value="${comm.comm_content }"/><button class = 'removeCom' id = '${comm.comm_seq}'>댓글삭제</button>
-				</c:forEach>
+            <textarea id="commvalue" placeholder=" 댓글을 입력하세요.">
+            	
             </textarea>
             <div class="con">
                 <button type = "button" class= "writeCom" style="margin-top:10px; cursor: pointer;  float: right; background:white;">등록</button>
             </div>
         </section>
-		</form>
+		<div id="comm_content">
+				<c:forEach var="comm" items="${list }"> 
+				<p><c:out value="${comm.comm_content }"/><button class = 'removeCom' id = '${comm.comm_seq}'>댓글삭제</button>
+				</c:forEach>
+		</div>
     </alticle>
         
     <script>
 		//댓글 작성하는거
 
 		$('.writeCom').click(function() { //클래스가 wirtecom인 버튼을 클릭을했을때  댓글을 작성할겁니다
-							var com = $('input[type=text]').val() //이때 사용자가 어떤값을 입력을했는지 가지고오는 문장 ( 사용자가 입력한 댓글 가지고 오기)
+							var com = $('#commvalue').val() //이때 사용자가 어떤값을 입력을했는지 가지고오는 문장 ( 사용자가 입력한 댓글 가지고 오기)
 
 							//db서버에다가 등록을 할 수있도록 비동기통신 작성
 							$.ajax({ //어떤게시물에서 작성됫는지랑 작성된댓글 보내주기
-								data : {f_seq : 1,comm_content : com}, //보내줄 데이터 정의 ( 사용자가 입력한 댓글, 어떤게시물에서작성되었는지 까지 같이 보내기)
+								data : {f_seq : 1,"comm_content" : com}, //보내줄 데이터 정의 ( 사용자가 입력한 댓글, 어떤게시물에서작성되었는지 까지 같이 보내기)
 								url : "AddCommentCon", //어디로 요청하는지  (요청하는 addcommentcon 작성하러가기 )
 								method : "POST", //보내느 방식
 								success : function(data) { // 성공시 작성한 댓글도 밑에 보여질수있도록 작성 / data : 서버가 넘겨준 현재 추가된 댓글의 시퀀스번호
 											$('#comm_content').prepend('<p>'+ com+ '<button class="removeCom" id='+data+'>삭제</button></p>')
-											$('input[type=text]').val("") //댓글창은 비워주기
+											$('#commvalue').val("") //댓글창은 비워주기
 										},
 										error : function() {
 											alert("통신실패!")
@@ -158,8 +160,7 @@ pageContext.setAttribute("list", commList);
     <footer class = "footer">
         <ul class = "list">
             <li class = "list-object">
-                <a href = "#">About</a>
-            </li>
+                <a href = "#">About</a>            </li>
             <li class = "list-object">⋅</li>
             <li class = "list-object">
                 <a href = "#">Contact</a>
