@@ -31,13 +31,13 @@ public class JoinCon extends HttpServlet {
 
 		if (cnt > 0) { // 회원가입 성공
 			System.out.println("회원가입 성공");
-			RequestDispatcher rd = request.getRequestDispatcher("joinSuccess.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("joinsuc.jsp");
 			request.setAttribute("joinId", user_id);
 			rd.forward(request, response);
 
 		} else { // 회원가입 실패
 			System.out.println("회원가입 실패");
-			response.sendRedirect("main.jsp");
+			response.sendRedirect("joinfail.jsp");
 		}
 	}
 

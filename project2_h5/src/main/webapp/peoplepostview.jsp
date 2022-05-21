@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,11 +15,23 @@
         <div class = "logo" >
             <a href ="main.jsp">바나다</a>
         </div>
-        <div class ="nav_but">
-            <a href ="object.jsp">소분해요</a>
-            <a href ="peoplecategory.jsp">재능나눔</a>
-            <a href ="post.jsp">자유게시판</a>
-            <a href ="" style ="margin-right:200px">로그아웃</a>
+        <div class ="nav_but" style ="display: flex; justify-content: space-between;">
+			<c:choose>
+               <c:when test="${empty loginUser}">
+				<a href ="object.jsp">소분해요</a>
+				<a href ="peoplecategory.jsp">재능나눔</a>
+				<a href ="post.jsp">자유게시판</a>
+                <a href="login.jsp">로그인</a>
+                <a href="join.jsp" >회원가입</a>
+               </c:when>
+             
+               <c:otherwise>
+				<a href ="object.jsp">소분해요</a>
+				<a href ="peoplecategory.jsp">재능나눔</a>
+				<a href ="post.jsp">자유게시판</a>
+				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
+               </c:otherwise>
+            </c:choose>      
         </div>
     </div>
     </div>

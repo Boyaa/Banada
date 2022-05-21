@@ -16,14 +16,14 @@
         <div class = "logo">
             <a href ="main.jsp">바나다</a>
         </div>
-        <div class ="nav_but">
+        <div class ="nav_but" style ="display: flex; justify-content: space-between;">
 			<c:choose>
                <c:when test="${empty loginUser}">
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
 				<a href ="post.jsp">자유게시판</a>
                 <a href="login.jsp">로그인</a>
-                <a href="join.jsp">회원가입</a>
+                <a href="join.jsp" >회원가입</a>
                </c:when>
              
                <c:otherwise>
