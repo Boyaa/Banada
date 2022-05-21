@@ -23,7 +23,7 @@
                <c:when test="${empty loginUser}">
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">자유게시판</a>
+				<a href ="reviewpost.jsp">나눔후기</a>
                 <a href="login.jsp">로그인</a>
                 <a href="join.jsp" >회원가입</a>
                </c:when>
@@ -31,7 +31,7 @@
                <c:otherwise>
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">자유게시판</a>
+				<a href ="myreview.jsp">내후기</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
             </c:choose>   
@@ -43,7 +43,7 @@
       <form  style = "text-align:center; height: 120px;">
         <div class="Title">
           <span style = "font-size:60px; font-family:'ibm'; color : #ffc107;">
-            자유게시판
+            나눔 후기
           </span>
         </div>
       </form>
@@ -65,7 +65,7 @@
         </ul>
         <!--1-->
         <!--{{#each contents}}-->
-        <a href="freepostview.jsp" class="List-1 flex">
+        <a href="reviewpostview.jsp" class="List-1 flex">
           <div>
             <span>
               01
@@ -122,12 +122,11 @@
         </div>
         <!--작성하기 버튼-->
         <div class="Up-Btn">
-          <input class = "style-bt" type="button" value="글쓰기" name="submit" onclick="location.href='freepostwrite.jsp'"/>
+          <input class = "style-bt" type="button" value="글쓰기" name="submit" onclick="location.href='reviewpostwrite.jsp'"/>
         </div>
       </form>
     </div>
     <!--top-bar-->
-</div>
 </div>
 </body>
 </html>

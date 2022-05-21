@@ -20,7 +20,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
         
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="assets/styles.css" rel="stylesheet" />
     </head>
     <body>
         <!--상단바-->
@@ -36,6 +36,7 @@
                </c:when>
              
                <c:otherwise>
+               	  <a href="myreview.jsp">내 후기</a>
                   <a href="LogoutCon">로그아웃</a>
                </c:otherwise>
             </c:choose>
@@ -101,7 +102,7 @@
                             <div class="features-icons-icon d-flex">
                                 <img style="margin-left: 100px; margin-bottom:10px;border-radius: 30%;" src="assets/main_img/gesi.png" >
                             </div>
-                            <a href="post.jsp" class="mini-category">자유게시판</a>
+                            <a href="reviewpost.jsp" class="mini-category">나눔후기</a>
                         </div>
                     </div>
                 </div>

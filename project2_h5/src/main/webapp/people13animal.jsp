@@ -20,7 +20,7 @@
                <c:when test="${empty loginUser}">
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">자유게시판</a>
+				<a href ="reviewpost.jsp">나눔후기</a>
                 <a href="login.jsp">로그인</a>
                 <a href="join.jsp" >회원가입</a>
                </c:when>
@@ -28,7 +28,7 @@
                <c:otherwise>
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">자유게시판</a>
+				<a href ="reviewpost.jsp">나눔후기</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
             </c:choose>      
@@ -139,7 +139,7 @@
           </ul>
 
           <!--{{#each contents}}-->
-          <a href="#" class="List-1 flex">
+          <a href="peoplepostview.jsp" class="List-1 flex">
             <div>
               <span>
                 01
@@ -161,37 +161,7 @@
               </span>
             </div>
           </a>
-          <!--2-->
-          <a href="#" class="List-1 flex">
-            <div>
-              <span>
-                02
-              </span>
-            </div>
-            <div>
-              <span>
-                Lorem
-              </span>
-            </div>
-            <div>
-              <span>
-                와 오늘 하늘마당 사람 실화냐...
-              </span>
-            </div>
-            <div>
-              <span>
-                2021.09.27 15 : 00
-              </span>
-            </div>
-          </a>
-          <!--{{/each}}-->
-        </div>
 
-        <section class="write">
-            <a href="peoplepostwrite123.jsp">글쓰기</a>
-        </section>
-      </div>
-        
 
     <!-- footer -->
     <footer class = "footer">

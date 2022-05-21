@@ -24,7 +24,7 @@
                <c:when test="${empty loginUser}">
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">자유게시판</a>
+				<a href ="reviewpost.jsp">나눔후기</a>
                 <a href="login.jsp">로그인</a>
                 <a href="join.jsp" >회원가입</a>
                </c:when>
@@ -32,7 +32,7 @@
                <c:otherwise>
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">자유게시판</a>
+				<a href ="reviewpost.jsp">나눔후기</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
                </c:choose>
@@ -150,7 +150,7 @@
 
 							
           <!--{{#each contents}}-->
-          <a href="#" class="List-1 flex">
+          <a href="peoplepostview.jsp" class="List-1 flex">
           <c:forEach var="hBoard" items="${hBoardList}" varStatus="status">
             <div>
               <span>
@@ -203,7 +203,7 @@
         <div>
 
       <section class="write">
-            <a href="peoplepostwrite123.html">글쓰기</a>
+            <a href="peoplepostwrite123.jsp">글쓰기</a>
        </section>
       </div>
 

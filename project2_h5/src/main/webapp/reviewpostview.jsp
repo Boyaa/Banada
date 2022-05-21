@@ -49,35 +49,16 @@ pageContext.setAttribute("list", commList);
 
     </div>
     </div>
-    <div>
-        <div class = "img">
-            <img class = "img-con" src="assets/post_image/jiyung.png" style="cursor:pointer; max-height: 200%; width: auto;WIDTH: 650px" onclick="window.open(this.src)">
-        </div>
-    </div>
-
-
     <alticle >
-        <section class="pro">
+        <section class="pro" style="border-top:2px solid #eaeaea; ">
             <div class="alticle-image">
                 <img src="assets/post_image/hruru.png" style="width:50px; height:50px; -webkit-border-radius:50%; margin-right:10px"  >
             </div>
-            <div style="width:250px;">
+            <div style="width:250px; margin-right:380px;">
                 <p id = "id">글쓴이</p>
                 <p id = "live">광주광역시 남구 봉선동</p>
             </div>
             
-            
-            <div>
-            <button type = "submit" id = "good" style="margin-left: 200px">좋아요💗</button>
-            </div>
-            
-            
-            <div>
-            <p class ="count">0</p>
-            </div>
-            <div>
-            <a href="" type = "button" class="btn">채팅요청</a>
-            </div>
         </section>
 
         <section class = "article-description">
@@ -91,8 +72,9 @@ pageContext.setAttribute("list", commList);
         
 		
         <!--댓글기능-->
-        <p id="content">댓글 쓰기</p>
-        
+        <div style="max-width:700px; margin:auto;margin-bottom:50px">
+        <a href="reviewpost.jsp" style="float:right; color:black; text-decoration:none; font-family:ibm">후기 더 보기</a>
+        </div>
         
         <section class="comment-on">
             <textarea id="commvalue" placeholder=" 댓글을 입력하세요.">
