@@ -1,5 +1,17 @@
+<%@page import="com.smhrd.domain.Comm"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.BoardDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%
+BoardDAO dao = new BoardDAO();
+
+List<Comm> commList = (List<Comm>) dao.selectAllComm(1); 
+
+pageContext.setAttribute("list", commList); 
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +20,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/freepostview.css">
     <title>Document</title>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
 </head>
 <body>
      <!-- nav -->
@@ -81,13 +95,63 @@
         
         <form action="">
         <section class="comment-on">
-            <textarea placeholder=" 댓글을 입력하세요."></textarea>
+            <textarea id="comm_content" placeholder=" 댓글을 입력하세요.">
+            	<c:forEach var="comm" items="${list }"> 
+				<p><c:out value="${comm.comm_content }"/><button class = 'removeCom' id = '${comm.comm_seq}'>댓글삭제</button>
+				</c:forEach>
+            </textarea>
             <div class="con">
-                <button type = "button" class= "btn" style="margin-top:10px; cursor: pointer;  float: right; background:white;">등록</button>
+                <button type = "button" class= "writeCom" style="margin-top:10px; cursor: pointer;  float: right; background:white;">등록</button>
             </div>
         </section>
 		</form>
     </alticle>
+        
+    <script>
+		//댓글 작성하는거
+
+		$('.writeCom').click(function() { //클래스가 wirtecom인 버튼을 클릭을했을때  댓글을 작성할겁니다
+							var com = $('input[type=text]').val() //이때 사용자가 어떤값을 입력을했는지 가지고오는 문장 ( 사용자가 입력한 댓글 가지고 오기)
+
+							//db서버에다가 등록을 할 수있도록 비동기통신 작성
+							$.ajax({ //어떤게시물에서 작성됫는지랑 작성된댓글 보내주기
+								data : {f_seq : 1,comm_content : com}, //보내줄 데이터 정의 ( 사용자가 입력한 댓글, 어떤게시물에서작성되었는지 까지 같이 보내기)
+								url : "AddCommentCon", //어디로 요청하는지  (요청하는 addcommentcon 작성하러가기 )
+								method : "POST", //보내느 방식
+								success : function(data) { // 성공시 작성한 댓글도 밑에 보여질수있도록 작성 / data : 서버가 넘겨준 현재 추가된 댓글의 시퀀스번호
+											$('#comm_content').prepend('<p>'+ com+ '<button class="removeCom" id='+data+'>삭제</button></p>')
+											$('input[type=text]').val("") //댓글창은 비워주기
+										},
+										error : function() {
+											alert("통신실패!")
+										}
+									})
+						})
+
+		//댓글 삭제하는거 
+
+		$('#comm_content').on("click", ".removeCom", function() {
+			let comm_seq = $(this).attr('id');
+			console.log(comm_seq)
+			$.ajax({
+				data : {
+					comm_seq : comm_seq
+				},
+				url : "DeleteCommentCon",
+				method : "post",
+				context : this,
+				success : function() {
+					$(this).parent().remove()
+				},
+				error : function() {
+					alert("통신실패!")
+				}
+			})
+		})
+
+		
+	</script>
+    
 
    
 
