@@ -4,6 +4,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,13 +46,16 @@
 		</div>
 	</div>
 	</div>
-	<% 
-		HobbyDAO dao = new HobbyDAO();
-		List<Hobby> hPostList = dao.selecthpost(74);
-		pageContext.setAttribute("hPostList",hPostList);
+	
+	<%
+	HobbyDAO dao = new HobbyDAO();
+
+	List<Hobby> hpostList = (List<Hobby>) dao.selectAllhpostList(82);
+
+	pageContext.setAttribute("hpostList", hpostList); 
+
 	%>
-
-
+	
 	<alticle>
 	<section class="pro">
 		<div class="alticle-image">
@@ -59,12 +63,12 @@
 				style="width: 50px; height: 50px; -webkit-border-radius: 50%; margin-right: 10px">
 		</div>
 		<div style="width: 250px;">
-			<p id="id">${hPostList.h_nick}</p>
+			<p id="id"><c:out value="${hPostList.h_nick}"/></p>
 			<p id="live">광주광역시 남구 봉선동</p>
 		</div>
 
 		<%
-	int h_like = dao.getLike(74);
+	int h_like = dao.getLike(82);
 	pageContext.setAttribute("like", h_like); // el 표기법 쓰기 위해 써 줌 
 			%>
 
@@ -72,7 +76,7 @@
 			<button type="submit" id="like" style="margin-left: 200px">반하다💗</button>
 		</div>
 		<div>
-			<p class="count">${h_like}개</p>
+			<p class="count">${like}개</p>
 		</div>
 		<div>
 			<a type="button" class="btn" style="cursor: pointer;"
@@ -81,9 +85,9 @@
 	</section>
 
 	<section class="article-description">
-		<h1 id="content">${hPostList.h_title}</h1>
+		<h1 id="content"><c:out value="${hPostList.h_title}"/></h1>
 		<div id="article-detail">
-			<p>${hPostList.h_content}</p>
+			<p><c:out value="${hPostList.h_content}"/></p>
 		
 		</div>
 	</section>
@@ -110,7 +114,7 @@
 	<script>
         $(document).on("click","#like",function(){ 
 			$.ajax({
-				data : {status : "like", h_seq : 74},
+				data : {status : "like", h_seq : 82},
 				url : "HobbyAjaxCon",
 				method : "GET",
 				dataType : "text", 
@@ -128,7 +132,7 @@
 
         $(document).on("click","#dislike",function(){ 
             $.ajax({
-				data : {status : "dislike", h_seq : 74},
+				data : {status : "dislike", h_seq : 82},
 				url : "HobbyAjaxCon",
 				method : "GET",
 				dataType : "text",

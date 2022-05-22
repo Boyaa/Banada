@@ -6,8 +6,8 @@ import java.sql.Timestamp;
 public class Hobby {
 	
 
-
-	private String h_title;
+	 private BigDecimal h_seq;
+	 private String h_title;
      private String h_nick;
      private String h_cate;
      private String h_content; 
@@ -15,20 +15,16 @@ public class Hobby {
      private int h_maxpeople;
      private int h_like;
 	 
-	 private BigDecimal h_seq;
-	 
-	 
-    
-     
-     public Hobby(String h_title, String h_content, String h_nick, int h_like, int h_maxpeople) {
-		super();
-		this.h_title = h_title;
-		this.h_content = h_content;
-		this.h_nick = h_nick;
-	    this.h_like = h_like;
-		this.h_maxpeople = h_maxpeople;
-	}
 
+	public Hobby(BigDecimal h_seq, String h_title, String h_nick, String h_content, int h_maxpeople, int h_like) {
+		super();
+		this.h_seq = h_seq;
+		this.h_title = h_title;
+		this.h_nick = h_nick;
+		this.h_content = h_content;
+		this.h_maxpeople = h_maxpeople;
+		this.h_like = h_like;
+	}
 
 
 	public Hobby(String h_title, String h_content, String h_cate, int h_maxpeople) {
@@ -52,15 +48,7 @@ public class Hobby {
 		this.h_like = h_like;
 	}
      
-     public Hobby(String h_title, String h_nick, Timestamp h_date) {
- 		super();
- 		this.h_title = h_title;
- 		this.h_nick = h_nick;
- 		this.h_date = h_date;
- 	}
-
-
-
+ 
 
 	public Hobby(BigDecimal h_seq) {
     	 this.h_seq = h_seq;

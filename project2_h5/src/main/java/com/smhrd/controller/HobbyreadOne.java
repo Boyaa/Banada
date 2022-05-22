@@ -1,6 +1,7 @@
 package com.smhrd.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.math.BigDecimal;
 
 import javax.servlet.ServletException;
@@ -18,9 +19,7 @@ public class HobbyreadOne extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	
-		request.setCharacterEncoding("utf-8");
-	  	
-	 	
+	
 	 	String h_num = request.getParameter("h_seq");
 	 	BigDecimal h_seq = new BigDecimal("h_num");
 	    String h_title = request.getParameter("h_title");

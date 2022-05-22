@@ -14,11 +14,11 @@ public class HobbyDAO {
 
 	public int insertHobby(Hobby hobby) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		int h_seq = 0;
+		int HobbyNum = 0;
 		try {
 			 sqlSession.insert("com.smhrd.domain.HobbyDAO.insertHobby", hobby);
-			 h_seq = sqlSession.selectOne("com.smhrd.domain.HobbyDAO.getHobbyNum");
-			if (h_seq != 0) {
+			 HobbyNum = sqlSession.selectOne("com.smhrd.domain.HobbyDAO.getHobbyNum");
+			if (HobbyNum != 0) {
 				sqlSession.commit();
 			} else {
 				sqlSession.rollback();
@@ -28,15 +28,15 @@ public class HobbyDAO {
 		} finally {
 			sqlSession.close();
 		}
-		return h_seq;
+		return HobbyNum;
 	} // 글 등록
 	
 
-	public List<Hobby> selecthpost(int h_seq) {
+	public List<Hobby> selectAllhpostList(int HobbyNum) {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		List<Hobby> hPostList = null;
 		try {
-			sqlSession.selectList("com.smhrd.domain.HobbyDAO.selecthpost", h_seq);
+			sqlSession.selectList("com.smhrd.domain.HobbyDAO.selecthpost", HobbyNum);
 
 			if (hPostList != null) {
 				sqlSession.commit();
@@ -140,11 +140,11 @@ public class HobbyDAO {
 		}
 		return hBoardList;
 	}
-	public List<Hobby> selecthboardTravle() {
+	public List<Hobby> selecthboardTravel() {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		List<Hobby> hBoardList = null;
 		try {
-			hBoardList = sqlSession.selectList("com.smhrd.domain.HobbyDAO.selecthboardTravle");
+			hBoardList = sqlSession.selectList("com.smhrd.domain.HobbyDAO.selecthboardTravel");
 			if (hBoardList != null) {
 				sqlSession.commit();
 			} else {
