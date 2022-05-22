@@ -70,6 +70,24 @@
   	<description></description>
   	<servlet-class>com.smhrd.controller.DeleteCommentCon</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>HobbyAjaxCon</servlet-name>
+  	<display-name>HobbyAjaxCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.HobbyAjaxCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>AddhPostCon</servlet-name>
+  	<display-name>AddhPostCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.AddhPostCon</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>ProductCon</servlet-name>
+  	<display-name>ProductCon</display-name>
+  	<description></description>
+  	<servlet-class>com.smhrd.controller.ProductCon</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
   	<url-pattern>/JoinCon</url-pattern>
@@ -113,6 +131,18 @@
   <servlet-mapping>
   	<servlet-name>DeleteCommentCon</servlet-name>
   	<url-pattern>/DeleteCommentCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>HobbyAjaxCon</servlet-name>
+  	<url-pattern>/HobbyAjaxCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddhPostCon</servlet-name>
+  	<url-pattern>/AddhPostCon</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ProductCon</servlet-name>
+  	<url-pattern>/ProductCon</url-pattern>
   </servlet-mapping>
   
 

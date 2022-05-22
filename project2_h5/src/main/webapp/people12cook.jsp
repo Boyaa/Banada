@@ -41,7 +41,7 @@
     
     <div class = "title">
         <h1>< 재능 정보 ></h1>
-        <p style="font-size:20px">반려동물</p>
+        <p style="font-size:20px">요리/베이킹</p>
     </div>
     
     <section class="category">
@@ -123,7 +123,7 @@
 
 	<% 
 		HobbyDAO dao = new HobbyDAO();
-		List<Hobby> hBoardList = dao.selecthboard();
+		List<Hobby> hBoardList = dao.selecthboardCook();
 		pageContext.setAttribute("hBoardList",hBoardList);
 	%>
 
