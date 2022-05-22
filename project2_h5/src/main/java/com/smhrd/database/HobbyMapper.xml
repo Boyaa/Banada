@@ -6,14 +6,68 @@
 	<insert id="insertHobby" parameterType="com.smhrd.domain.Hobby">
 		insert into TBL_hobby values (tbl_hobby_seq.nextval, #{h_title}, 's', #{h_cate}, #{h_content}, sysdate, #{h_maxpeople}, 0)
 	</insert>
-	<select id="selectHobby" parameterType="com.smhrd.domain.Hobby" resultType="com.smhrd.domain.Hobby">
-		select * from TBL_hobby where h_seq=#{h_seq}
+	<select id="selecthpost" parameterType="com.smhrd.domain.Hobby" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_content, h_nick, h_like, h_maxpeople from TBL_hobby where h_seq=74
 	</select>
 	<select id="getHobbyNum" resultType="int">
-        select MAX(h_seq) from tbl_hobby where h_nick=#{h_nick} 
+        select MAX(h_seq) from tbl_hobby where h_nick='s' 
     </select>
 	<select id="selecthboard" resultType="com.smhrd.domain.Hobby">
 		select h_title, h_nick,h_date from TBL_hobby
+	</select>
+	<select id="getLike" resultType="int" parameterType="int"> <!-- 게시물 번호 넘겨줄거라 int -->
+		select h_LIKE from TBL_hobby where h_SEQ=74
+	</select>
+	<update id="like" parameterType="int">
+		update TBL_hobby set h_like=h_like+1 where h_SEQ=74
+	</update>
+	<update id="dislike" parameterType="int">
+		update TBL_hobby set h_like=h_like-1 where h_SEQ=74
+	</update>
+	<select id="selecthboardLang" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='language'
+	</select>
+	<select id="selecthboardCar" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='car'
+	</select>
+	<select id="selecthboardPicture" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='picture'
+	</select>
+	<select id="selecthboardCook" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='cook'
+	</select>
+	<select id="selecthboardAnimal" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='animal'
+	</select>
+	<select id="selecthboardShopping" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='shop'
+	</select>
+	<select id="selecthboardSports" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='sports'
+	</select>
+	<select id="selecthboardGame" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='game'
+	</select>
+	<select id="selecthboardTravel" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='travel'
+	</select>
+	<select id="selecthboardRead" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='book'
+	</select>
+	<select id="selecthboardCulture" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='culture'
+	</select>
+	<select id="selecthboardMake" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='make'
+	</select>
+	<select id="selecthboardMusic" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='music'
+	</select>
+	<select id="selecthboardBongsa" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='bongsa'
+	</select>
+	<select id="selecthboardInmac" resultType="com.smhrd.domain.Hobby">
+		select h_title, h_nick,h_date from TBL_hobby where h_cate='inmac'
 	</select>
     
 </mapper>

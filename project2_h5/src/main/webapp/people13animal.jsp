@@ -1,5 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page import="com.smhrd.domain.Hobby"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.HobbyDAO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" isELIgnored="false"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="assets/people.css">
 </head>
-<body >
+<body>
     <!-- nav -->
     <div class = "nav">
         <div class = "logo">
@@ -31,8 +35,7 @@
 				<a href ="reviewpost.jsp">나눔후기</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
-            </c:choose>      
-
+               </c:choose>
         </div>
     </div>
     
@@ -110,6 +113,7 @@
 
 
   <!-- maps -->
+
     <section class ="header">
         <div class="title">
             <img src="" alt="">
@@ -117,6 +121,11 @@
     </section>
 
 
+	<% 
+		HobbyDAO dao = new HobbyDAO();
+		List<Hobby> hBoardList = dao.selecthboardAnimal();
+		pageContext.setAttribute("hBoardList",hBoardList);
+	%>
 
 
 
@@ -124,6 +133,7 @@
         <!--목록-->
         <div class="List-Box box-height">
           <ul >
+          
             <li>
               <span>목록</span>
             </li>
@@ -138,21 +148,48 @@
             </li>
           </ul>
 
+							
           <!--{{#each contents}}-->
-          <a href="peoplepostview.jsp" class="List-1 flex">
+          
+          <c:forEach var="hBoard" items="${hBoardList}" varStatus="status">
+            <a href="peoplepostview.jsp" class="List-1 flex">
             <div>
               <span>
-                01
+                ${status.count}
               </span>
             </div>
             <div>
               <span>
-                facere
+                <c:out value="${hBoard.h_nick}"/>
               </span>
             </div>
             <div>
               <span>
-                오늘 날씨가 너무 좋네요~
+                <c:out value="${hBoard.h_title}"/>
+              </span>
+            </div>
+            <div>
+              <span>
+                <c:out value="${hBoard.h_date}"/>
+              </span>
+            </div>
+           </c:forEach>
+          </a>
+          <!--2
+          <a href="#" class="List-1 flex">
+            <div>
+              <span>
+                02
+              </span>
+            </div>
+            <div>
+              <span>
+                Lorem
+              </span>
+            </div>
+            <div>
+              <span>
+                와 오늘 하늘마당 사람 실화냐...
               </span>
             </div>
             <div>
@@ -160,8 +197,18 @@
                 2021.09.27 15 : 00
               </span>
             </div>
-          </a>
+          </a> -->
 
+          <!--{{/each}}-->
+          
+        <div>
+
+      <section class="write">
+            <a href="peoplepostwrite123.jsp">글쓰기</a>
+       </section>
+      </div>
+
+        
 
     <!-- footer -->
     <footer class = "footer">

@@ -123,7 +123,7 @@
 
 	<% 
 		HobbyDAO dao = new HobbyDAO();
-		List<Hobby> hBoardList = dao.selecthboard();
+		List<Hobby> hBoardList = dao.selecthboardLang();
 		pageContext.setAttribute("hBoardList",hBoardList);
 	%>
 
@@ -150,8 +150,9 @@
 
 							
           <!--{{#each contents}}-->
-          <a href="peoplepostview.jsp" class="List-1 flex">
+          
           <c:forEach var="hBoard" items="${hBoardList}" varStatus="status">
+            <a href="peoplepostview.jsp" class="List-1 flex">
             <div>
               <span>
                 ${status.count}
