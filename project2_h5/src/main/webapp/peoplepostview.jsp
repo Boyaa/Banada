@@ -7,6 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/peoplepostview.css">
+    <script language="JavaScript">
+	function openNewWindow(window) { 
+		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=550, height=700"); 
+		}
+	</script>
     <title>Document</title>
 </head>
 <body style="margin:0px;">
@@ -53,7 +58,7 @@
             <p class ="count">0</p>
             </div>
             <div>
-            <a href="chat.jsp" type = "submit" class="btn">채팅요청</a>
+            <a type = "button" class="btn" style="cursor:pointer;"" onclick="javascript:openNewWindow('chat.jsp')">채팅요청</a>
             </div>
         </section>
 

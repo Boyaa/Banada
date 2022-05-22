@@ -13,15 +13,15 @@
 	function openNewWindow(window) { 
 		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=550, height=500"); 
 		}
-</script>
+	</script>
     <link rel="stylesheet" href="assets/chat.css">
 </head>
-<body>
+<body style="max-width: 523px;">
     
-    <div class="chat_wrap">
-        <div class="header">
+    <div class="chat_wrap" >
+        <div class="header" style="max-width: 523px; background-color:#ffc107; font-family:'jalnan';'">
             CHAT
-            <button class="safe" onclick="javascript:openNewWindow('ansim.jsp')">안심 등록</button>
+            <button class="safe" onclick="javascript:openNewWindow('ansim.jsp')" style="font-size:12px;  background-color:#ffc107; font-family:ibm; color:black;">안심등록</button>
         </div>
         <div class="anotherMsg">
             <br><br><br>
@@ -38,8 +38,8 @@
                 <!-- 동적 생성 -->
             </ul>
         </div>
-        <div class="input-div">
-            <textarea placeholder="채팅 치세요."></textarea>
+        <div class="input-div" style="width:523px;">
+            <textarea placeholder="채팅 치세요." style="width:513px;"></textarea>
         </div>
      
         <!-- format -->
