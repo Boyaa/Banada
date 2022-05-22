@@ -83,10 +83,10 @@
   	<servlet-class>com.smhrd.controller.AddhPostCon</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>ObjectCon</servlet-name>
-  	<display-name>ObjectCon</display-name>
+  	<servlet-name>ProductCon</servlet-name>
+  	<display-name>ProductCon</display-name>
   	<description></description>
-  	<servlet-class>com.smhrd.controller.ObjectCon</servlet-class>
+  	<servlet-class>com.smhrd.controller.ProductCon</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>JoinCon</servlet-name>
@@ -141,8 +141,8 @@
   	<url-pattern>/AddhPostCon</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>ObjectCon</servlet-name>
-  	<url-pattern>/ObjectCon</url-pattern>
+  	<servlet-name>ProductCon</servlet-name>
+  	<url-pattern>/ProductCon</url-pattern>
   </servlet-mapping>
   
 

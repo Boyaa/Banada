@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.domain.ProductDAO">
+	<insert id="insertProduct" parameterType="com.smhrd.domain.Product">
+		insert into TBL_PRODUCT values (tbl_product_seq.nextval, #{pd_title}, #{pd_content}, 's', sysdate, #{pd_name}, #{pd_price}, #{pd_cate}, #{pd_option}, 0)
+	</insert>
+	<select id="selectOneProduct" parameterType="com.smhrd.domain.Post" resultType="com.smhrd.domain.Post">
+		select * from TBL_PRODUCT where pd_seq=#{pd_seq} <!-- 수정 필요  -->
+	</select> 
+</mapper>
