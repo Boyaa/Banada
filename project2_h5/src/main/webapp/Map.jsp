@@ -31,9 +31,11 @@ System.out.println("맵리스트 확인 : "+ markerList);
 </head>
 <body>
 
+
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=67a460358a31f67cda76cd800e168b40&libraries=services"></script>
 
 <div id="map" style="width:100%;height:350px;"></div>
+
 
 
 <script>
@@ -50,7 +52,7 @@ var map = new kakao.maps.Map(mapContainer, mapOption);
 var geocoder = new kakao.maps.services.Geocoder();
 
 // 주소로 좌표를 검색합니다
-geocoder.addressSearch('광주광역시 첨단중앙로 181번길 104', function(result, status) {
+geocoder.addressSearch('광주 북구 호동로43번길 60 ', function(result, status) {
 
     // 정상적으로 검색이 완료됐으면 
      if (status === kakao.maps.services.Status.OK) {
