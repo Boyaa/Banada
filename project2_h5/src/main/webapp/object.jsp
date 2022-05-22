@@ -61,7 +61,7 @@
             
             <!-- 여기 안에 작성-->
                  <div class = "card" >
-                    <div class="img">
+                    <div class="img" src="./image/01.jpg">
                         <img src="" alt="">
                     </div>
                     <div class = "text">
