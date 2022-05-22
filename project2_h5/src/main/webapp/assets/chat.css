@@ -44,9 +44,7 @@ body {
 	
     margin-left: auto;
     margin-right: auto;
-    height: auto; 
-    min-height: 500px;
-    
+    height: 940px;
     border-left : 3px solid black;
     border-right : 3px solid black;
     max-width: 523px;    

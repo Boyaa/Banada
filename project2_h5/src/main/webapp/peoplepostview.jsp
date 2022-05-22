@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="assets/peoplepostview.css">
 <script language="JavaScript">
 	function openNewWindow(window) { 
-		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=550, height=700"); 
+		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=620, height=940"); 
 		}
 	</script>
 <title>Document</title>
