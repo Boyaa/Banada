@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.smhrd.domain.BoardDAO;
+import com.smhrd.domain.Comm;
 import com.smhrd.domain.Hobby;
 import com.smhrd.domain.HobbyDAO;
 
@@ -35,13 +37,17 @@ public class HobbyCon extends HttpServlet {
 		BigDecimal h_seqDecimal = new BigDecimal(h_seq);
 	    String h_title = request.getParameter("h_title");
 	    String h_nick = request.getParameter("h_nick");
-		String h_content = request.getParameter("h_content");
 		String h_cate = request.getParameter("h_cate");
+		String h_content = request.getParameter("h_content");
 		int h_maxpeople = Integer.parseInt(request.getParameter("h_maxpeople"));
 		
-		Hobby h_vo = new Hobby(h_title, h_nick, h_cate, h_content, h_maxpeople, h_seqDecimal);
+
 		HobbyDAO dao = new HobbyDAO();
+		Hobby h_vo = new Hobby(h_seqDecimal, h_title, h_nick, h_cate, h_content, h_maxpeople);
 		int HobbyNum = dao.insertHobby(h_vo);
+		
+		PrintWriter out = response.getWriter();
+		out.print(HobbyNum);
 		
 		
 		
@@ -52,8 +58,6 @@ public class HobbyCon extends HttpServlet {
 			System.out.println("취미 카테고리 글 등록 실패");
 		}
 		
-		PrintWriter out = response.getWriter();
-		out.print(HobbyNum);
 		
 	}
 
