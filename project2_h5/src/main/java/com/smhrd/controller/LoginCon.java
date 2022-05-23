@@ -34,6 +34,7 @@ public class LoginCon extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("loginUser", loginUser);
 			response.sendRedirect("loginsuc.jsp");
+			
 
 		} else {
 			// 로그인 실패

@@ -151,8 +151,9 @@
 
 				<!-- <a href="HobbyreadOne?h_seq=${h_vo.h_seq}" class="List-1 flex">		 --> 	
           <!--{{#each contents}}-->
-          <a href="peoplepostview.jsp" class="List-1 flex">
+          
           <c:forEach var="hBoard" items="${hBoardList}" varStatus="status">
+            <a href="main.jsp" class="List-1 flex">
             <div>
               <span>
                 ${status.count}

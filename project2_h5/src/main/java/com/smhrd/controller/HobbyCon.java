@@ -14,6 +14,8 @@ import com.smhrd.domain.BoardDAO;
 import com.smhrd.domain.Comm;
 import com.smhrd.domain.Hobby;
 import com.smhrd.domain.HobbyDAO;
+import com.smhrd.domain.User;
+import com.smhrd.domain.UserDAO;
 
 public class HobbyCon extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -32,32 +34,34 @@ public class HobbyCon extends HttpServlet {
 //		// hobby 객체에 담기 - 글 쓸 때
 //		Hobby hobby = new Hobby(h_title, h_content, h_cate, h_maxpeople);
 		
-	
-		String h_seq = request.getParameter("h_seq");
-		BigDecimal h_seqDecimal = new BigDecimal(h_seq);
+		
+
+		
 	    String h_title = request.getParameter("h_title");
-	    String h_nick = request.getParameter("h_nick");
+	    String h_nick = request.getParameter("user_nick");
 		String h_cate = request.getParameter("h_cate");
 		String h_content = request.getParameter("h_content");
 		int h_maxpeople = Integer.parseInt(request.getParameter("h_maxpeople"));
 		
-
+			System.out.println("닉네임 : " + h_nick);
 		HobbyDAO dao = new HobbyDAO();
-		Hobby h_vo = new Hobby(h_seqDecimal, h_title, h_nick, h_cate, h_content, h_maxpeople);
-		int HobbyNum = dao.insertHobby(h_vo);
+		Hobby h_vo = new Hobby(h_title, h_nick, h_cate, h_content, h_maxpeople);
+		int cnt = dao.insertHobby(h_vo);
 		
-		PrintWriter out = response.getWriter();
-		out.print(HobbyNum);
+//		PrintWriter out = response.getWriter();
+//		out.print(HobbyNum);
 		
 		
 		
-		if(HobbyNum > 0) {
+		if(cnt > 0) {
 			System.out.println("취미 카테고리 글 등록 성공");
-			
+			request.setAttribute("hPost", h_vo);
+		
 		} else {
 			System.out.println("취미 카테고리 글 등록 실패");
 		}
 		
+		response.sendRedirect("peoplecategory.jsp");
 		
 	}
 
