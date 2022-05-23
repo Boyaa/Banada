@@ -123,6 +123,7 @@
 
 	<% 
 		HobbyDAO dao = new HobbyDAO();
+		// Hobby h_vo = (Hobby)session.getAttribute("hobbyPost");
 		List<Hobby> hBoardList = dao.selecthboardSports();
 		pageContext.setAttribute("hBoardList",hBoardList);
 	%>
@@ -148,7 +149,7 @@
             </li>
           </ul>
 
-							
+				<!-- <a href="HobbyreadOne?h_seq=${h_vo.h_seq}" class="List-1 flex">		 --> 	
           <!--{{#each contents}}-->
           <a href="peoplepostview.jsp" class="List-1 flex">
           <c:forEach var="hBoard" items="${hBoardList}" varStatus="status">

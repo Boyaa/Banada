@@ -32,30 +32,13 @@ public class HobbyDAO {
 	} // 글 등록
 	
 
-	public List<Hobby> selectAllhpostList(int HobbyNum) {
-		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<Hobby> hPostList = null;
-		try {
-			sqlSession.selectList("com.smhrd.domain.HobbyDAO.selecthpost", HobbyNum);
-
-			if (hPostList != null) {
-				sqlSession.commit();
-			} else {
-				sqlSession.rollback();
-			}
-		} finally {
-			sqlSession.close();
-		}
-		return hPostList;
-	} // 글 작성 바로 후 게시글 보는 메소드 (로그인)
-
-//	public Hobby justselectOneHobby(BigDecimal h_seq) {
+//	public List<Hobby> selecthpost(int HobbyNum) {
 //		SqlSession sqlSession = sqlSessionFactory.openSession();
-//		Hobby hobbyPost = null;
+//		List<Hobby> hPostList = null;
 //		try {
-//			sqlSession.selectOne("com.smhrd.domain.HobbyDAO.selectHobbyJust", h_seq);
+//			sqlSession.selectList("com.smhrd.domain.HobbyDAO.selecthpost", HobbyNum);
 //
-//			if (hobbyPost != null) {
+//			if (hPostList != null) {
 //				sqlSession.commit();
 //			} else {
 //				sqlSession.rollback();
@@ -63,8 +46,30 @@ public class HobbyDAO {
 //		} finally {
 //			sqlSession.close();
 //		}
-//		return hobbyPost;
-//	} // 글 제목 클릭해서 게시글 보는 메소드 (로그아웃 or 그냥 게시글 볼 때)
+//		return hPostList;
+//	} // 게시글 보는 메소드 (로그인)
+	
+	public Hobby selecthpost(Hobby hobby) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		Hobby hPost = null;
+		try {
+			// selectOne() 결과값 (object)
+			// - > 결과값 항상 1개 또는 null
+			// 같은 아이디/패스워드가 테이블에 여러 개 있을 경우 오류 발생
+			hPost = sqlSession.selectOne("com.smhrd.domain.MemberDAO.selecthpost", hobby);
+			if(hPost != null) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return hPost;
+	} 
+
 
 	public List<Hobby> selecthboard() {
 		SqlSession sqlSession = sqlSessionFactory.openSession();

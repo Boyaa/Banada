@@ -48,11 +48,9 @@
 	</div>
 	
 	<%
+	
+	
 	HobbyDAO dao = new HobbyDAO();
-
-	List<Hobby> hpostList = (List<Hobby>) dao.selectAllhpostList(82);
-
-	pageContext.setAttribute("hpostList", hpostList); 
 
 	%>
 	
@@ -63,7 +61,7 @@
 				style="width: 50px; height: 50px; -webkit-border-radius: 50%; margin-right: 10px">
 		</div>
 		<div style="width: 250px;">
-			<p id="id"><c:out value="${hPostList.h_nick}"/></p>
+			<p id="id">${hobbyPost.h_nick}</p>
 			<p id="live">광주광역시 남구 봉선동</p>
 		</div>
 
@@ -85,9 +83,9 @@
 	</section>
 
 	<section class="article-description">
-		<h1 id="content"><c:out value="${hPostList.h_title}"/></h1>
+		<h1 id="content">${hobbyPost.h_title}</h1>
 		<div id="article-detail">
-			<p><c:out value="${hPostList.h_content}"/></p>
+			<p>${hobbyPost.h_content}</p>
 		
 		</div>
 	</section>
