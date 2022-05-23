@@ -12,7 +12,7 @@
     	
     														<!-- 삽입할 정보들 주기 Comm-->
     <insert id="addComment" parameterType="com.smhrd.domain.Comm">
-        insert into tbl_comment values (tbl_comment_seq.nextval, #{f_seq}, #{comm_content}, sysdate, 's')
+        insert into tbl_comment values (tbl_comment_seq.nextval, #{f_seq}, #{comm_content}, sysdate, #{comm_nick})
     </insert>
     							<!-- 자동으로 넣을 시퀀스번호, 넘겨준 파라미터안에들어있는 boardnum, 실제댓글 이것도 넘겨준객체안에있음 그대로 넣어주기 -->
     

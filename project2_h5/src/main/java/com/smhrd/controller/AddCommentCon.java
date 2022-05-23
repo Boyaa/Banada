@@ -3,6 +3,7 @@ package com.smhrd.controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -23,10 +24,13 @@ public class AddCommentCon extends HttpServlet {
 		
 		BigDecimal f_seqDecimal = new BigDecimal(f_seq);
 		
-		
+	
 		String comm_content = request.getParameter("comm_content");
+		String comm_nick = request.getParameter("comm_nick");
 		
-		Comm comm = new Comm(f_seqDecimal, comm_content);
+		
+		
+		Comm comm = new Comm(f_seqDecimal, comm_content, comm_nick);
 		
 		BoardDAO dao = new BoardDAO();
 		
