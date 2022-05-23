@@ -123,7 +123,7 @@
 
 	<% 
 		HobbyDAO dao = new HobbyDAO();
-		List<Hobby> hBoardList = dao.selecthboard();
+		List<Hobby> hBoardList = dao.selecthboardShopping();
 		pageContext.setAttribute("hBoardList",hBoardList);
 	%>
 

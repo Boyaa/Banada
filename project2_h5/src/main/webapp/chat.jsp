@@ -16,7 +16,7 @@
 	</script>
     <link rel="stylesheet" href="assets/chat.css">
 </head>
-<body style="max-width: 523px;">
+<body style="max-width: 523px; height:940px;">
     
     <div class="chat_wrap" >
         <div class="header" style="max-width: 523px; background-color:#ffc107; font-family:'jalnan';'">
@@ -27,12 +27,7 @@
             <br><br><br>
             <span class="anotherName">Jo</span> <br>
             <span class="msg">반갑습니다.</span>
-        </div>
-       <br><br><br>
-       
-       
-
-        
+        </div>              
         <div class="chat">
             <ul class="booy">
                 <!-- 동적 생성 -->
