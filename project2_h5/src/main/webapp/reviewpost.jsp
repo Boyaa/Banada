@@ -16,7 +16,7 @@
   <!-- 로고-->
   <div class = "nav">
     <div class = "logo">
-      <a href ="main.html">바나다</a>
+      <a href ="main.jsp">바나다</a>
     </div>
     <div class ="nav_but" style ="display: flex; justify-content: space-between;">
 			<c:choose>
@@ -36,6 +36,7 @@
                </c:otherwise>
             </c:choose>   
     </div>
+	</div>
 </div>
     <!--요소 시작-->
     <div class="Contents-Box" style = "padding : 50px 200px 50px 200px">
@@ -127,6 +128,26 @@
       </form>
     </div>
     <!--top-bar-->
+     
+<!-- footer -->
+<footer class = "footer" style="background-color: #e5e5e5;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    box-sizing: border-box;
+    text-align :center;
+    margin-top: 250px;">
+        <ul class = "list" style="color:black; text-align:center; margin:auto; width:max-content; text-align:center; text-decoration: none; color: #000;  list-style:none;">
+            <li class = "list-object" style="float:left; padding: 0 5px;"><a href = "#" style="text-decoration: none; color:black;">About</a></li>
+            <li class = "list-object" style="float:left; padding: 0 5px;">⋅</li>
+            <li class = "list-object" style="float:left; padding: 0 5px;"> <a href = "#" style="text-decoration: none; color:black;">Contact</a></li>
+            <li class = "list-object" style="float:left; padding: 0 5px;">⋅</li>
+            <li class = "list-object" style="float:left; padding: 0 5px;"><a href = "#" style="text-decoration: none; color:black;">Terms of Use</a></li>
+            <li class = "list-object" style="float:left; padding: 0 5px;">⋅</li>
+            <li class = "list-object" style="float:left; padding: 0 5px;"><a href = "#" style="text-decoration: none; color:black;">Privacy Policy</a></li>
+        </ul>
+        <br>
+        <p>© Your Website 2022. Made by H5</p>
+    </footer>
 </div>
 </body>
 </html>

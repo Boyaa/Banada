@@ -169,14 +169,14 @@
         <!-- Footer-->
         <footer class="footer " style="height:150px;"">
                 <div class="container col-lg-6 h-100 text-center text-lg-start my-auto">
-                        <ul class="list-inline mb-2">
-                            <li class="list-inline-item"><a href="#!">About</a></li>
+                        <ul class="list-inline mb-2" style="color:black; text-decoration:none;">
+                            <li class="list-inline-item"><a href="#!" style="color:black; text-decoration:none;">About</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Contact</a></li>
+                            <li class="list-inline-item"><a href="#!" style="color:black; text-decoration:none;">Contact</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Terms of Use</a></li>
+                            <li class="list-inline-item"><a href="#!" style="color:black; text-decoration:none;">Terms of Use</a></li>
                             <li class="list-inline-item">⋅</li>
-                            <li class="list-inline-item"><a href="#!">Privacy Policy</a></li>
+                            <li class="list-inline-item"><a href="#!" style="color:black; text-decoration:none;">Privacy Policy</a></li>
                         </ul>
                         <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2022. Made by H5</H></p>
             </div>
