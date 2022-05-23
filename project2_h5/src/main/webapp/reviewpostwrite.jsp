@@ -48,14 +48,14 @@
         </div>
 
         <div id="price" style = "display:flex;">
-            <div id="box">공유자</div>
+            <div id="box">상대방</div>
             <div id = "right-box">
                 <input type="text" name="product-write" placeholder="이름을 입력하세요." style="width:200px;height:30px;font-size:12px;"/>
             </div>
         </div>
 
         <div id="category" style = "display:flex;">
-            <div id = "box">카테고리</div>
+            <div id = "box">평점</div>
             <div id = "right-box">
                 <select name="fruits" class="select" style="width:115px;height:30px; font-family:ibm">
                     <option disabled selected>선택</option>
@@ -78,7 +78,7 @@
         </div>
 
         <div id="select">
-            <input type="button" value="등록완료" onclick="alert('작성완료!'); location.href='peoplecategory.jsp'"/>
+            <input type="button" value="등록완료" onclick="alert('등록완료!'); location.href='peoplecategory.jsp'"/>
         </div>
         
     </form>
