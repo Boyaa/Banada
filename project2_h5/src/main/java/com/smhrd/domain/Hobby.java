@@ -46,10 +46,9 @@ public class Hobby {
      
      
      
-     public Hobby(BigDecimal h_seq, String h_title, String h_nick, String h_cate, String h_content, 
+     public Hobby(String h_title, String h_nick, String h_cate, String h_content, 
 			int h_maxpeople) {
 		super();
-		this.h_seq = h_seq;
 		this.h_title = h_title;
 		this.h_nick = h_nick;
 		this.h_cate = h_cate;

@@ -14,6 +14,7 @@ import com.smhrd.domain.Hobby;
 import com.smhrd.domain.HobbyDAO;
 
 
+
 public class HobbyreadOne extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -31,12 +32,13 @@ public class HobbyreadOne extends HttpServlet {
 		
 		HobbyDAO dao = new HobbyDAO();
 		Hobby hobbyPost = new Hobby(h_seq, h_title, h_nick, h_content, h_maxpeople, h_like);
-		hobbyPost = dao.selecthpost(hobbyPost);
+		Hobby hpost = dao.selecthpost(hobbyPost);
 		
-		if(hobbyPost != null) {
+		
+		if(hpost != null) {
 			// 글 읽기 성공
 			System.out.println("글 읽기 성공");
-			request.setAttribute("hobbyPost", hobbyPost);
+			request.setAttribute("hPost", hpost);
 	
 		} else {
 			// 로그인 실패

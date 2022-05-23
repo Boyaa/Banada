@@ -1,3 +1,4 @@
+<%@page import="java.math.BigDecimal"%>
 <%@page import="com.smhrd.domain.Hobby"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.HobbyDAO"%>
@@ -20,6 +21,9 @@
 <title>Document</title>
 </head>
 <body style="margin: 0px;">
+
+<% Hobby hPost = (Hobby)session.getAttribute("hPost"); %>
+
 	<!-- nav -->
 	<div class="nav">
 		<div class="logo">
@@ -61,20 +65,21 @@
 				style="width: 50px; height: 50px; -webkit-border-radius: 50%; margin-right: 10px">
 		</div>
 		<div style="width: 250px;">
-			<p id="id">${hobbyPost.h_nick}</p>
+			<p id="id">${hPost.h_nick}</p>
 			<p id="live">광주광역시 남구 봉선동</p>
 		</div>
 
 		<%
-	int h_like = dao.getLike(82);
-	pageContext.setAttribute("like", h_like); // el 표기법 쓰기 위해 써 줌 
+		int h_seq = (BigDecimal)dataMap.get(hPost.getH_seq()).intValue();
+		int h_like = dao.getLike(h_seq);
+		pageContext.setAttribute("like", h_like); // el 표기법 쓰기 위해 써 줌 
 			%>
 
 		<div>
 			<button type="submit" id="like" style="margin-left: 200px">반하다💗</button>
 		</div>
 		<div>
-			<p class="count">${like}개</p>
+			<p class="count">"${hPost.h_like}"개</p>
 		</div>
 		<div>
 			<a type="button" class="btn" style="cursor: pointer;"
@@ -83,9 +88,9 @@
 	</section>
 
 	<section class="article-description">
-		<h1 id="content">${hobbyPost.h_title}</h1>
+		<h1 id="content">"${hPost.h_title}"</h1>
 		<div id="article-detail">
-			<p>${hobbyPost.h_content}</p>
+			<p>${hPost.h_content}</p>
 		
 		</div>
 	</section>
@@ -112,7 +117,7 @@
 	<script>
         $(document).on("click","#like",function(){ 
 			$.ajax({
-				data : {status : "like", h_seq : 82},
+				data : {status : "like", h_seq : ${hobbyPost.h_seq} },
 				url : "HobbyAjaxCon",
 				method : "GET",
 				dataType : "text", 
@@ -130,7 +135,7 @@
 
         $(document).on("click","#dislike",function(){ 
             $.ajax({
-				data : {status : "dislike", h_seq : 82},
+				data : {status : "dislike", h_seq : ${hobbyPost.h_seq} },
 				url : "HobbyAjaxCon",
 				method : "GET",
 				dataType : "text",

@@ -53,10 +53,7 @@ public class HobbyDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		Hobby hPost = null;
 		try {
-			// selectOne() 결과값 (object)
-			// - > 결과값 항상 1개 또는 null
-			// 같은 아이디/패스워드가 테이블에 여러 개 있을 경우 오류 발생
-			hPost = sqlSession.selectOne("com.smhrd.domain.MemberDAO.selecthpost", hobby);
+			hPost = sqlSession.selectOne("com.smhrd.domain.HobbyDAO.selecthpost", hobby);
 			if(hPost != null) {
 				sqlSession.commit();
 			} else {
@@ -68,7 +65,7 @@ public class HobbyDAO {
 			sqlSession.close();
 		}
 		return hPost;
-	} 
+	} // 글 정보 객체에 담아옴
 
 
 	public List<Hobby> selecthboard() {

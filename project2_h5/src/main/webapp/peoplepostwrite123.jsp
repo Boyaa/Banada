@@ -91,7 +91,7 @@
         <div id="select">
             <input button type="submit" value="작성완료" onclick="alert('작성완료!'); location.href='peoplecategory.jsp'"/>
         </div>
-        
+       
     </form>
 
 
