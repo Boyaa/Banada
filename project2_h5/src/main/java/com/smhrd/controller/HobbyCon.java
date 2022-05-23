@@ -34,34 +34,29 @@ public class HobbyCon extends HttpServlet {
 //		// hobby 객체에 담기 - 글 쓸 때
 //		Hobby hobby = new Hobby(h_title, h_content, h_cate, h_maxpeople);
 		
-		String user_id = request.getParameter("id");
-		String user_pw = request.getParameter("pw");
-
 		
-		User u_vo = new User(user_id, user_pw);
 
-		UserDAO daoo = new UserDAO();
-		User loginUser = daoo.selectUser(u_vo);
 		
 	    String h_title = request.getParameter("h_title");
-	    String h_nick = request.getParameter(loginUser.user_nick);
+	    String h_nick = request.getParameter("user_nick");
 		String h_cate = request.getParameter("h_cate");
 		String h_content = request.getParameter("h_content");
 		int h_maxpeople = Integer.parseInt(request.getParameter("h_maxpeople"));
 		
-
+			System.out.println("닉네임 : " + h_nick);
 		HobbyDAO dao = new HobbyDAO();
 		Hobby h_vo = new Hobby(h_title, h_nick, h_cate, h_content, h_maxpeople);
-		int HobbyNum = dao.insertHobby(h_vo);
+		int cnt = dao.insertHobby(h_vo);
 		
-		PrintWriter out = response.getWriter();
-		out.print(HobbyNum);
+//		PrintWriter out = response.getWriter();
+//		out.print(HobbyNum);
 		
 		
 		
-		if(HobbyNum > 0) {
+		if(cnt > 0) {
 			System.out.println("취미 카테고리 글 등록 성공");
-			
+			request.setAttribute("hPost", h_vo);
+		
 		} else {
 			System.out.println("취미 카테고리 글 등록 실패");
 		}

@@ -17,6 +17,20 @@ public class Hobby {
 	 
      
 
+	public Hobby(BigDecimal h_seq, String h_title, String h_nick, String h_cate, String h_content, Timestamp h_date,
+			int h_maxpeople, int h_like) {
+		super();
+		this.h_seq = h_seq;
+		this.h_title = h_title;
+		this.h_nick = h_nick;
+		this.h_cate = h_cate;
+		this.h_content = h_content;
+		this.h_date = h_date;
+		this.h_maxpeople = h_maxpeople;
+		this.h_like = h_like;
+	}
+
+
 	public Hobby(BigDecimal h_seq, String h_title, String h_nick, String h_content, int h_maxpeople, int h_like) {
 		super();
 		this.h_seq = h_seq;

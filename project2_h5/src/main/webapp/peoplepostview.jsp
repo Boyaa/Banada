@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.math.BigDecimal"%>
 <%@page import="com.smhrd.domain.Hobby"%>
 <%@page import="java.util.List"%>
@@ -22,7 +23,14 @@
 </head>
 <body style="margin: 0px;">
 
-<% Hobby hPost = (Hobby)session.getAttribute("hPost"); %>
+   <% 
+   
+	HobbyDAO dao = new HobbyDAO();
+   
+    int h_seq = ((BigDecimal)dataMap.get("h_seq")).intValue();
+	Hobby h_vo = dao.selecthpost(h_seq); // h_seq(BigDeciaml) int로 바꿔야 함
+	System.out.println(h_vo.getH_seq());
+	%>
 
 	<!-- nav -->
 	<div class="nav">
@@ -54,7 +62,7 @@
 	<%
 	
 	
-	HobbyDAO dao = new HobbyDAO();
+	
 
 	%>
 	
@@ -70,16 +78,15 @@
 		</div>
 
 		<%
-		int h_seq = (BigDecimal)dataMap.get(hPost.getH_seq()).intValue();
-		int h_like = dao.getLike(h_seq);
-		pageContext.setAttribute("like", h_like); // el 표기법 쓰기 위해 써 줌 
+		//int h_like = dao.getLike(hPost.getH_seq());
+		//pageContext.setAttribute("like", h_like); // el 표기법 쓰기 위해 써 줌 
 			%>
 
 		<div>
 			<button type="submit" id="like" style="margin-left: 200px">반하다💗</button>
 		</div>
 		<div>
-			<p class="count">"${hPost.h_like}"개</p>
+			<p class="count">"${like}"개</p>
 		</div>
 		<div>
 			<a type="button" class="btn" style="cursor: pointer;"
@@ -135,7 +142,7 @@
 
         $(document).on("click","#dislike",function(){ 
             $.ajax({
-				data : {status : "dislike", h_seq : ${hobbyPost.h_seq} },
+				data : {status :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "dislike", h_seq : ${hobbyPost.h_seq} },
 				url : "HobbyAjaxCon",
 				method : "GET",
 				dataType : "text",

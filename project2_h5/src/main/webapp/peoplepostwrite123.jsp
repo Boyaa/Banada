@@ -1,3 +1,5 @@
+<%@page import="com.smhrd.domain.UserDAO"%>
+<%@page import="com.smhrd.domain.User"%>
 <%@page import="com.smhrd.domain.Hobby"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.HobbyDAO"%>
@@ -13,6 +15,9 @@
     <title>stickcode_summernote</title>
   </head>
 <body>
+	<% User u_vo = (User)session.getAttribute("loginUser");
+	%>
+	
     <!-- nav -->
     <div class = "nav">
         <div class = "logo">
@@ -67,7 +72,7 @@
             </div>
         </div>
         
-    
+    	 <input type="hidden" name="user_nick" value=${loginUser.user_nick}>
 	
         <div id="product-write" style = "display:flex; ">
             <div id = "box">제목</div>
