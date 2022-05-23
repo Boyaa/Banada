@@ -94,6 +94,8 @@ pageContext.setAttribute("list", commList);
             <c:forEach var="comm" items="${list }"> 
             <p style="border: 1px solid #eaeaea; padding:5px;">
             
+            <c:out value="${comm.comm_date }"/>
+            <c:out value="${comm.comm_nick }"/>
             <c:out value="${comm.comm_content }"/>
             <button style="float:right; border:none; background-color:white; cursor: pointer;" class = 'removeCom' id = '${comm.comm_seq}'>X</button>
             </c:forEach>
@@ -109,10 +111,12 @@ pageContext.setAttribute("list", commList);
       $('.writeCom').click(function() { //클래스가 wirtecom인 버튼을 클릭을했을때  댓글을 작성할겁니다
                      var com = $('#commvalue').val() //이때 사용자가 어떤값을 입력을했는지 가지고오는 문장 ( 사용자가 입력한 댓글 가지고 오기)
 					 
+                    // let today = new Date();   
+
       				let nick = "<%=u_vo.getUser_nick()%>"
                      //db서버에다가 등록을 할 수있도록 비동기통신 작성
                      $.ajax({ //어떤게시물에서 작성됫는지랑 작성된댓글 보내주기
-                        data : {f_seq : 1,"comm_content" : com ,"comm_nick" : nick}, //보내줄 데이터 정의 ( 사용자가 입력한 댓글, 어떤게시물에서작성되었는지 까지 같이 보내기)
+                        data : {f_seq : 1,"comm_content" : com , "comm_nick" : nick}, //보내줄 데이터 정의 ( 사용자가 입력한 댓글, 어떤게시물에서작성되었는지 까지 같이 보내기)
                         url : "AddCommentCon", //어디로 요청하는지  (요청하는 addcommentcon 작성하러가기 )
                         method : "POST", //보내느 방식
                         success : function(data) { // 성공시 작성한 댓글도 밑에 보여질수있도록 작성 / data : 서버가 넘겨준 현재 추가된 댓글의 시퀀스번호

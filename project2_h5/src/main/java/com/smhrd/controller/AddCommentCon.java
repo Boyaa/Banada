@@ -26,6 +26,8 @@ public class AddCommentCon extends HttpServlet {
 		
 	
 		String comm_content = request.getParameter("comm_content");
+		
+	
 		String comm_nick = request.getParameter("comm_nick");
 		
 		
