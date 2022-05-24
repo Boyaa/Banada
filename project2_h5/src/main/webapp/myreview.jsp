@@ -16,7 +16,7 @@
   <!-- 로고-->
   <div class = "nav">
     <div class = "logo">
-      <a href ="main.html">바나다</a>
+      <a href ="main.jsp">바나다</a>
     </div>
     <div class ="nav_but" style ="display: flex; justify-content: space-between;">
 			<c:choose>

@@ -60,11 +60,18 @@ pageContext.setAttribute("list", commList);
             <div class="alticle-image">
                 <img src="assets/post_image/hruru.png" style="width:50px; height:50px; -webkit-border-radius:50%; margin-right:10px"  >
             </div>
-            <div style="width:250px; margin-right:380px;">
+            <div style="width:250px; margin-right:180px;">
                 <p id = "id">글쓴이</p>
                 <p id = "live">광주광역시 남구 봉선동</p>
             </div>
             
+            <div>
+			<button id="like" style="margin-left: 80px;">반하다💗</button>
+			</div>
+			<div>
+			<p class="count">1개</p>
+			</div>
+
         </section>
 
         <section class = "article-description">
