@@ -160,7 +160,7 @@ a {text-decoration:none;}
                 <h2 class="mb-5 font-paybooc">오늘의 추천 물품</h2>
                </c:when>
                <c:otherwise>
-               	  <h2 class="mb-5 font-paybooc">${loginUser.user_nick} 추천 물품</h2>
+               	  <h2 class="mb-5 font-paybooc">${loginUser.user_nick} 님이 </h2> <h1 class="mb-5 font-paybooc">  반할 물건을 소개해드립니다 </h1>
               </div>
                </c:otherwise>
             </c:choose>
