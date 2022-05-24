@@ -36,9 +36,11 @@ public class GradeCon extends HttpServlet {
 		
 		
 		if(cnt > 0) {
+			
 			System.out.println(" 리뷰 등록 성공");
 			if(g_score.equals("banana1")) {
 				dao.updateScore1(g_seq);
+				
 			} else if(g_score.equals("banana2")) {
 				dao.updateScore2(g_seq);
 			} else if(g_score.equals("banana4")) {
