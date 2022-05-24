@@ -30,7 +30,7 @@ BoardDAO dao = new BoardDAO();
 
 List<Comm> commList = (List<Comm>) dao.selectAllComm(1); 
 User u_vo = (User)session.getAttribute("loginUser"); //세션에서 로그인한 멤버의 키값 가져오기
-System.out.println("데이터 : " +u_vo.getUser_nick());
+
 
 pageContext.setAttribute("list", commList); 
 %>

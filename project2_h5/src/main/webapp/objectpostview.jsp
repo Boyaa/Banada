@@ -80,10 +80,10 @@
                 <p id = "live">광주광역시 남구 봉선동</p>
             </div>
             <div>
-            <button type = "submit" id = "good" style="margin-left: 200px">좋아요💗</button>
+            <button type = "submit" id = "good" style="margin-left: 200px">반하다💗</button>
             </div>
             <div>
-            <p class ="count">0</p>
+            <p class ="count">2</p>
             </div>
             <div>
             <a type = "button" class="btn" style="cursor:pointer;"" onclick="javascript:openNewWindow('chat.jsp')">채팅요청</a>

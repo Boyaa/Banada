@@ -25,26 +25,12 @@ public class ProductCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		System.out.println("[ProductCon3]");
-		//String pd_nick = request.getParameter("pd_nick");
-//		System.out.println(pd_nick);
-//		String pd_title = request.getParameter("pd_title");
-//		System.out.println(pd_title);
-//		String pd_cate = request.getParameter("pd_cate");
-//		String pd_name = request.getParameter("pd_name");
-//		String pd_content = request.getParameter("pd_content");
-//		System.out.println(pd_content);
-//
-//		int pdprice = Integer.parseInt(request.getParameter("pd_price"));
-//		System.out.println(pdprice); // 
-//		BigDecimal pd_price = new BigDecimal("pdprice");
-//		String pd_option= request.getParameter("pd_option");
-		
-		
+
 		  String filename = "";
 	      int sizeLimit = 15 * 1024 * 1024; // 한번에 올릴 수 있는 파일 용량 : 15M로 제한
 	      
 	      
-	      String realPath = "C:\\Users\\smhrd\\git\\project2_h5\\project2_h5\\src\\main\\webapp\\image"; // <질문> + filename을 해주면 그 사진 경로 ?? 
+	      String realPath = "image/"; // <질문> + filename을 해주면 그 사진 경로 ?? 
 	      System.out.println("인서트" + realPath); // 저장된 공간 
 	      
 	      
@@ -76,9 +62,9 @@ public class ProductCon extends HttpServlet {
 	     // form내의 input name="photo" 인 요소의 값을 가져옴 
 	           
 	       System.out.println(filename);
-	       System.out.println(realPath+"\\"+filename); // 사진 경로 
+	       System.out.println(realPath+filename); // 사진 경로 
 	       
-	       String pd_path = realPath+"\\"+filename; // pd_path를 받아와야 하는데 빨간줄 뜸 ! int 못 받는건 모두 BigDecimal로 바꿔서 해결 
+	       String pd_path = realPath+filename; // pd_path를 받아와야 하는데 빨간줄 뜸 ! int 못 받는건 모두 BigDecimal로 바꿔서 해결 
 	       											
 	       Product product = new Product(pd_title, pd_content, pd_nick, pd_name, pd_price, pd_cate, pd_option, pd_path);
 	       													
