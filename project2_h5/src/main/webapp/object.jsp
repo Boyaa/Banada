@@ -198,11 +198,27 @@ for (var i = 0; i < positions.length; i ++) {
     </section>
     </form>
     
+    
+    
+    
+    
     <!-- 글쓰기 눌렀을때 로그인이 안되어 있으면 로그인요청 alert 표시 -->
     <form>
+     <c:choose>
+          <c:when test="${empty loginUser}">
     <section class="write">
         <a href="objectpostwrite123.jsp" >글쓰기</a>
     </section>
+    </c:when>
+      <c:otherwise>
+      <section class="write">
+        <a href="#" onclick="alert('로그인을 해주세요')">글쓰기</a>
+    </section>
+    
+      </c:otherwise>
+</c:choose>
+    
+    
     </form>
 
     <div class = "title">

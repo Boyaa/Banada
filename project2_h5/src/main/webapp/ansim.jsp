@@ -18,7 +18,10 @@
 
 <form action="SafetyCon" >	
  <div style="width:300px; height:200px; margin:auto; border:1px solid #eaeaea">
- 
+ 			
+ 			<!--  <input name="safetyUser1" style="width:200px; height:20px; padding:5px; border:1px solid #eaeaea; " 
+          type="text"/>-->
+          
  	<div class="place" style="display:flex; width:300px; height:50px;  border-bottom:1px solid #eaeaea;font-family:ibm;">
  		<div style="border-right:1px solid #eaeaea; margin: 0 0 0 12px; padding-right:12px;">
  			<div> 상대</div>
@@ -35,7 +38,7 @@
  		</div>
  		<div style="margin-left:10px; padding-top:8px;">			
           <input  style="width:200px; height:20px; padding:5px; border:1px solid #eaeaea; " 
-          id="address_kakao" name="safeAddr"type="text" class="id" readonly  placeholder="만날 주소 입력"/>
+          id="address_kakao" name="safetyAddr"type="text" class="id" readonly  placeholder="만날 주소 입력"/>
  		</div>
  	</div>
  
@@ -47,11 +50,22 @@
  			<input type ="datetime-local" name="meetingTime" style="width:200px; height:20px; padding:5px; border:1px solid #eaeaea;">
  		</div>
  	</div>
+ 	
+ 	<div class="memo" style="display:flex; width:300px; height:50px;font-family:ibm;">
+ 		<div style="border-right:1px solid #eaeaea; padding:12px 12px 0px 12px;">
+ 			메모
+ 		</div>
+ 		<div style="margin-left:10px; padding-top:8px;">
+ 			<input name="safetyMemo" style="width:200px;  border:1px solid #eaeaea; height:20px; padding:5px; " 
+          type="text"/>
+ 		</div>
+ 	</div>
+ 	
 
  	<div class="time" style="width:300px; height:50px;">
  		<div style="margin-left:10px; padding-top:8px;">
- 			 <input type="button" style="margin-left:120px; font-family:ibm; border:1px solid #eaeaea; cursor: pointer; border-radius:50px;" 
- 			 value="확인" onClick="alert('등록완료!'); window.close()"/>
+ 			 <input type="submit" style="margin-left:120px; margin-top : 5px;font-family:ibm; border:1px solid #eaeaea; cursor: pointer; border-radius:50px;" 
+ 			 value="확인" />
  		</div>
  	</div>
 

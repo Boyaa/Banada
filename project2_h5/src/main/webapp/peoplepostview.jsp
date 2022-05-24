@@ -7,6 +7,21 @@
 	pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<%@page import="com.smhrd.domain.User"%>
+<%@page import="com.smhrd.domain.Comm"%>
+<%@page import="com.smhrd.domain.BoardDAO"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
+<%
+BoardDAO dao = new BoardDAO();
+
+List<Comm> commList = (List<Comm>) dao.selectAllComm(1); 
+User u_vo = (User)session.getAttribute("loginUser"); //세션에서 로그인한 멤버의 키값 가져오기
+System.out.println("데이터 : " +u_vo.getUser_nick());
+
+pageContext.setAttribute("list", commList); 
+%>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,26 +36,17 @@
 	</script>
 <title>Document</title>
 </head>
-<body style="margin: 0px;">
+
+<body>
 
    <% 
-   
-
-	 
-   	   int seq = Integer.parseInt(request.getParameter("h_seq"));
-   	   BigDecimal H_seq = new BigDecimal("seq");
-	   HobbyDAO dao = new HobbyDAO();
-	   System.out.println("글번호 Postview: " +seq);
+   	  int seq = Integer.parseInt(request.getParameter("h_seq"));
+	  HobbyDAO dao1 = new HobbyDAO();
+	  System.out.println("글번호 Postview: " +seq);
 	   
-	   //
-	   //int h_seq = ((BigDecimal)dataMap.get("h_seq")).intValue();
-	   
-	   BigDecimal h_seq = new BigDecimal(seq);
-	   System.out.println("test"+h_seq);
-	   
-	   Hobby hPost = dao.selecthpost(h_seq); // h_seq(BigDeciaml) int로 바꿔야 함
-	 //  System.out.println(hPost.getH_title());
-	 
+	  BigDecimal h_seq = new BigDecimal(seq);
+	  System.out.println("test"+h_seq);
+	  Hobby hPost = dao1.selecthpost(h_seq); 
 	%>
 
 	<!-- nav -->
@@ -70,13 +76,6 @@
 	</div>
 	</div>
 	
-	<%
-	
-	
-	
-
-	%>
-	
 	<alticle>
 	<section class="pro">
 		<div class="alticle-image">
@@ -84,7 +83,7 @@
 				style="width: 50px; height: 50px; -webkit-border-radius: 50%; margin-right: 10px">
 		</div>
 		<div style="width: 250px;">
-			<p id="id"><%=dao.selecthpost(h_seq).getH_nick() %></p>
+			<p id="id"><%=dao1.selecthpost(h_seq).getH_nick() %></p>
 			<p id="live">광주광역시 남구 봉선동</p>
 		</div>
 
@@ -94,10 +93,10 @@
 			%>
 
 		<div>
-			<button id="like" style="margin-left: 200px">반하다💗</button>
+			<button id="like" style="margin-left: 190px;">반하다💗</button>
 		</div>
 		<div>
-			<p class="count"><%=dao.selecthpost(h_seq).getH_like() %>개</p>
+			<p class="count"><%=dao1.selecthpost(h_seq).getH_like() %>개</p>
 		</div>
 		<div>
 			<a type="button" class="btn" style="cursor: pointer;"
@@ -106,17 +105,59 @@
 	</section>
 
 	<section class="article-description">
-		<h1 id="content"><%=dao.selecthpost(h_seq).getH_title() %></h1>
+		<h1 id="content"><%=dao1.selecthpost(h_seq).getH_title() %></h1>
 		<div id="article-detail">
-			<p><%=dao.selecthpost(h_seq).getH_content() %></p>
+			<p><%=dao1.selecthpost(h_seq).getH_content() %></p>
 		
 		</div>
 	</section>
-	</alticle>
+		</alticle>
+	
+	<!--댓글기능-->
+        <div style="max-width:700px; margin:auto;margin-bottom:50px">
+        <a href="reviewpost.jsp" style="float:right; color:black; text-decoration:none; font-family:ibm">후기 더 보기</a>
+        </div>
+         
+            <section class="comment-on" style="max-width:700px; margin:auto;margin-bottom:50px">
+            <textarea id="commvalue" placeholder=" 댓글을 입력하세요." style="    font-family: ibms;
+    font-size: 20px;
+    width: 700px;
+    height: 100px;
+    resize: none;
+    padding: 0;
+    margin: 0 auto;
+    border-radius: 1px;">
+               
+            </textarea>
+            <div class="con">
+                <button type = "button" class= "writeCom" style="margin-top:10px; border-radius:25px; margin-bottom:10px;  cursor: pointer;  float: right; background:white;">등록</button>
+            </div>
+        
+            <div id="comm_content" style="margin-top:50px;">
+            <c:forEach var="comm" items="${list }"> 
+            
+            <p style=" border-bottom: 1px solid #eaeaea; padding:5px;">  
+            <button style="float:right; margin-top:10px; border:0.5px solid #eaeaea; border-radius:25%; background-color:white; cursor: pointer;" class = 'removeCom' id = '${comm.comm_seq}'>X</button>         
+			<div>
+            <div class="alticle-image" style="padding-top:10px;">
+                <div style="float:left;">
+                	<img src="assets/post_image/hruru.png" style="width:30px; height:30px; -webkit-border-radius:50%; margin-right:10px"  >
+           		</div>
+           		<div style="padding-bottom:5px; padding-top:2px; font-size:12px;">
+           			<c:out value="${comm.comm_nick }"/>
+           		</div>
+            </div>
+            <div style="font-size:15px;">
+            <c:out value="${comm.comm_content }"/>
+            </div>
+            <div style="font-size:10px; padding-top:5px; float:right;">
+            <c:out  value="${comm.comm_date }"/>
+            </div>
 
-	<div class="more">
-		<a href="peoplecategory.jsp">더 보러가기</a>
-	</div>
+            </c:forEach>
+             </div>
+           </section>
+
 
 	<footer class="footer">
 		<ul class="list">

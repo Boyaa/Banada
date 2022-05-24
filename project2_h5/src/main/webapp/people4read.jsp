@@ -152,7 +152,7 @@
           <!--{{#each contents}}-->
           
           <c:forEach var="hBoard" items="${hBoardList}" varStatus="status">
-           <a href="peoplepostview.jsp" class="List-1 flex">
+           <a href="peoplepostview.jsp?h_seq=${hBoard.h_seq}" class="List-1 flex">
             <div>
               <span>
                 ${status.count}
