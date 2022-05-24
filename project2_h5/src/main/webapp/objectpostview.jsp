@@ -23,7 +23,7 @@
 
 	 
    	   int seq = Integer.parseInt(request.getParameter("pd_seq"));
-   	   BigDecimal pd_seq = new BigDecimal("seq");
+   	   BigDecimal pd_seq = new BigDecimal(seq);
 	   ProductDAO dao = new ProductDAO();
 	   
 	   System.out.println("글번호 Postview: " + pd_seq);

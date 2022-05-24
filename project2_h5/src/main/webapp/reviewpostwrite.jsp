@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.domain.Grade"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -72,6 +73,10 @@
             </div>
         </div>
 
+		<%
+			
+		
+		%>
 
         <div id="content" style = "display:flex;">
             <div id = "box" style="margin-right:30px; height: 100px; padding-top:68px;">리뷰 내용</div>
