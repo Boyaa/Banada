@@ -67,6 +67,23 @@ public class GradeDAO {
 		}
 		
 		
+		public List<Grade> selectmyreview() {
+			SqlSession sqlSession = sqlSessionFactory.openSession();
+			List<Grade> myreviewList = null;
+			try {
+				myreviewList = sqlSession.selectList("com.smhrd.domain.GradeDAO.selectmyreview");
+				if (myreviewList != null) {
+					sqlSession.commit();
+				} else {
+					sqlSession.rollback();
+				}
+			} finally {
+				sqlSession.close();
+			}
+			return myreviewList; // 글 목록 불러오기 ( 세부 카테고리 글 목록은 밑에 왕창 있음)
+		}
+		
+		
 		
 		public int updateScore1(BigDecimal g_seq) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
