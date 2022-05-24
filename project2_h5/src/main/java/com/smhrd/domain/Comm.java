@@ -7,17 +7,17 @@ public class Comm {
 //댓글 VO 클래스
 	
 	private BigDecimal comm_seq;	//댓글번호
-	private BigDecimal f_seq;  //게시물번호
+	private BigDecimal h_seq;  //게시물번호
 	private String comm_content; //댓글실제컨텐츠
 	
 	private Timestamp comm_date;
 	private String comm_nick;
 	
 	
-	public Comm(BigDecimal comm_seq, BigDecimal f_seq, String comm_content, Timestamp comm_date, String comm_nick) {
+	public Comm(BigDecimal comm_seq, BigDecimal h_seq, String comm_content, Timestamp comm_date, String comm_nick) {
 		super();
 		this.comm_seq = comm_seq;
-		this.f_seq = f_seq;
+		this.h_seq = h_seq;
 		this.comm_content = comm_content;
 		this.comm_date = comm_date;
 		this.comm_nick = comm_nick;
@@ -42,9 +42,9 @@ public class Comm {
 //		this.comm_content = comm_content;
 //정훈	}
 
-	public Comm(BigDecimal f_seq, String comm_content, String comm_nick) {
+	public Comm(BigDecimal h_seq, String comm_content, String comm_nick) {
 		super();
-		this.f_seq = f_seq;
+		this.h_seq = h_seq;
 		this.comm_content = comm_content;
 		this.comm_nick = comm_nick;
 	}
@@ -57,7 +57,7 @@ public class Comm {
 
 
 	public BigDecimal getBoardNum() {
-		return f_seq;
+		return h_seq;
 	}
 
 	public String getComm_content() {
