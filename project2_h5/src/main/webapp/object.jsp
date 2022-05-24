@@ -1,8 +1,33 @@
 <%@page import="com.smhrd.domain.Product"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.ProductDAO"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.domain.MapDAO"%>
+<%@page import="com.smhrd.domain.User"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%
+
+MapDAO dao = new MapDAO();
+
+List<User> markerList = dao.selectAddr();
+
+List<User> markerNickList = dao.selectNick();
+
+List<User> productList = dao.selectProduct();
+
+System.out.println("----------------");
+System.out.println("맵리스트 확인 : " + markerList);
+System.out.println("닉리스트 확인 : " + markerNickList);
+System.out.println("상품리스트 확인 : " + productList);
+
+
+
+session.setAttribute("markerList", markerList);
+session.setAttribute("markerNickList", markerNickList);
+session.setAttribute("productList", productList);
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,26 +60,6 @@
   font-style: normal;
 }
 
-.overlaybox {position:relative;width:360px;height:350px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;padding:15px 10px;;}
-.overlaybox div, ul {overflow:hidden;margin:0;padding:0;}
-.overlaybox li {list-style: none;}
-.overlaybox .boxtitle {color:#fff;font-size:16px;font-weight:bold;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;margin-bottom:8px;}
-.overlaybox .first {position:relative;width:247px;height:136px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/thumb.png') no-repeat;margin-bottom:8px;}
-.first .text {color:#fff;font-weight:bold;}
-.first .triangle {position:absolute;width:48px;height:48px;top:0;left:0;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; padding:6px;font-size:18px;}
-.first {position:absolute; color:black; width:100%;bottom:0;background:white;padding:7px 15px;font-size:14px;}
-.overlaybox ul {width:247px;}
-.overlaybox li {position:relative;margin-bottom:2px;background:#2b2d36;padding:5px 10px;color:#ffc107;line-height: 1;}
-.overlaybox li span {display:inline-block;}
-.overlaybox li .number {font-size:16px;font-weight:bold;}
-.overlaybox li .title {font-size:13px;}
-.overlaybox ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
-.overlaybox li .up {background-position:0 -40px;}
-.overlaybox li .down {background-position:0 -60px;}
-.overlaybox li .count {position:absolute;margin-top:5px;right:15px;font-size:10px;}
-.overlaybox li:hover {color:#fff;background:white;}
-.overlaybox li:hover .up {background-position:0 0px;}
-.overlaybox li:hover .down {background-position:0 -20px;}   
 
 </style>
 </head>
@@ -65,20 +70,20 @@
             <a href ="main.jsp">바나다</a>
         </div>
     <div class ="nav_but" style ="display: flex; justify-content: space-between;">
-			<c:choose>
+         <c:choose>
                <c:when test="${empty loginUser}">
-				<a href ="object.jsp">소분해요</a>
-				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="reviewpost.jsp">나눔후기</a>
+            <a href ="object.jsp">소분해요</a>
+            <a href ="peoplecategory.jsp">재능나눔</a>
+            <a href ="reviewpost.jsp">나눔후기</a>
                 <a href="login.jsp">로그인</a>
                 <a href="join.jsp" >회원가입</a>
                </c:when>
              
                <c:otherwise>
-				<a href ="object.jsp">소분해요</a>
-				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="reviewpost.jsp">나눔후기</a>
-				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
+            <a href ="object.jsp">소분해요</a>
+            <a href ="peoplecategory.jsp">재능나눔</a>
+            <a href ="reviewpost.jsp">나눔후기</a>
+            <a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
             </c:choose>      
         </div>
@@ -87,115 +92,65 @@
     <!-- section -->
     <form>
     <section class ="header" style="border-radius:25px;">
-        <div id="map" style="width:820px;height:470px; border-radius:25px;"></div>
+       	<div id="map" style="width: 800px; height: 450px; border-radius:25px;"></div>
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=67a460358a31f67cda76cd800e168b40&libraries=services"></script>
-<script>
-var mapContainer = document.getElementById('map'), // 지도를 표시할 div  
-    mapOption = { 
-        center: new kakao.maps.LatLng(35.1761129306312, 126.91353712346), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨 
-    };
+	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=67a460358a31f67cda76cd800e168b40&libraries=services"></script>
+	<script>
 
+var mapContainer = document.getElementById('map');
+mapOption = { 
+    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 3 // 지도의 확대 레벨
+}; // 지도를 표시할 div
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
+let addr = [];
+let dataNum2 = [];
+let product = [];
+<%for (int i = 0; i < markerNickList.size(); i++) {%>
 
-//커스텀 오버레이에 표시할 내용입니다     
-//HTML 문자열 또는 Dom Element 입니다 
-var content = '<div class="overlaybox1" style="width:100px; font-family:ibm; padding:5px; background:white; color:black;  border:5px solid #ffc107; border-radius:25px;" >' +
-'    <div class="boxtitle" style="text-align:center;width:100px; font-family:jalnan;  border-bottom:2px solid #eaeaea;">사용자</div>' +
-'    <ul style="width:100px; text-align:center;">' +
-'        <li class="up">' +
-'            <span class="number">1</span>' +
-'            <span class="object">바나나</span>' +
-'            <span class="arrow up"></span>' +
-'            <span class="count">2개</span>' +
-'        </li>' +
-'        <li>' +
-'            <span class="number">2</span>' +
-'            <span class="object">사과</span>' +
-'            <span class="arrow up"></span>' +
-'            <span class="count">10개</span>' +
-'        </li>' +
-'        <li>' +
-'            <span class="number">3</span>' +
-'            <span class="object">우유</span>' +
-'            <span class="arrow up"></span>' +
-'            <span class="count">1+1</span>' +
-'        </li>' +
-'        <li>' +
-'            <span class="number">4</span>' +
-'            <span class="object">당면</span>' +
-'            <span class="arrow down"></span>' +
-'            <span class="count">1개</span>' +
-'        </li>' +
-'    </ul>' +
-'</div>';
- 
-// 마커를 표시할 위치와 title 객체 배열입니다 
-var positions = [
-    {
-        title: 'hyeon',
-        latlng: new kakao.maps.LatLng(35.1771098652095, 126.914857492693)
-    },
-    {
-        title: 'jun', 
-        latlng: new kakao.maps.LatLng(35.1771707638814, 126.916101899014)
-    },
-    {
-        title: 'dodo', 
-        latlng: new kakao.maps.LatLng(35.1775634137639, 126.914837369005)
-    },
-    {
-        title: 'lalaa',
-        latlng: new kakao.maps.LatLng(35.1781473123282, 126.915739165121)
-    }
-];
+dataNum2.push("<%=markerNickList.get(i)%>");
+addr.push("<%=markerList.get(i)%>");
+product.push("<%=productList.get(i)%>");
+
+<%}%>
 
 
-// 마커 이미지의 이미지 주소입니다
-//var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png"; 
-    
-for (var i = 0; i < positions.length; i ++) {
-    
-    // 마커 이미지의 이미지 크기 입니다
-  //  var imageSize = new kakao.maps.Size(24, 35); 
-    
-    // 마커 이미지를 생성합니다    
-  //  var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize); 
-    
-  //커스텀 오버레이를 생성합니다
-    var customOverlay = new kakao.maps.CustomOverlay({
-        position: positions[i].latlng,
-        content: content,
-        xAnchor: 0.3,
-        yAnchor: 0.91
-    });
+//주소-좌표 변환 객체를 생성합니다
+var geocoder = new kakao.maps.services.Geocoder();
+for(let i =0; i<addr.length; i++){
+geocoder.addressSearch(addr[i], function(result, status) {
 
-    //커스텀 오버레이를 지도에 표시합니다
-    customOverlay.setMap(map);
+	console.log(result)
+    // 정상적으로 검색이 완료됐으면 
+     if (status === kakao.maps.services.Status.OK) {
 
+        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+		
+        // 결과값으로 받은 위치를 마커로 표시합니다
+        var marker = new kakao.maps.Marker({
+            map: map,
+            position: coords
+        });
+
+        // 인포윈도우로 장소에 대한 설명을 표시합니다
+        var infowindow = new kakao.maps.InfoWindow({
+            content: '<div style="font-family:jalnan; width:150px; background:#fdfd96; border-left:1px solid black; border-right:1px solid black; border-top:1px; solid black; text-align:center; padding:6px 0;">'+dataNum2[i] +'</div><div style="font-family:ibms; border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black; padding:3px 3px;">'+product[i]+'</div>'
+        });
+        infowindow.open(map, marker);
+
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+        map.setCenter(coords);
+    } 
     
-    // 마커를 생성합니다
-   // var marker = new kakao.maps.Marker({
-     //   map: map, // 마커를 표시할 지도
-       // position: positions[i].latlng, // 마커를 표시할 위치
-       // title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
-        //image : markerImage // 마커 이미지 
-   // });
     
- // 인포윈도우로 장소에 대한 설명을 표시합니다
-  //  var infowindow = new kakao.maps.InfoWindow({
-    //    content: '<div style="width:150px;text-align:center;padding:6px 0;">사용자위치</div>'
-   // });
-    //infowindow.open(map, marker);
-    
- 
- 
-    
+});
 }
+ 
+
 </script>
-    </section>
+   		 </section>
     </form>
     
     
@@ -229,18 +184,18 @@ for (var i = 0; i < positions.length; i ++) {
         <div class="container">
             <div class = "item_list">
             
-	<% 
-		ProductDAO dao = new ProductDAO();
-		List<Product> pdBoardList = dao.selectpdboard();
-		pageContext.setAttribute("pdBoardList",pdBoardList);
-	%>
-	
+   <% 
+      ProductDAO dao1 = new ProductDAO();
+      List<Product> pdBoardList = dao1.selectpdboard();
+      pageContext.setAttribute("pdBoardList",pdBoardList);
+   %>
+   
             <!-- 여기 안에 작성-->
             <c:forEach var="pdBoard" items="${pdBoardList}" varStatus="status">
            <a href="objectpostview.jsp?pd_seq=$pdBoard.pd_seq}" >
                  <div class = "card" >
                     <div class="img" src=>
-                        <img src=${pdBoard.pd_path}>
+                        <img src="${pdBoard.pd_path}" alt="">
                     </div>
                     <div class = "text">
                         <h2>"${pdBoard.pd_title}"</h2>
