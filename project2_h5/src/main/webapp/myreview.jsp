@@ -38,15 +38,16 @@
     </div>
 </div>
     <!--요소 시작-->
-    <div class="Contents-Box" style = "padding : 50px 200px 50px 200px">
+    <div class="Contents-Box" >
       <!--제목-->
       <form  style = "text-align:center; height: 120px;">
         <div class="Title">
-          <span style = "font-size:60px; font-family:'ibm'; color : #ffc107;">
+          <span style = "font-size:60px; font-family:'ibm'; ">
             마이리뷰    
           </span>
         </div>
       </form>
+      
       <!--목록-->
       <div class="List-Box box-height">
         <ul >
@@ -87,47 +88,47 @@
             </span>
           </div>
         </a>
-      </div>
-      
-       <!--숫자-->
-      <form class="Form-Box List-Move-Number" method="post">
-        <div class="Number">
-          <!--1-->
-          <div class="mave-btn-1">
-            <div class="page-text 1-page-text">
-              <span id="li{{this}}">
-                <!--{{this}}-->
-                1
-              </span>
-            </div>
-          </div>
-          <!--2-->
-          <div class="mave-btn-2">
-            <div class="page-text 1-page-text">
-              <span id="li{{this}}">
-                <!--{{this}}-->
-                2
-              </span>
-            </div>
-          </div>
-          <!--3-->
-          <div class="mave-btn-3">
-            <div class="page-text 1-page-text">
-              <span id="li{{this}}">
-                <!--{{this}}-->
-                3
-              </span>
-            </div>
-          </div>
-        </div>
-        <!--작성하기 버튼-->
-        <div class="Up-Btn">
-          <input class = "style-bt" type="button" value="글쓰기" name="submit" />
-        </div>
-      </form>
-    </div>
-    <!--top-bar-->
+      </div>  
+    </div>  
+    
+   
+    
 </div>
-</div>
+        <div style="max-width:1000px;margin:auto; text-align:center; margin-top:10px;">
+        	<div class="Up-Btn" style="float:right;">
+        	<input class = "style-bt" type="button" value="글쓰기" name="submit" style="font-family:ibm; width:100px;
+        	border:none; cursor:pointer; border-radius:25px; background:#ffc107; font-size:20px; color:white;" />
+        	</div>  
+		</div>  
+		
+		 <!-- footer -->
+    <footer class = "footer" style="    background-color: #e5e5e5;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    box-sizing: border-box;
+    text-align :center;
+    margin-top: 320px;">
+        <ul class = "list" style="display:flex; width: 500px;;
+  margin-left: auto;
+  margin-right: auto;">
+            <li class = "list-object" style="list-style:none; padding-left:20px;">
+                <a href = "#"  style="text-decoration: none; color:black;">About</a>
+            </li>
+            <li class = "list-object" style="list-style:none; padding-left:20px;">⋅</li>
+            <li class = "list-object" style="list-style:none; padding-left:20px;">
+                <a href = "#" style="text-decoration: none; color:black;">Contact</a>
+            </li>
+            <li class = "list-object" style="list-style:none; padding-left:20px;">⋅</li>
+            <li class = "list-object" style="list-style:none; padding-left:20px;">
+                <a href = "#" style="text-decoration: none; color:black;">Terms of Use</a>
+            </li>
+            <li class = "list-object" style="list-style:none; padding-left:20px;">⋅</li>
+            <li class = "list-object" style="list-style:none; padding-left:20px;">
+                <a href = "#" style="text-decoration: none; color:black;">Privacy Policy</a>
+            </li>
+        </ul>
+        <br>
+        <p>© Your Website 2022. Made by H5</p>
+    </footer>
 </body>
 </html>
