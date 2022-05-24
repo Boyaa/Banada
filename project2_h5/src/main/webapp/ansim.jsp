@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,8 +19,7 @@
 <form action="SafetyCon" >	
  <div style="width:300px; height:200px; margin:auto; border:1px solid #eaeaea">
  			
- 			<!--  <input name="safetyUser1" style="width:200px; height:20px; padding:5px; border:1px solid #eaeaea; " 
-          type="text"/>-->
+ 			<input type="hidden" name="safetyUser1" value="${loginUser.user_nick}"/>
           
  	<div class="place" style="display:flex; width:300px; height:50px;  border-bottom:1px solid #eaeaea;font-family:ibm;">
  		<div style="border-right:1px solid #eaeaea; margin: 0 0 0 12px; padding-right:12px;">

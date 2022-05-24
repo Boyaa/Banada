@@ -218,7 +218,9 @@ a {text-decoration:none;}
                
          
         <div class="quickmenu" style="top:850px; background-color:transparent;"> 
+        <div>약속시간까지</div>
 		<div id="countdown" style="font-size:20px; font-family:ibm;"></div>
+		<div>남았습니다.</div>
 
         <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
