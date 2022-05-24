@@ -36,6 +36,12 @@ public class User {
 
 
 
+	public User(String user_nick) {
+		super();
+		this.user_nick = user_nick;
+	}
+
+
 	public User(String user_nick, String user_addr, String a) {
 		super();
 		this.user_nick = user_nick;

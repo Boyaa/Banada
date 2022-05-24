@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -14,7 +15,7 @@ public class MapDAO {
 	public  List<User> selectAddr(){
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
-		List<User> markerList = null;
+		List<User> markerList = null; //sql문통해서 가져온 값들을 User vo에 넣어논걸로 List만들기
 		
 		try {															// mapper에 들어있는ㄴsql실행문 name값
 			markerList = sqlSession.selectList("com.smhrd.domain.MapDAO.selectAddr");
@@ -27,6 +28,24 @@ public class MapDAO {
 		}finally {
 			sqlSession.close();
 		}return markerList;
+	}
+	
+public  List<User> selectNick(){
+		
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<User> markerNickList = null; //sql문통해서 가져온 값들을 User vo에 넣어논걸로 List만들기
+		
+		try {															// mapper에 들어있는ㄴsql실행문 name값
+			markerNickList = sqlSession.selectList("com.smhrd.domain.MapDAO.selectNick");
+			if(markerNickList != null) {
+				sqlSession.commit();
+			}else {
+				sqlSession.rollback();
+			}
+			
+		}finally {
+			sqlSession.close();
+		}return markerNickList;
 	}
 		
 	}
