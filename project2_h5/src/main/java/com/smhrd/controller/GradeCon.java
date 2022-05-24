@@ -22,16 +22,17 @@ public class GradeCon extends HttpServlet {
 		System.out.println("[GradeCon]");
 		request.setCharacterEncoding("UTF-8");
 		
-		int gNum = Integer.parseInt(request.getParameter("g_seq"));
-		BigDecimal g_seq = new BigDecimal("gNum");
+		
 		String g_nick = request.getParameter("g_nick");
+		System.out.println(g_nick);
 		String user_nick = request.getParameter("user_nick");
 		String g_review = request.getParameter("g_review");
-		int g_score = Integer.parseInt(request.getParameter("g_score"));
+		String g_score = request.getParameter("g_score");
+		request.getParameterValues("interest");
 		String g_title = request.getParameter("g_title");
 		
 		GradeDAO  dao = new GradeDAO();
-		Grade g_vo = new Grade(g_seq);
+		Grade g_vo = new Grade(g_nick, user_nick, g_review, g_score, g_title);
 		int cnt = dao.insertGrade(g_vo);
 		
 		if(cnt > 0) {
@@ -41,6 +42,7 @@ public class GradeCon extends HttpServlet {
 		} else {
 			System.out.println("리뷰 등록 실패");
 		}
+		
 		
 		
 		

@@ -76,26 +76,26 @@
         <!--1-->
         <!--{{#each contents}}-->
         <c:forEach var="gBoard" items="${gBoardList}" varStatus="status">
-        <a href="reviewpostview.jsp" class="List-1 flex">
-          <div>
-            <span>
+        <a href="reviewpostview.jsp?g_seq=${gBoard.g_seq}" class="List-1 flex">
+          <div style="text-align=center;">
+            <p>
              ${status.count}
-            </span>
+            </p>
           </div>
-          <div>
-            <span>
+          <div style="text-align=center;">
+            <p>
              <c:out value="${gBoard.g_nick}"/>
-            </span>
+            </p>
           </div>
-          <div>
-            <span>
-              <c:out value="${gBoard.g_content}"/>
-            </span>
+          <div style="text-align=center;">
+            <p>
+              <c:out value="${gBoard.g_review}"/>
+            </p>
           </div>
-          <div>
-            <span>
+          <div style="text-align=center;">
+            <p>
               <c:out value="${gBoard.g_date}"/>
-            </span>
+            </p>
           </div>
         </a>
       </div>
