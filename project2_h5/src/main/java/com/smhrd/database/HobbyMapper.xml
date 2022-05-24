@@ -25,49 +25,49 @@
 		update TBL_hobby set h_like=h_like-1 where h_seq=78
 	</update>
 	<select id="selecthboardLang" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='language'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='language'
 	</select>
 	<select id="selecthboardCar" resultType="com.smhrd.domain.Hobby">
 		select h_seq, h_title, h_nick, h_date from TBL_hobby where h_cate='car'
 	</select>
 	<select id="selecthboardPicture" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='picture'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='picture'
 	</select>
 	<select id="selecthboardCook" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='cook'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='cook'
 	</select>
 	<select id="selecthboardAnimal" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='animal'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='animal'
 	</select>
 	<select id="selecthboardShopping" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='shop'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='shop'
 	</select>
 	<select id="selecthboardSports" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='sports'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='sports'
 	</select>
 	<select id="selecthboardGame" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='game'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='game'
 	</select>
 	<select id="selecthboardTravel" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='travel'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='travel'
 	</select>
 	<select id="selecthboardRead" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='book'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='book'
 	</select>
 	<select id="selecthboardCulture" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='culture'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='culture'
 	</select>
 	<select id="selecthboardMake" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='make'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='make'
 	</select>
 	<select id="selecthboardMusic" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='music'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='music'
 	</select>
 	<select id="selecthboardBongsa" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='bongsa'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='bongsa'
 	</select>
 	<select id="selecthboardInmac" resultType="com.smhrd.domain.Hobby">
-		select h_title, h_nick,h_date from TBL_hobby where h_cate='inmac'
+		select h_seq, h_title, h_nick,h_date from TBL_hobby where h_cate='inmac'
 	</select>
     
 </mapper>

@@ -24,23 +24,13 @@
 <body style="margin: 0px;">
 
    <% 
-   
-
-	 
    	   int seq = Integer.parseInt(request.getParameter("h_seq"));
-   	   BigDecimal H_seq = new BigDecimal("seq");
 	   HobbyDAO dao = new HobbyDAO();
 	   System.out.println("글번호 Postview: " +seq);
 	   
-	   //
-	   //int h_seq = ((BigDecimal)dataMap.get("h_seq")).intValue();
-	   
 	   BigDecimal h_seq = new BigDecimal(seq);
 	   System.out.println("test"+h_seq);
-	   
-	   Hobby hPost = dao.selecthpost(h_seq); // h_seq(BigDeciaml) int로 바꿔야 함
-	 //  System.out.println(hPost.getH_title());
-	 
+	   Hobby hPost = dao.selecthpost(h_seq);
 	%>
 
 	<!-- nav -->
