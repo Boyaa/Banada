@@ -34,7 +34,7 @@ session.setAttribute("productList", productList);
 
 </head>
 <body>
-	<div id="map" style="width: 100%; height: 350px;"></div>
+	<div id="map" style="width: 800px; height: 800px;"></div>
 
 	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=67a460358a31f67cda76cd800e168b40&libraries=services"></script>
 	<script>
@@ -75,10 +75,9 @@ geocoder.addressSearch(addr[i], function(result, status) {
             map: map,
             position: coords
         });
-
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+dataNum2[i]+'</div>'
+            content: '<div style="font-family:jalnan; width:150px; background:#fdfd96; border:1px solid black; text-align:center; padding:6px 0;">'+dataNum2[i]+'</div>'
         });
         infowindow.open(map, marker);
 
