@@ -47,6 +47,24 @@ public  List<User> selectNick(){
 			sqlSession.close();
 		}return markerNickList;
 	}
+
+public  List<Product> selectProduct(){
+	
+	SqlSession sqlSession = sqlSessionFactory.openSession();
+	List<Product> productList = null; //sql문통해서 가져온 값들을 User vo에 넣어논걸로 List만들기
+	
+	try {															// mapper에 들어있는ㄴsql실행문 name값
+		productList = sqlSession.selectList("com.smhrd.domain.MapDAO.selectProduct");
+		if(productList != null) {
+			sqlSession.commit();
+		}else {
+			sqlSession.rollback();
+		}
+		
+	}finally {
+		sqlSession.close();
+	}return productList;
+}
 		
 	}
 
