@@ -68,7 +68,7 @@ public class GradeDAO {
 		
 		
 		
-		public int updateScore1(int g_seq) {
+		public int updateScore1(BigDecimal g_seq) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			int cnt = 0;
 
@@ -85,7 +85,7 @@ public class GradeDAO {
 			}
 			return cnt; // 점수 수정
 		}
-		public int updateScore2(int g_seq) {
+		public int updateScore2(BigDecimal g_seq) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			int cnt = 0;
 			
@@ -102,7 +102,7 @@ public class GradeDAO {
 			}
 			return cnt; // 점수 수정
 		}
-		public int updateScore4(int g_seq) {
+		public int updateScore4(BigDecimal g_seq) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			int cnt = 0;
 			
@@ -119,7 +119,7 @@ public class GradeDAO {
 			}
 			return cnt; // 점수 수정
 		}
-		public int updateScore5(int g_seq) {
+		public int updateScore5(BigDecimal g_seq) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			int cnt = 0;
 			
