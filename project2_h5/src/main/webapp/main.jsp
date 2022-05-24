@@ -153,8 +153,19 @@ a {text-decoration:none;}
         </section>
         <!-- Testimonials-->
         <section class="testimonials text-center bg-light">
-            <div class="container">
+            
+            
+            <c:choose>
+               <c:when test="${empty loginUser}">
                 <h2 class="mb-5 font-paybooc">오늘의 추천 물품</h2>
+               </c:when>
+               <c:otherwise>
+               	  <h2 class="mb-5 font-paybooc">${loginUser.user_nick} 추천 물품</h2>
+              </div>
+               </c:otherwise>
+            </c:choose>
+            <div class="container">
+
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
@@ -217,8 +228,10 @@ a {text-decoration:none;}
               
                
          
-        <div class="quickmenu" style="top:850px; background-color:transparent;"> 
-		<div id="countdown" style="font-size:20px; font-family:ibm;"></div>
+        <div class="quickmenu" style="top:850px; background:white; border-radius: 25px; border:3px solid #ffc107;"> 
+        <div style="font-family:ibm">약속시간까지</div>
+		<div id="countdown" style="font-family:ibm;"></div>
+		<div style="font-family:ibm">남았습니다.</div>
 
         <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">

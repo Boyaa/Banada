@@ -38,6 +38,22 @@ public class Product {
 
 
 
+	public Product(String pd_title, String pd_content, String pd_nick, String pd_name, BigDecimal pd_price,
+			String pd_cate, String pd_option, String pd_path) {
+		super();
+		this.pd_title = pd_title;
+		this.pd_content = pd_content;
+		this.pd_nick = pd_nick;
+		this.pd_name = pd_name;
+		this.pd_price = pd_price;
+		this.pd_cate = pd_cate;
+		this.pd_option = pd_option;
+		this.pd_path = pd_path;
+	}
+
+
+
+
 	public Product(BigDecimal pd_seq, String pd_title, String pd_content, String pd_nick, Timestamp pd_date,
 			String pd_name, BigDecimal pd_price, String pd_cate, String pd_option, BigDecimal pd_like, String pd_path) {
 		super();

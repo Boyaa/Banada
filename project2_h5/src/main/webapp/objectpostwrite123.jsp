@@ -44,7 +44,7 @@
     </section>
 	
     <form class="container" action="ProductCon" method="post" enctype="multipart/form-data"> <!--  여기서 productCon으로 보내는데 밑에 JS로 또 productCon으로 보내야 할까용? -->
-  
+        <input type="hidden" name="pd_nick" value="${loginUser.user_nick}"/>
         <div id="product-write" style = "display:flex; ">
             <div id = "box">제목</div>
             <div id = "right-box">
@@ -85,7 +85,7 @@
             </div>
         </div>
               <div id="product" style = "display:flex;">
-            <div id = "box" style="width:150px; height: 100px; padding-top:65px;">
+            <div id = "box" style="width:149px; height: 100px; padding-top:65px; margin-left:0px;">
             	상품이미지
             </div>
             <div style="width: 250px; margin-left:20px;">

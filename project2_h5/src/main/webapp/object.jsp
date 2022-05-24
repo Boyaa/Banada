@@ -77,7 +77,7 @@
                <c:otherwise>
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="post.jsp">나눔후기</a>
+				<a href ="reviewpost.jsp">나눔후기</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
             </c:choose>      
@@ -207,12 +207,12 @@ for (var i = 0; i < positions.length; i ++) {
      <c:choose>
           <c:when test="${empty loginUser}">
     <section class="write">
-        <a href="objectpostwrite123.jsp" >글쓰기</a>
+        <a href="#" onclick="alert('로그인을 해주세요')">글쓰기</a>        
     </section>
     </c:when>
       <c:otherwise>
       <section class="write">
-        <a href="#" onclick="alert('로그인을 해주세요')">글쓰기</a>
+        <a href="objectpostwrite123.jsp" >글쓰기</a>
     </section>
     
       </c:otherwise>
