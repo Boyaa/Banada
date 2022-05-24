@@ -25,6 +25,9 @@
 	<update id="updateScore5" parameterType="String"> 
 		update TBL_grade set g_grade=g_grade+5 where user_nick=${user_nick}
 	</update>
+	<select id="selectmyreview" parameterType="String" resultType="com.smhrd.domain.Grade">
+		select g_nick, user_nick, g_title, g_date from tbl_grade where user_nick=${user_nick}
+	</select>
 	
    
 </mapper>

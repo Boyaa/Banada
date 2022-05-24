@@ -12,5 +12,7 @@
 	<select id="selectpdboard" resultType="com.smhrd.domain.Product">
 		select * from tbl_product
 	</select>
+	
+	
 	 
 </mapper>

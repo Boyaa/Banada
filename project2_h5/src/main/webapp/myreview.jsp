@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.domain.Grade"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.GradeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -37,6 +40,11 @@
             </c:choose>   
     </div>
 </div>
+<% 
+		GradeDAO dao = new GradeDAO();
+		List<Grade> myreviewList = dao.selectmyreview();
+		pageContext.setAttribute("myreviewList",myreviewList);
+	%>
     <!--요소 시작-->
     <div class="Contents-Box" >
       <!--제목-->
@@ -66,27 +74,29 @@
         </ul>
         <!--1-->
         <!--{{#each contents}}-->
-        <a href="reviewpostview.jsp" class="List-1 flex">
+        <c:forEach var="myreview" items="${myreviewList}" varStatus="status">
+        <a href="reviewpostview.jsp?user_name=${myreview.user_name}" class="List-1 flex">
           <div>
             <span>
-              01
+              ${status.count}
             </span>
           </div>
           <div>
             <span>
-              facere
+           <c:out value="${myreview.g_nick}"/>
             </span>
           </div>
           <div>
             <span>
-              오늘 날씨가 너무 좋네요~
+              <c:out value="${myreview.g_title}"/>
             </span>
           </div>
           <div>
             <span>
-              2021.09.27 15 : 00
+             <c:out value="${myreview.g_date}"/>
             </span>
           </div>
+           </c:forEach>
         </a>
       </div>  
     </div>  

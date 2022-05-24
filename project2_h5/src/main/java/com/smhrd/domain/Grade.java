@@ -14,9 +14,15 @@ public class Grade {
 	private BigDecimal g_grade;
 	
 	
-	
-	
-	
+	public Grade(String g_nick, String user_nick, Timestamp g_date, String g_title) {
+		super();
+		this.g_nick = g_nick;
+		this.user_nick = user_nick;
+		this.g_date = g_date;
+		this.g_title = g_title;
+	}
+
+
 	public Grade(BigDecimal g_seq, String g_nick, String user_nick, String g_review, Timestamp g_date, String g_score,
 			String g_title, BigDecimal g_grade) {
 		super();
