@@ -3,6 +3,8 @@ package com.smhrd.domain;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
 
+import javax.management.loading.PrivateClassLoader;
+
 public class Product {
 	
 	 private BigDecimal pd_seq;
@@ -15,8 +17,30 @@ public class Product {
      private String pd_cate;
      private String pd_option;
      private int pd_like;
+     private String pd_path;
 	
-     public Product(String pd_title, String pd_content, String pd_name, int pd_price, String pd_cate, String pd_option) {
+     
+     
+     public Product(BigDecimal pd_seq, String pd_title, String pd_content, String pd_nick, Timestamp pd_date,
+			String pd_name, int pd_price, String pd_cate, String pd_option, int pd_like, String pd_path) {
+		super();
+		this.pd_seq = pd_seq;
+		this.pd_title = pd_title;
+		this.pd_content = pd_content;
+		this.pd_nick = pd_nick;
+		this.pd_date = pd_date;
+		this.pd_name = pd_name;
+		this.pd_price = pd_price;
+		this.pd_cate = pd_cate;
+		this.pd_option = pd_option;
+		this.pd_like = pd_like;
+		this.pd_path = pd_path;
+	}
+
+
+
+
+	public Product(String pd_title, String pd_content, String pd_name, int pd_price, String pd_cate, String pd_option) {
 		super();
 		this.pd_title = pd_title;
 		this.pd_content = pd_content;
@@ -27,6 +51,21 @@ public class Product {
 	}
 
    
+
+
+	public Product(String pd_title, String pd_content, String pd_name, int pd_price, String pd_cate, String pd_option,
+			String pd_path) {
+		super();
+		this.pd_title = pd_title;
+		this.pd_content = pd_content;
+		this.pd_name = pd_name;
+		this.pd_price = pd_price;
+		this.pd_cate = pd_cate;
+		this.pd_option = pd_option;
+		this.pd_path = pd_path;
+	}
+
+
 
 
 	public BigDecimal getPd_seq() {
@@ -69,6 +108,27 @@ public class Product {
 
 	public int getLike_num() {
 		return pd_like;
+	}
+
+
+
+
+	public String getPd_content() {
+		return pd_content;
+	}
+
+
+
+
+	public int getPd_like() {
+		return pd_like;
+	}
+
+
+
+
+	public String getPd_path() {
+		return pd_path;
 	} 
      
      

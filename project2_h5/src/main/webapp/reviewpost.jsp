@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.domain.Grade"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.GradeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -38,6 +41,12 @@
     </div>
 	</div>
 </div>
+<% 
+		GradeDAO dao = new GradeDAO();
+		List<Grade> gBoardList = dao.selectgboard();
+		pageContext.setAttribute("gBoardList",gBoardList);
+	%>
+
     <!--요소 시작-->
     <div class="Contents-Box" style = "padding : 50px 200px 50px 200px">
       <!--제목-->
@@ -66,29 +75,31 @@
         </ul>
         <!--1-->
         <!--{{#each contents}}-->
+        <c:forEach var="gBoard" items="${gBoardList}" varStatus="status">
         <a href="reviewpostview.jsp" class="List-1 flex">
           <div>
             <span>
-              01
+             ${status.count}
             </span>
           </div>
           <div>
             <span>
-              facere
+             <c:out value="${gBoard.g_nick}"/>
             </span>
           </div>
           <div>
             <span>
-              오늘 날씨가 너무 좋네요~
+              <c:out value="${gBoard.g_content}"/>
             </span>
           </div>
           <div>
             <span>
-              2021.09.27 15 : 00
+              <c:out value="${gBoard.g_date}"/>
             </span>
           </div>
         </a>
       </div>
+      </c:forEach>
       
        <!--숫자-->
       <form class="Form-Box List-Move-Number" method="post">

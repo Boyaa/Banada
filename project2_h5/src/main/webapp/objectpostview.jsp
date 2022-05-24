@@ -1,4 +1,7 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
+<%@page import="com.smhrd.domain.Product"%>
+<%@page import="com.smhrd.domain.ProductDAO"%>
+<%@page import="java.math.BigDecimal"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,6 +18,27 @@
 	</script>
 </head>
 <body>
+<% 
+   
+
+	 
+   	   int seq = Integer.parseInt(request.getParameter("pd_seq"));
+   	   BigDecimal pd_seq = new BigDecimal("seq");
+	   ProductDAO dao = new ProductDAO();
+	   System.out.println("글번호 Postview: " +seq);
+	   
+	   //
+	   //int h_seq = ((BigDecimal)dataMap.get("h_seq")).intValue();
+	   
+	   BigDecimal h_seq = new BigDecimal(seq);
+	   System.out.println("test"+h_seq);
+	   
+	   Product pdPost = dao.selectpdpost(pd_seq); // h_seq(BigDeciaml) int로 바꿔야 함
+	 //  System.out.println(hPost.getH_title());
+	 
+	%>
+	
+	
      <!-- nav -->
      <div class = "nav">
         <div class = "logo" >
@@ -41,7 +65,8 @@
     </div>
     <div>
         <div class = "img">
-            <img class = "img-con" src="assets/post_image/jiyung.png" style="cursor:pointer; max-height: 200%; width: auto;WIDTH: 650px" onclick="window.open(this.src)">
+            <img class = "img-con" src="<%=dao.selectpdpost(pd_seq).getPd_path()%>" style="cursor:pointer; max-height: 200%; width: auto;WIDTH: 650px" onclick="window.open(this.src)">
+      								<!-- 업로드한 사진 올리고 싶음 -->
         </div>
     </div>
 
@@ -52,7 +77,7 @@
                 <img src="assets/post_image/hruru.png" style="width:50px; height:50px; border-radius:50%; margin-right:10px"/>
             </div>
             <div style="width:250px;">
-                <p id = "id">글쓴이</p>
+                <p id = "id"><%=dao.selectpdpost(pd_seq).getPd_nick() %></p>
                 <p id = "live">광주광역시 남구 봉선동</p>
             </div>
             <div>
@@ -69,12 +94,11 @@
         <section class = "article-description">
             <h1 id="content">제목칸</h1>
             <div id = "price">
-                <p>3000원</p>
+                <p><%=dao.selectpdpost(pd_seq).getPd_price()%></p>
             </div>
             <div id ="article-detail">
-            <p>안녕하세요</p>
-            <p>만나서 반가워요</p>
-            <p>다음에 만나요</p>
+            <p><%=dao.selectpdpost(pd_seq).getPd_content()%></p>
+           
             </div>
         </section>
     </alticle>

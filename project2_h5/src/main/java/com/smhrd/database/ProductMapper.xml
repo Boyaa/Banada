@@ -4,9 +4,13 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.domain.ProductDAO">
 	<insert id="insertProduct" parameterType="com.smhrd.domain.Product">
-		insert into TBL_PRODUCT values (tbl_product_seq.nextval, #{pd_title}, #{pd_content}, 's', sysdate, #{pd_name}, #{pd_price}, #{pd_cate}, #{pd_option}, 0)
+		insert into TBL_PRODUCT values (tbl_product_seq.nextval, #{pd_title}, #{pd_content}, #{pd_nick}, sysdate, #{pd_name}, #{pd_price}, #{pd_cate}, #{pd_option}, 0, #{pd_path})
 	</insert>
-	<select id="selectOneProduct" parameterType="com.smhrd.domain.Product" resultType="com.smhrd.domain.Product">
+	<select id="selectpdpost" parameterType="com.smhrd.domain.Product" resultType="com.smhrd.domain.Product">
 		select * from TBL_PRODUCT where pd_seq=#{pd_seq} <!-- 수정 필요  -->
-	</select> 
+	</select>
+	<select id="selectpdboard" resultType="com.smhrd.domain.Product">
+		select * from tbl_product
+	</select>
+	 
 </mapper>
