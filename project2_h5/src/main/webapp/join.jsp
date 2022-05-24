@@ -47,7 +47,7 @@
         <p id = "pw2" style="text-align:center; border-bottom: 1px solid #ffc107;">
           주소 찾기를 눌러 입력받아주세요
         </p>
-        <input type="submit" class="btn" value="회 원 가 입"/>
+        <input type="submit" style="color:white; background:#ffc107; border:none;" class="btn" value="회 원 가 입"/>
       </section>
        
        </form>
