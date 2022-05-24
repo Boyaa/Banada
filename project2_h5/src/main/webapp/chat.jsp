@@ -21,7 +21,7 @@
     <div class="chat_wrap" >
         <div class="header" style="max-width: 523px; background-color:#ffc107; font-family:'jalnan';'">
             CHAT
-            <button class="safe" onclick="javascript:openNewWindow('ansim.jsp')" style="font-size:12px;  background-color:#ffc107; font-family:ibm; color:black;">안심등록</button>
+            <button class="safe" onclick="javascript:openNewWindow('ansim.jsp')" style="font-size:14px;  border-radius:25px; border:1px solid black;  background:white; font-family:ibm; color:black;">안심등록</button>
         </div>
         <div class="anotherMsg">
             <br><br><br>
