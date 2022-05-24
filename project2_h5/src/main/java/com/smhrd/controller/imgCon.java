@@ -22,7 +22,7 @@ public class imgCon extends HttpServlet {
         int sizeLimit = 15 * 1024 * 1024; // 한번에 올릴 수 있는 파일 용량 : 15M로 제한
        
         String realPath = "C:\\Users\\smhrd\\git\\project2_h5\\project2_h5\\src\\main\\webapp\\image";
-        System.out.println(realPath);
+        System.out.println( "썸네일" + realPath);
         
 //        File dir = new File(realPath);
 //        if (!dir.exists()) dir.mkdirs();

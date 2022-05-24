@@ -7,7 +7,7 @@
 		insert into TBL_PRODUCT values (tbl_product_seq.nextval, #{pd_title}, #{pd_content}, #{pd_nick}, sysdate, #{pd_name}, #{pd_price}, #{pd_cate}, #{pd_option}, 0, #{pd_path})
 	</insert>
 	<select id="selectpdpost" parameterType="com.smhrd.domain.Product" resultType="com.smhrd.domain.Product">
-		select * from TBL_PRODUCT where pd_seq=#{pd_seq} <!-- 수정 필요  -->
+		select pd_title, pd_content, pd_nick, pd_name, pd_price,  pd_cate, pd_option, pd_like, pd_path from TBL_PRODUCT where pd_seq=#{pd_seq} <!-- 수정 필요  -->
 	</select>
 	<select id="selectpdboard" resultType="com.smhrd.domain.Product">
 		select * from tbl_product

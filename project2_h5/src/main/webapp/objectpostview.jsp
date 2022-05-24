@@ -25,13 +25,12 @@
    	   int seq = Integer.parseInt(request.getParameter("pd_seq"));
    	   BigDecimal pd_seq = new BigDecimal("seq");
 	   ProductDAO dao = new ProductDAO();
-	   System.out.println("글번호 Postview: " +seq);
+	   
+	   System.out.println("글번호 Postview: " + pd_seq);
 	   
 	   //
 	   //int h_seq = ((BigDecimal)dataMap.get("h_seq")).intValue();
 	   
-	   BigDecimal h_seq = new BigDecimal(seq);
-	   System.out.println("test"+h_seq);
 	   
 	   Product pdPost = dao.selectpdpost(pd_seq); // h_seq(BigDeciaml) int로 바꿔야 함
 	 //  System.out.println(hPost.getH_title());

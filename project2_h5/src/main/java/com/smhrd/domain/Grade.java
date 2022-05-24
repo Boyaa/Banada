@@ -9,11 +9,12 @@ public class Grade {
 	private String user_nick;
 	private String g_review;
 	private Timestamp g_date;
-	private int g_score;
+	private String g_score;
 	private String g_title;
+	private int g_grade;
 	
 
-	public Grade(BigDecimal g_seq, String g_nick, String user_nick, String g_review, Timestamp g_date, int g_score,
+	public Grade(BigDecimal g_seq, String g_nick, String user_nick, String g_review, Timestamp g_date, String g_score,
 			String g_title) {
 		super();
 		this.g_seq = g_seq;
@@ -34,6 +35,8 @@ public class Grade {
 	}
 
 
+	
+	
 	public BigDecimal getG_seq() {
 		return g_seq;
 	}
@@ -59,6 +62,17 @@ public class Grade {
 	}
 	
 	
+	public String getG_score() {
+		return g_score;
+	}
+	
+	public String getG_title() {
+		return g_title;
+	}
+	
+	public int getG_grade() {
+		return g_grade;
+	}
 	
 	
 }

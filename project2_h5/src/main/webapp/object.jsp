@@ -229,7 +229,7 @@ for (var i = 0; i < positions.length; i ++) {
                     <div class = "text">
                         <h2>"${pdBoard.pd_title}"</h2>
                         <p style="font-family: ibm;">관심 있으신가요?</p>
-                        <button onclick="location.href='objectpostview.jsph_seq=${hBoard.h_seq}'" style="cursor:pointer; text-decoration : none; color:#000;" >보러가기</button>
+                        <button onclick="location.href='objectpostview.jsp?pd_seq=${pdBoard.pd_seq}'" style="cursor:pointer; text-decoration : none; color:#000;" >보러가기</button>
                     </div>
                  </div>
                  </c:forEach>
