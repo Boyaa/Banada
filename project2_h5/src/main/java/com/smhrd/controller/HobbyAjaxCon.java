@@ -21,8 +21,7 @@ public class HobbyAjaxCon extends HttpServlet {
 		
 		HobbyDAO dao = new HobbyDAO();
 		dao.updateLike(h_seq, status);
-		int h_like = dao.getLike(h_seq);
-		
+		int h_like = dao.getLike(78);
 		PrintWriter out = response.getWriter();
 		out.print(h_like);
 	}

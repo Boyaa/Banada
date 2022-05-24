@@ -5,7 +5,23 @@
         
 <mapper namespace="com.smhrd.domain.GradeDAO">
 	<insert id="insertGrade" parameterType="com.smhrd.domain.Grade">
-		insert into tbl_grade values (tbl_grade_seq.nextval, #{g_nick}, #{user_nick}, #{g_review}, sysdate)
+		insert into tbl_grade values (tbl_grade_seq.nextval, #{g_nick}, #{user_nick}, #{g_review}, sysdate, #{g_score}, #{g_title})
    </insert>
+   <select id="selectgboard" resultType="com.smhrd.domain.Grade">
+		select * from tbl_grade
+	</select>
+	<update id="updateScore1" parameterType="String"> 
+		update TBL_grade set g_grade=g_grade-5 where g_score='banana1'
+	</update>
+	<update id="updateScore2" parameterType="String"> 
+		update TBL_grade set g_grade=g_grade-3 where g_score='banana2'
+	</update>
+	<update id="updateScore4" parameterType="String"> 
+		update TBL_grade set g_grade=g_grade+3 where g_score='banana4'
+	</update>
+	<update id="updateScore5" parameterType="String"> 
+		update TBL_grade set g_grade=g_grade+5 where g_score='banana5'
+	</update>
+	
    
 </mapper>

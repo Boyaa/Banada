@@ -1,5 +1,8 @@
+<%@page import="com.smhrd.domain.Product"%>
+<%@page import="java.util.List"%>
+<%@page import="com.smhrd.domain.ProductDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -210,17 +213,26 @@ for (var i = 0; i < positions.length; i ++) {
         <div class="container">
             <div class = "item_list">
             
+	<% 
+		ProductDAO dao = new ProductDAO();
+		List<Product> pdBoardList = dao.selectpdboard();
+		pageContext.setAttribute("pdBoardList",pdBoardList);
+	%>
+	
             <!-- 여기 안에 작성-->
+            <c:forEach var="pdBoard" items="${pdBoardList}" varStatus="status">
+           <a href="objectpostview.jsp?pd_seq=$pdBoard.pd_seq}" >
                  <div class = "card" >
-                    <div class="img" src="./image/01.jpg">
-                        <img src="" alt="">
+                    <div class="img" src=>
+                        <img src="${pdBoard.pd_path}" alt="">
                     </div>
                     <div class = "text">
-                        <h2>React</h2>
+                        <h2>"${pdBoard.pd_title}"</h2>
                         <p style="font-family: ibm;">관심 있으신가요?</p>
-                        <button onclick="location.href='objectpostview.jsp'" style="cursor:pointer; text-decoration : none; color:#000;" >보러가기</button>
+                        <button onclick="location.href='objectpostview.jsph_seq=${hBoard.h_seq}'" style="cursor:pointer; text-decoration : none; color:#000;" >보러가기</button>
                     </div>
                  </div>
+                 </c:forEach>
             <!-- 여기 안에 작성-->
             
             </div>

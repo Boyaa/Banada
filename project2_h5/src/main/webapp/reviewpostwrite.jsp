@@ -43,21 +43,21 @@
         <div id="product-write" style = "display:flex; ">
             <div id = "box">후기 제목</div>
             <div id = "right-box">
-            <input type="text" name="product-write" placeholder="제목을 입력하세요." style="width:200px;height:30px;font-size:12px;"/>
+            <input type="text" name="g_title" placeholder="제목을 입력하세요." style="width:200px;height:30px;font-size:12px;"/>
             </div>
         </div>
 
         <div id="price" style = "display:flex;">
             <div id="box">상대방</div>
             <div id = "right-box">
-                <input type="text" name="product-write" placeholder="이름을 입력하세요." style="width:200px;height:30px;font-size:12px;"/>
+                <input type="text" name="g_nick" placeholder="이름을 입력하세요." style="width:200px;height:30px;font-size:12px;"/>
             </div>
         </div>
 
         <div id="category" style = "display:flex;">
             <div id = "box">평점</div>
             <div id = "right-box">
-                <select name="fruits" class="select" style="width:115px;height:30px; font-family:ibm">
+                <select name="g_score" class="select" style="width:115px;height:30px; font-family:ibm">
                     <option disabled selected>선택</option>
                     <option value="banana1">🍌</option>
                     <option value="banana2">🍌🍌</option>
@@ -73,7 +73,7 @@
         <div id="content" style = "display:flex;">
             <div id = "box" style="margin-right:30px; height: 100px; padding-top:68px;">리뷰 내용</div>
             <div id = "right box" >
-                <textarea id="write" name="write"  placeholder="내용을 입력하세요."></textarea>
+                <textarea id="write" name="g_review"  placeholder="내용을 입력하세요."></textarea>
             </div>
         </div>
 

@@ -24,23 +24,27 @@ public class imgCon extends HttpServlet {
         String realPath = "C:\\Users\\smhrd\\git\\project2_h5\\project2_h5\\src\\main\\webapp\\image";
         System.out.println(realPath);
         
-        File dir = new File(realPath);
-        if (!dir.exists()) dir.mkdirs();
-              
-        MultipartRequest multpartRequest = null;
-        multpartRequest = new MultipartRequest(request, realPath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
-
-        System.out.println("변환객체" + multpartRequest);
-        String title = multpartRequest.getParameter("title"); 
-        System.out.println("타이틀" + title);
-       // form내의 input name="title" 인 요소의 값을 가져옴
-
-        filename = multpartRequest.getFilesystemName("photo");
-        System.out.println("경로" + filename);
-       // form내의 input name="photo" 인 요소의 값을 가져옴
-             
+//        File dir = new File(realPath);
+//        if (!dir.exists()) dir.mkdirs();
+//              
+//        MultipartRequest multpartRequest = null;
+//        multpartRequest = new MultipartRequest(request, realPath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
+//
+//        System.out.println("변환객체" + multpartRequest);
+//        String title = multpartRequest.getParameter("title"); 
+//        System.out.println("타이틀" + title);
+//       // form내의 input name="title" 인 요소의 값을 가져옴
+//
+//        filename = multpartRequest.getFilesystemName("photo");
+//        System.out.println("경로" + filename);
+//       // form내의 input name="photo" 인 요소의 값을 가져옴
+//             
+//        //DB에 realPath 를 저장 해주요
+        
+        
+        
         PrintWriter out = response.getWriter();
-          out.print(realPath);
+        out.print(realPath);
 
 	}
 

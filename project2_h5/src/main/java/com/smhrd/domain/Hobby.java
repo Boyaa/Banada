@@ -12,13 +12,22 @@ public class Hobby {
      private String h_cate;
      private String h_content; 
      private Timestamp h_date; 
-     private int h_maxpeople;
-     private int h_like;
+     private BigDecimal h_maxpeople;
+     private BigDecimal h_like;
 	 
      
 
+	public Hobby(BigDecimal h_seq, String h_title, String h_nick, Timestamp h_date) {
+		super();
+		this.h_seq = h_seq;
+		this.h_title = h_title;
+		this.h_nick = h_nick;
+		this.h_date = h_date;
+	}
+
+
 	public Hobby(BigDecimal h_seq, String h_title, String h_nick, String h_cate, String h_content, Timestamp h_date,
-			int h_maxpeople, int h_like) {
+			BigDecimal h_maxpeople, BigDecimal h_like) {
 		super();
 		this.h_seq = h_seq;
 		this.h_title = h_title;
@@ -31,7 +40,7 @@ public class Hobby {
 	}
 
 
-	public Hobby(BigDecimal h_seq, String h_title, String h_nick, String h_content, int h_maxpeople, int h_like) {
+	public Hobby(BigDecimal h_seq, String h_title, String h_nick, String h_content, BigDecimal h_maxpeople, BigDecimal h_like) {
 		super();
 		this.h_seq = h_seq;
 		this.h_title = h_title;
@@ -50,29 +59,27 @@ public class Hobby {
 	}
 
 
-	public Hobby(String h_title, String h_content, String h_cate, int h_maxpeople) {
+	public Hobby(String h_title, String h_cate, String h_content, BigDecimal h_maxpeople) {
 		super();
 		this.h_title = h_title;
-		this.h_content = h_content;
 		this.h_cate = h_cate;
+		this.h_content = h_content;
 		this.h_maxpeople = h_maxpeople;
 	}
-     
-     
-     
-     public Hobby(String h_title, String h_nick, String h_cate, String h_content, 
-			int h_maxpeople) {
+
+
+	public Hobby(String h_title, String h_nick, String h_content, BigDecimal h_maxpeople, BigDecimal h_like) {
 		super();
 		this.h_title = h_title;
 		this.h_nick = h_nick;
-		this.h_cate = h_cate;
 		this.h_content = h_content;
 		this.h_maxpeople = h_maxpeople;
+		this.h_like = h_like;
 	}
 
 
-	public Hobby(String h_title, String h_nick, String h_cate, String h_content, int h_maxpeople,
-			int h_like) {
+	public Hobby(String h_title, String h_nick, String h_cate, String h_content, BigDecimal h_maxpeople,
+			BigDecimal h_like) {
 		super();
 		this.h_title = h_title;
 		this.h_nick = h_nick;
@@ -119,12 +126,12 @@ public class Hobby {
 	}
 
 
-	public int getH_maxpeople() {
+	public BigDecimal getH_maxpeople() {
 		return h_maxpeople;
 	}
 
 
-	public int getH_like() {
+	public BigDecimal getH_like() {
 		return h_like;
 	}
      

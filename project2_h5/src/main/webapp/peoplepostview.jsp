@@ -25,11 +25,22 @@
 
    <% 
    
-	HobbyDAO dao = new HobbyDAO();
-   
-    int h_seq = ((BigDecimal)dataMap.get("h_seq")).intValue();
-	Hobby h_vo = dao.selecthpost(h_seq); // h_seq(BigDeciaml) int로 바꿔야 함
-	System.out.println(h_vo.getH_seq());
+
+	 
+   	   int seq = Integer.parseInt(request.getParameter("h_seq"));
+   	   BigDecimal H_seq = new BigDecimal("seq");
+	   HobbyDAO dao = new HobbyDAO();
+	   System.out.println("글번호 Postview: " +seq);
+	   
+	   //
+	   //int h_seq = ((BigDecimal)dataMap.get("h_seq")).intValue();
+	   
+	   BigDecimal h_seq = new BigDecimal(seq);
+	   System.out.println("test"+h_seq);
+	   
+	   Hobby hPost = dao.selecthpost(h_seq); // h_seq(BigDeciaml) int로 바꿔야 함
+	 //  System.out.println(hPost.getH_title());
+	 
 	%>
 
 	<!-- nav -->
@@ -73,20 +84,20 @@
 				style="width: 50px; height: 50px; -webkit-border-radius: 50%; margin-right: 10px">
 		</div>
 		<div style="width: 250px;">
-			<p id="id">${hPost.h_nick}</p>
+			<p id="id"><%=dao.selecthpost(h_seq).getH_nick() %></p>
 			<p id="live">광주광역시 남구 봉선동</p>
 		</div>
 
 		<%
-		//int h_like = dao.getLike(hPost.getH_seq());
-		//pageContext.setAttribute("like", h_like); // el 표기법 쓰기 위해 써 줌 
+		// int h_like = dao.getLike(hPost.getH_seq());
+		// pageContext.setAttribute("like", h_like); // el 표기법 쓰기 위해 써 줌 
 			%>
 
 		<div>
-			<button type="submit" id="like" style="margin-left: 200px">반하다💗</button>
+			<button id="like" style="margin-left: 200px">반하다💗</button>
 		</div>
 		<div>
-			<p class="count">"${like}"개</p>
+			<p class="count"><%=dao.selecthpost(h_seq).getH_like() %>개</p>
 		</div>
 		<div>
 			<a type="button" class="btn" style="cursor: pointer;"
@@ -95,9 +106,9 @@
 	</section>
 
 	<section class="article-description">
-		<h1 id="content">"${hPost.h_title}"</h1>
+		<h1 id="content"><%=dao.selecthpost(h_seq).getH_title() %></h1>
 		<div id="article-detail">
-			<p>${hPost.h_content}</p>
+			<p><%=dao.selecthpost(h_seq).getH_content() %></p>
 		
 		</div>
 	</section>
