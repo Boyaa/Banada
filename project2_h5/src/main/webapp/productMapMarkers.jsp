@@ -32,7 +32,10 @@ session.setAttribute("productList", productList);
 <head>
 <meta charset="utf-8">
 <title>여러개 마커 표시하기</title>
+<style>
 
+
+</style>
 </head>
 <body>
 	<div id="map" style="width: 100%; height: 350px;"></div>
@@ -79,7 +82,7 @@ geocoder.addressSearch(addr[i], function(result, status) {
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="width:150px;text-align:center;padding:6px 0;">'+dataNum2[i]+'</div><br><div>'+ product[i] +'</div>'
+            content: '<div style="width:150px; background:#fdfd96; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; padding:6px 0;">'+dataNum2[i]+'</div><div style="border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black; padding: 5px 5px;">'+ product[i] +'</div>'
         });
         infowindow.open(map, marker);
 
