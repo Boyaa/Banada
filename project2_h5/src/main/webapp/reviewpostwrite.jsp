@@ -39,7 +39,10 @@
         <p style="font-family: ibm; font-size: 60px;  margin: 20px; ">후기 작성</p>
     </form>
 
-    <form class="container" action="">
+    <form class="container" action="GradeCon" method="post">
+    
+    
+    <input type="hidden" name="g_nick" value="${loginUser.user_nick}">
         <div id="product-write" style = "display:flex; ">
             <div id = "box">후기 제목</div>
             <div id = "right-box">
@@ -50,7 +53,7 @@
         <div id="price" style = "display:flex;">
             <div id="box">상대방</div>
             <div id = "right-box">
-                <input type="text" name="g_nick" placeholder="이름을 입력하세요." style="width:200px;height:30px;font-size:12px;"/>
+                <input type="text" name="user_nick" placeholder="이름을 입력하세요." style="width:200px;height:30px;font-size:12px;"/>
             </div>
         </div>
 
@@ -78,7 +81,7 @@
         </div>
 
         <div id="select">
-            <input type="button" value="등록완료" onclick="alert('등록완료!'); location.href='peoplecategory.jsp'"/>
+            <input type="submit" value="등록완료" onclick="alert('등록완료!'); location.href='peoplecategory.jsp'"/>
         </div>
         
     </form>

@@ -5,8 +5,11 @@
         
 <mapper namespace="com.smhrd.domain.GradeDAO">
 	<insert id="insertGrade" parameterType="com.smhrd.domain.Grade">
-		insert into tbl_grade values (tbl_grade_seq.nextval, #{g_nick}, #{user_nick}, #{g_review}, sysdate, #{g_score}, #{g_title})
+		insert into tbl_grade values (tbl_grade_seq.nextval, #{g_nick}, #{user_nick}, #{g_review}, sysdate, #{g_score}, #{g_title},1)
    </insert>
+   <select id="selectgpost" parameterType="BigDecimal" resultType="com.smhrd.domain.Grade">
+		select g_title, g_nick, g_review from TBL_grade where g_seq=#{g_seq}
+	</select>
    <select id="selectgboard" resultType="com.smhrd.domain.Grade">
 		select * from tbl_grade
 	</select>
