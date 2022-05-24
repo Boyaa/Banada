@@ -11,10 +11,16 @@ public class User {
 	public BigDecimal user_manner;
 	public Timestamp user_joinDate;
 	
+	public String user_product;
+	
 	public String a; //임의의 값 선언
+	public int b; //임의의 값 선언
 
 	
 	
+
+
+
 
 
 
@@ -52,6 +58,15 @@ public class User {
 		//this.a = a; 얘도 꼭넣어줘야하나?? 
 		
 	}
+	
+	public User(String user_nick, String user_product, int b) {
+		super();
+		this.user_nick = user_nick;
+		this.user_product = user_product;
+		//this.b = b;
+	}
+	
+	
 
 
 	public User(String user_id, String user_pw, String user_nick, String user_addr) {
