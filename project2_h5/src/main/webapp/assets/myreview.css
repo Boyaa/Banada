@@ -102,12 +102,6 @@
   
     .box-height{
         padding : 5px 0 5px 0;
-        display: inline-block;
-        width: 62%;
-        margin-left: 19%;
-      
-        height: 100px;
-        text-align: center;
        
     }
     /*미디어 Top-S*/
@@ -239,6 +233,8 @@
     /*목록*/
     .Contents-Box > .List-Box {
       height: 80%;
+      max-width:1000px;
+      margin:auto;
     }
     .Contents-Box > .List-Box > ul {
       font-family:"ibm";
@@ -373,3 +369,4 @@
     .style-bt {
         border: none;
     }
+    
