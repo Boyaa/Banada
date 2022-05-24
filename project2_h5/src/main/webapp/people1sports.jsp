@@ -202,12 +202,21 @@
 
           <!--{{/each}}-->
           
-        <div>
-
+     
+       <div>
+	<c:choose>
+		<c:when test="${empty loginUser}">
       <section class="write">
             <a href="peoplepostwrite123.jsp">글쓰기</a>
        </section>
       </div>
+      </c:when>
+      <c:otherwise>
+		<section class="write">
+	<a href="#" onclick="alert('로그인을 해주세요')">글쓰기</a>
+	</section>
+	</c:otherwise>
+	</c:choose>
 
         
 
