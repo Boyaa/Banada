@@ -21,7 +21,16 @@ public class Product {
 	
      
      
-     public Product(String pd_title, String pd_content, String pd_nick, String pd_name, BigDecimal pd_price, String pd_cate,
+     public Product(String pd_nick, String pd_name) {
+		super();
+		this.pd_nick = pd_nick;
+		this.pd_name = pd_name;
+	}
+
+
+
+
+	public Product(String pd_title, String pd_content, String pd_nick, String pd_name, BigDecimal pd_price, String pd_cate,
 			String pd_option, BigDecimal pd_like, String pd_path) {
 		super();
 		this.pd_title = pd_title;
