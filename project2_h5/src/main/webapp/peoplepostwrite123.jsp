@@ -72,7 +72,7 @@
             </div>
         </div>
         
-    	 <input type="hidden" name="user_nick" value=${loginUser.user_nick}>
+    	 <input type="hidden" name="h_nick" value=${loginUser.user_nick}>
 	
         <div id="product-write" style = "display:flex; ">
             <div id = "box">제목</div>
@@ -94,7 +94,7 @@
         </div>
 
         <div id="select">
-            <input button type="submit" value="작성완료" onclick="alert('작성완료!'); location.href='peoplecategory.jsp'"/>
+            <input type="submit" value="작성완료" onclick="alert('작성완료!');"/>
         </div>
        
     </form>

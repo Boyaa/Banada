@@ -36,19 +36,20 @@ public class HobbyCon extends HttpServlet {
 		
 		
 
-		int hNum = Integer.parseInt(request.getParameter("h_seq"));
-		BigDecimal h_seq = new BigDecimal("hNum");
+
 	    String h_title = request.getParameter("h_title");
-	    String h_nick = request.getParameter("user_nick");
+	    String h_nick = request.getParameter("h_nick");
 		String h_cate = request.getParameter("h_cate");
 		String h_content = request.getParameter("h_content");
 		int hmaxpeople = Integer.parseInt(request.getParameter("h_maxpeople"));
-		BigDecimal h_maxpeople = new BigDecimal("hmaxpeople");
+
+		BigDecimal h_maxpeople = new BigDecimal(hmaxpeople);
+
 		
 		System.out.println("닉네임 : " + h_nick);
 		HobbyDAO dao = new HobbyDAO();
-		Hobby h_vo = new Hobby(h_seq);
-		int cnt = dao.insertHobby(h_vo);
+		Hobby hobby = new Hobby(h_title, h_nick, h_cate, h_content, h_maxpeople);
+		int cnt = dao.insertHobby(hobby);
 		
 //		PrintWriter out = response.getWriter();
 //		out.print(HobbyNum);
@@ -57,7 +58,7 @@ public class HobbyCon extends HttpServlet {
 		
 		if(cnt > 0) {
 			System.out.println("취미 카테고리 글 등록 성공");
-			request.setAttribute("hPost", h_vo);
+			request.setAttribute("hPost", hobby);
 		
 		} else {
 			System.out.println("취미 카테고리 글 등록 실패");
