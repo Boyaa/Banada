@@ -1,13 +1,13 @@
-<%@page import="com.smhrd.domain.MapDAO"%>
 <%@page import="com.smhrd.domain.Product"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.ProductDAO"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.smhrd.domain.MapDAO"%>
+<%@page import="com.smhrd.domain.User"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page import="com.smhrd.domain.User"%>
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%
-
 
 MapDAO dao = new MapDAO();
 
@@ -28,10 +28,6 @@ session.setAttribute("markerList", markerList);
 session.setAttribute("markerNickList", markerNickList);
 session.setAttribute("productList", productList);
 %>
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,26 +60,6 @@ session.setAttribute("productList", productList);
   font-style: normal;
 }
 
-.overlaybox {position:relative;width:360px;height:350px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;padding:15px 10px;;}
-.overlaybox div, ul {overflow:hidden;margin:0;padding:0;}
-.overlaybox li {list-style: none;}
-.overlaybox .boxtitle {color:#fff;font-size:16px;font-weight:bold;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;margin-bottom:8px;}
-.overlaybox .first {position:relative;width:247px;height:136px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/thumb.png') no-repeat;margin-bottom:8px;}
-.first .text {color:#fff;font-weight:bold;}
-.first .triangle {position:absolute;width:48px;height:48px;top:0;left:0;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; padding:6px;font-size:18px;}
-.first {position:absolute; color:black; width:100%;bottom:0;background:white;padding:7px 15px;font-size:14px;}
-.overlaybox ul {width:247px;}
-.overlaybox li {position:relative;margin-bottom:2px;background:#2b2d36;padding:5px 10px;color:#ffc107;line-height: 1;}
-.overlaybox li span {display:inline-block;}
-.overlaybox li .number {font-size:16px;font-weight:bold;}
-.overlaybox li .title {font-size:13px;}
-.overlaybox ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
-.overlaybox li .up {background-position:0 -40px;}
-.overlaybox li .down {background-position:0 -60px;}
-.overlaybox li .count {position:absolute;margin-top:5px;right:15px;font-size:10px;}
-.overlaybox li:hover {color:#fff;background:white;}
-.overlaybox li:hover .up {background-position:0 0px;}
-.overlaybox li:hover .down {background-position:0 -20px;}   
 
 </style>
 </head>
@@ -94,20 +70,20 @@ session.setAttribute("productList", productList);
             <a href ="main.jsp">바나다</a>
         </div>
     <div class ="nav_but" style ="display: flex; justify-content: space-between;">
-			<c:choose>
+         <c:choose>
                <c:when test="${empty loginUser}">
-				<a href ="object.jsp">소분해요</a>
-				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="reviewpost.jsp">나눔후기</a>
+            <a href ="object.jsp">소분해요</a>
+            <a href ="peoplecategory.jsp">재능나눔</a>
+            <a href ="reviewpost.jsp">나눔후기</a>
                 <a href="login.jsp">로그인</a>
                 <a href="join.jsp" >회원가입</a>
                </c:when>
              
                <c:otherwise>
-				<a href ="object.jsp">소분해요</a>
-				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="reviewpost.jsp">나눔후기</a>
-				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
+            <a href ="object.jsp">소분해요</a>
+            <a href ="peoplecategory.jsp">재능나눔</a>
+            <a href ="reviewpost.jsp">나눔후기</a>
+            <a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
             </c:choose>      
         </div>
@@ -116,21 +92,21 @@ session.setAttribute("productList", productList);
     <!-- section -->
     <form>
     <section class ="header" style="border-radius:25px;">
-        <div id="map" style="width:820px;height:470px; border-radius:25px;"></div>
+       	<div id="map" style="width: 800px; height: 450px; border-radius:25px;"></div>
 
-<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=67a460358a31f67cda76cd800e168b40&libraries=services"></script>
+	<script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=67a460358a31f67cda76cd800e168b40&libraries=services"></script>
 	<script>
 
-           var mapContainer = document.getElementById('map');
-               mapOption = { 
-               center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-               level: 3 // 지도의 확대 레벨
-               }; // 지도를 표시할 div
-           var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
-           var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+var mapContainer = document.getElementById('map');
+mapOption = { 
+    center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+    level: 3 // 지도의 확대 레벨
+}; // 지도를 표시할 div
+var imageSrc = "https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/markerStar.png";
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
 
-           let addr = [];
-           let dataNum2 = [];
+let addr = [];
+let dataNum2 = [];
 let product = [];
 <%for (int i = 0; i < markerNickList.size(); i++) {%>
 
@@ -160,7 +136,7 @@ geocoder.addressSearch(addr[i], function(result, status) {
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="font-family:jalnan; width:150px; background:#fdfd96; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; padding:6px 0;">'+dataNum2[i] +'</div><div style="font-family:ibms; border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black; padding:3px 3px;">'+product[i]+'</div>'
+            content: '<div style="font-family:jalnan; width:150px; background:#fdfd96; border-left:1px solid black; border-right:1px solid black; border-top:1px; solid black; text-align:center; padding:6px 0;">'+dataNum2[i] +'</div><div style="font-family:ibms; border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black; padding:3px 3px;">'+product[i]+'</div>'
         });
         infowindow.open(map, marker);
 
@@ -171,6 +147,12 @@ geocoder.addressSearch(addr[i], function(result, status) {
     
 });
 }
+ 
+
+</script>
+   		 </section>
+    </form>
+    
     
     
     
@@ -202,18 +184,18 @@ geocoder.addressSearch(addr[i], function(result, status) {
         <div class="container">
             <div class = "item_list">
             
-	<% 
-		ProductDAO dao = new ProductDAO();
-		List<Product> pdBoardList = dao.selectpdboard();
-		pageContext.setAttribute("pdBoardList",pdBoardList);
-	%>
-	
+   <% 
+      ProductDAO dao1 = new ProductDAO();
+      List<Product> pdBoardList = dao1.selectpdboard();
+      pageContext.setAttribute("pdBoardList",pdBoardList);
+   %>
+   
             <!-- 여기 안에 작성-->
             <c:forEach var="pdBoard" items="${pdBoardList}" varStatus="status">
            <a href="objectpostview.jsp?pd_seq=$pdBoard.pd_seq}" >
                  <div class = "card" >
                     <div class="img" src=>
-                        <img src=${pdBoard.pd_path}>
+                        <img src="${pdBoard.pd_path}" alt="">
                     </div>
                     <div class = "text">
                         <h2>"${pdBoard.pd_title}"</h2>
