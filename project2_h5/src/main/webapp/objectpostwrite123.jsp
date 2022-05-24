@@ -7,7 +7,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src = "./js/jquery-3.6.0.js"></script>
+    <script src = "jquery-3.6.0.js"></script>
     <link rel="stylesheet" href="assets/objectpostwrite.css">
     <title>stickcode_summernote</title>
   </head>
@@ -39,18 +39,21 @@
         </div>
     </div>
 
-    <section class="title-section">
+    <form class="title-section">
         <p style="font-family: ibm; font-size: 60px;  margin: 20px; ">게시판 작성</p>
-    </section>
+    </form>
 	
-    <form class="container" action="ProductCon" method="post" enctype="multipart/form-data"> <!--  여기서 productCon으로 보내는데 밑에 JS로 또 productCon으로 보내야 할까용? -->
+    <form class="container" method="post" enctype="multipart/form-data" action="ProductCon" >
+        
         <input type="hidden" name="pd_nick" value="${loginUser.user_nick}"/>
+        
         <div id="product-write" style = "display:flex; ">
             <div id = "box">제목</div>
             <div id = "right-box">
-            <input type="text" name="pd_title" style="width:200px;height:20px;font-size:20px;"/>
+            <input type="text" style="width:200px;height:20px;font-size:20px;" name="pd_title" />
             </div>
         </div>
+        
         <div id="category" style = "display:flex;">
             <div id = "box">카테고리</div>
             <div id = "right-box">
@@ -58,24 +61,28 @@
             <input type="radio" name ="pd_cate" value="eat"/>식료품
             </div>
         </div>
+        
         <div id="name" style = "display:flex;">
             <div id = "box">상품명</div>
             <div id = "right-box">
             <input type="text" name="pd_name" style="width:200px;height:20px;font-size:20px;"/>
             </div>
         </div>
+        
         <div id="content" style ="display:flex;">
             <div id = "box" style="margin-right:30px; height: 100px; padding-top:68px;">설명</div>
             <div id = "right box" >
                 <textarea id="write" name="pd_content"></textarea>
             </div>
         </div>
+        
         <div id="price" style ="display:flex;">
             <div id="box">가격</div>
             <div id = "right-box">
             <input type="text" name="pd_price" style="width:100px;height:20px;font-size:20px;"/> 원
             </div>
         </div>
+        
         <div id="option" style = "display:flex;">
             <div id = "box">결제옵션</div>
             <div id = "right-box">
@@ -84,6 +91,7 @@
             <input type="radio" name ="pd_option" value="mannam"/>만나서결정
             </div>
         </div>
+        
               <div id="product" style = "display:flex;">
             <div id = "box" style="width:149px; height: 100px; padding-top:65px; margin-left:0px;">
             	상품이미지
@@ -91,9 +99,7 @@
             <div style="width: 250px; margin-left:20px;">
             <input type="file" name="uploadImg" value="uploadImg" id="uploadFile" onchange="sendFile()" /> 
             </div>
-          <!-- <div style="width: 100px;">
-            <input type="submit" value="업로드" id="uploadImg" style="height:30px; "> 
-            </div> -->  
+
             <div style=" width: 183px; height: 100px; margin:auto; margin-top:20px;">
             	<div style="font-family:ibms; font-size:13px;">
                 	미리보기
@@ -103,11 +109,10 @@
         </div>
 
         <div id="select">
-        <!-- location.href='object.jsp -->
             <input type="submit" value="작성완료" onclick="alert('작성완료!');"/>
         </div>
         
-    </form>
+	</form>
 
 
      <!-- footer -->

@@ -16,8 +16,10 @@ public class User {
 	
 	
 
+
+
 	public User(String user_id, String user_pw, String user_nick, String user_addr, BigDecimal user_manner,
-			Timestamp user_joinDate) {
+			Timestamp user_joinDate, String a) {
 		super();
 		this.user_id = user_id;
 		this.user_pw = user_pw;
@@ -26,6 +28,7 @@ public class User {
 		this.user_manner = user_manner;
 		this.user_joinDate = user_joinDate;
 	}
+
 
 
 	public User(String user_id, String user_pw) {

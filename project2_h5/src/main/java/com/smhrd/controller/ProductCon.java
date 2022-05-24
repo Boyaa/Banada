@@ -22,19 +22,22 @@ public class ProductCon extends HttpServlet {
 
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		System.out.println("[ProductCon]");
-		String pd_title = request.getParameter("pd_title");
-		System.out.println(pd_title);
-		String pd_cate = request.getParameter("pd_cate");
-		String pd_name = request.getParameter("pd_name");
-		String pd_content = request.getParameter("pd_content");
-		String pd_nick = request.getParameter("pd_nick");
-		System.out.println(pd_content);
-		int pdprice = Integer.parseInt(request.getParameter("pd_price"));
-		System.out.println(pdprice); // 
-		BigDecimal pd_price = new BigDecimal("pdprice");
-		String pd_option= request.getParameter("pd_option");
+		request.setCharacterEncoding("UTF-8");
+		
+		System.out.println("[ProductCon3]");
+		//String pd_nick = request.getParameter("pd_nick");
+//		System.out.println(pd_nick);
+//		String pd_title = request.getParameter("pd_title");
+//		System.out.println(pd_title);
+//		String pd_cate = request.getParameter("pd_cate");
+//		String pd_name = request.getParameter("pd_name");
+//		String pd_content = request.getParameter("pd_content");
+//		System.out.println(pd_content);
+//
+//		int pdprice = Integer.parseInt(request.getParameter("pd_price"));
+//		System.out.println(pdprice); // 
+//		BigDecimal pd_price = new BigDecimal("pdprice");
+//		String pd_option= request.getParameter("pd_option");
 		
 		
 		  String filename = "";
@@ -51,8 +54,22 @@ public class ProductCon extends HttpServlet {
 	      MultipartRequest multpartRequest = null;
 	      multpartRequest = new MultipartRequest(request, realPath, sizeLimit, "utf-8", new DefaultFileRenamePolicy());
 
+	      	String pd_nick = multpartRequest.getParameter("pd_nick");
+			System.out.println(pd_nick);
+			String pd_title = multpartRequest.getParameter("pd_title");
+			System.out.println(pd_title);
+			String pd_cate = multpartRequest.getParameter("pd_cate");
+			String pd_name = multpartRequest.getParameter("pd_name");
+			String pd_content = multpartRequest.getParameter("pd_content");
+			System.out.println(pd_content);
 
-	      String title = multpartRequest.getParameter("title"); 
+			int pdprice = Integer.parseInt(multpartRequest.getParameter("pd_price"));
+			System.out.println(pdprice); // 
+			BigDecimal pd_price = new BigDecimal(pdprice);
+			String pd_option= multpartRequest.getParameter("pd_option");
+	      
+
+	     // String title = multpartRequest.getParameter("title"); 
 	     // form내의 input name="title" 인 요소의 값을 가져옴
 
 	      filename = multpartRequest.getFilesystemName("uploadImg");
