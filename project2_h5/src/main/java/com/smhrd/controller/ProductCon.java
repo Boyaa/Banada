@@ -25,21 +25,7 @@ public class ProductCon extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		
 		System.out.println("[ProductCon3]");
-		//String pd_nick = request.getParameter("pd_nick");
-//		System.out.println(pd_nick);
-//		String pd_title = request.getParameter("pd_title");
-//		System.out.println(pd_title);
-//		String pd_cate = request.getParameter("pd_cate");
-//		String pd_name = request.getParameter("pd_name");
-//		String pd_content = request.getParameter("pd_content");
-//		System.out.println(pd_content);
-//
-//		int pdprice = Integer.parseInt(request.getParameter("pd_price"));
-//		System.out.println(pdprice); // 
-//		BigDecimal pd_price = new BigDecimal("pdprice");
-//		String pd_option= request.getParameter("pd_option");
-		
-		
+
 		  String filename = "";
 	      int sizeLimit = 15 * 1024 * 1024; // 한번에 올릴 수 있는 파일 용량 : 15M로 제한
 	      
