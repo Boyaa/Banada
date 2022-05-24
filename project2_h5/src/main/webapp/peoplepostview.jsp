@@ -12,15 +12,6 @@
 <%@page import="com.smhrd.domain.BoardDAO"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-<%
-BoardDAO dao = new BoardDAO();
-
-List<Comm> commList = (List<Comm>) dao.selectAllComm(1); 
-User u_vo = (User)session.getAttribute("loginUser"); //세션에서 로그인한 멤버의 키값 가져오기
-System.out.println("데이터 : " +u_vo.getUser_nick());
-
-pageContext.setAttribute("list", commList); 
-%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +25,16 @@ pageContext.setAttribute("list", commList);
 		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=620, height=940"); 
 		}
 	</script>
+	<%
+BoardDAO dao = new BoardDAO();
+
+List<Comm> commList = (List<Comm>) dao.selectAllComm(1); 
+User u_vo = (User)session.getAttribute("loginUser"); //세션에서 로그인한 멤버의 키값 가져오기
+System.out.println("데이터 : " +u_vo.getUser_nick());
+
+pageContext.setAttribute("list", commList); 
+%>
+	
 <title>Document</title>
 </head>
 
