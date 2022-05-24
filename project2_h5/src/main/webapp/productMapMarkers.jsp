@@ -102,7 +102,7 @@ geocoder.addressSearch(addr[i], function(result, status) {
 
         // 인포윈도우로 장소에 대한 설명을 표시합니다
         var infowindow = new kakao.maps.InfoWindow({
-            content: '<div style="font-family:jalnan; width:150px; background:#fdfd96; border-left:1px solid black; border-right:1px solid black; border-top:1px solid black; text-align:center; padding:6px 0;">'+dataNum2[i] +'</div>'
+            content: '<div style="font-family:jalnan; width:150px; background:#fdfd96; border-left:1px solid black; border-right:1px solid black; border-top:1px; solid black; text-align:center; padding:6px 0;">'+dataNum2[i] +'</div><div style="font-family:ibms; border-left:1px solid black; border-right:1px solid black; border-bottom:1px solid black; padding:3px 3px;">'+product[i]+'</div>'
         });
         infowindow.open(map, marker);
 
