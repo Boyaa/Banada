@@ -6,13 +6,13 @@
 <mapper namespace="com.smhrd.domain.BoardDAO">        
 							<!-- 댓글에대한 정보 보내줘야함 결과값을줘야함 이때 list로 묵어지더라도 list안에들어가는 실제 객체들의 타입 즉 그 경로를 적어줘야함. 우리는 댓글에 대한 정보를 묶어줄거닌까 comm타입으로 묶어서 반환할거고/ 게시물번호를 하나 받을꺼닌까 int형을 파라미터 를 ㅏ받기-->
 <select id="selectAllComm" resultType="com.smhrd.domain.Comm" parameterType="int">
-        select * from tbl_comment where f_seq=#{f_seq} order by comm_seq desc
+        select * from tbl_comment where h_seq=#{h_seq} order by comm_seq desc
     </select>
     	<!-- select하면 전부다 불러올건데 게시물번호가 파라미터로 넘겨준 게시물번호인것들 가지고 올거다. 순서는 내림차순 - 댓글들을 삽입할때 시퀀스번호는 1번부터 차근차근 들어갈거임. 그럼 역순 가장 먼저적힌 순부터 나오니 역순으로 가지고오게하기  -->
     	
     														<!-- 삽입할 정보들 주기 Comm-->
     <insert id="addComment" parameterType="com.smhrd.domain.Comm">
-        insert into tbl_comment values (tbl_comment_seq.nextval, #{f_seq}, #{comm_content}, sysdate, #{comm_nick})
+        insert into tbl_comment values (tbl_comment_seq.nextval, #{h_seq}, #{comm_content}, sysdate, #{comm_nick})
     </insert>
     							<!-- 자동으로 넣을 시퀀스번호, 넘겨준 파라미터안에들어있는 boardnum, 실제댓글 이것도 넘겨준객체안에있음 그대로 넣어주기 -->
     

@@ -147,7 +147,7 @@
             <li>
               <span>작성일</span>
             </li>
-          </ul>
+          </ul>h
 
 				<!-- <a href="HobbyreadOne?h_seq=${h_vo.h_seq}" class="List-1 flex">		 --> 	
           <!--{{#each contents}}-->

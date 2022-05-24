@@ -20,9 +20,10 @@ public class AddCommentCon extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		String f_seq = request.getParameter("f_seq");
+		System.out.println("[addComment]");
+		int hseq = Integer.parseInt(request.getParameter("h_seq"));
 		
-		BigDecimal f_seqDecimal = new BigDecimal(f_seq);
+		BigDecimal h_seq = new BigDecimal(hseq);
 		
 	
 		String comm_content = request.getParameter("comm_content");
@@ -30,7 +31,7 @@ public class AddCommentCon extends HttpServlet {
 		
 		
 		
-		Comm comm = new Comm(f_seqDecimal, comm_content, comm_nick);
+		Comm comm = new Comm(h_seq, comm_content, comm_nick);
 		
 		BoardDAO dao = new BoardDAO();
 		

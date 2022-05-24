@@ -1,5 +1,6 @@
 package com.smhrd.domain;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,13 +14,13 @@ public class BoardDAO {
 	
 																									//댓글들 정보를 가지고와서 list로 묶어온거까지 반환받았고 최종적으로 이 메소드를 호출햇을때 이 list를 반환할겁니다 -이걸 출력해주기
 	//리스트안에 댓글들에 대한 정보를 커밋하는 vo를 객체로 생성한 다음에 그거를 리스트로 묶어가지고 반환을 할거다 
-	public List<Comm> selectAllComm(int f_seq){//selectallcomm 메소드는 호출을할때 게시물번호를 넣어줄거에요. 
+	public List<Comm> selectAllComm(int h_seq){//selectallcomm 메소드는 호출을할때 게시물번호를 넣어줄거에요. 
 		
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		List<Comm> commList = null;
 		
 		try {					//그래서 얘는 리스트가 나올 수 있기때문에 selectList를 호출			//그리고 이때 게시물번호 하나를 보내주기
-			commList = sqlSession.selectList("com.smhrd.domain.BoardDAO.selectAllComm",f_seq);
+			commList = sqlSession.selectList("com.smhrd.domain.BoardDAO.selectAllComm",h_seq);
 			if(commList != null) {				//mapper경로지정		//얘는 sql문메소드에 대한 id값 가져오는!
 				sqlSession.commit();
 			}else {
