@@ -34,7 +34,7 @@ public class SafetyCon extends HttpServlet {
 		System.out.println(meetingTime2);
 		if (cnt > 0) { 
 			System.out.println("안심등록 성공");
-			RequestDispatcher rd = request.getRequestDispatcher("TIMER.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("main.jsp");
 			request.setAttribute("MT", meetingTime2);
 			rd.forward(request, response);
 

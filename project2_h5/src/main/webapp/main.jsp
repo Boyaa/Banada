@@ -2,6 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@page import="com.smhrd.domain.UserDAO"%>
 <%@page import="com.smhrd.domain.User"%>
+<%
+String MT = (String)request.getAttribute("MT");
+%>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -18,7 +21,19 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
-        
+        <style>
+        div, ul, li {-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding:0;margin:0}
+a {text-decoration:none;}
+
+.quickmenu {position:absolute;width:300px;top:50%;margin-top:-50px;right:10px;background:#fff;}
+.quickmenu ul {position:relative;float:left;width:100%;display:inline-block;*display:inline;border:1px solid #ddd;}
+.quickmenu ul li {float:left;width:100%;border-bottom:1px solid #ddd;text-align:center;display:inline-block;*display:inline;}
+.quickmenu ul li a {position:relative;float:left;width:100%;height:30px;line-height:30px;text-align:center;color:#999;font-size:9.5pt;}
+.quickmenu ul li a:hover {color:#000;}
+.quickmenu ul li:last-child {border-bottom:0;}
+
+.content {position:relative;min-height:1000px;}
+        </style>
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="assets/styles.css" rel="stylesheet" />
     </head>
@@ -34,16 +49,15 @@
                   <a href="login.jsp">로그인</a>
                   <a href="join.jsp">회원가입</a>
                </c:when>
-             
                <c:otherwise>
                	  <a href="myreview.jsp">내 후기</a>
                   <a href="LogoutCon">로그아웃</a>
+              </div>
                </c:otherwise>
             </c:choose>
-            </div>
         </nav>
         <!-- 중앙 검색창-->
-        <header class="masthead" style = "background-color:#FAFAFA">
+        <header class="masthead" style = "background-color:#FAFAFA;">
             <div class="container position-relative">
                 <div class="row justify-content-center">
                     <div class="col-xl-6">
@@ -166,6 +180,7 @@
                 </div>
             </div>
         </section>
+         
         <!-- Footer-->
         <footer class="footer " style="height:150px;"">
                 <div class="container col-lg-6 h-100 text-center text-lg-start my-auto">
@@ -190,5 +205,99 @@
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        
+        
+        
+                    <!-- 시계-->
+   <c:choose>
+     <c:when test="${empty loginUser}">
+         </c:when>
+          <c:otherwise>
+
+              
+               
+         
+        <div class="quickmenu" style="top:850px; background-color:transparent;"> 
+		<div id="countdown" style="font-size:20px; font-family:ibm;"></div>
+
+        <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script type="text/javascript">
+
+CountDownTimer('${MT}', 'countdown');
+
+function CountDownTimer(dt, id) {
+
+    var end = new Date(dt);
+
+
+
+    var _second = 1000;
+
+    var _minute = _second * 60;
+
+    var _hour = _minute * 60;
+
+    var _day = _hour * 24;
+
+    var timer;
+
+
+
+    function showRemaining() {
+
+        var now = new Date();
+
+        var distance = end - now;
+
+
+
+        // 시간 종료 시 뜨는 문구
+
+        if (distance < 0) {
+
+            clearInterval(timer);
+
+            document.getElementById(id).innerHTML = '약속 시간입니다. 약속 장소로 나가!';
+
+            return;
+
+        }
+
+        var days = Math.floor(distance / _day);
+
+        var hours = Math.floor((distance % _day) / _hour);
+
+        var minutes = Math.floor((distance % _hour) / _minute);
+
+        var seconds = Math.floor((distance % _minute) / _second);
+
+
+
+        document.getElementById(id).innerHTML = days + '일 ';
+
+        document.getElementById(id).innerHTML += hours + '시간 ';
+
+        document.getElementById(id).innerHTML += minutes + '분 ';
+
+        document.getElementById(id).innerHTML += seconds + '초';
+
+    }
+
+    timer = setInterval(showRemaining, 1000);
+
+}
+</script>
+        
+        <script>
+        $(document).ready(function(){ 
+           var currentPosition = parseInt($(".quickmenu").css("top")); 
+           $(window).scroll(function() { 
+               var position = $(window).scrollTop(); 
+               $(".quickmenu").stop().animate({"top":position+currentPosition+"px"},1000); 
+               }); 
+           });
+        </script>
+        </c:otherwise>
+      </c:choose>
     </body>
 </html>

@@ -11397,7 +11397,6 @@ textarea.form-control-lg {
 
 header.masthead {
   text-align: center;
-  position: relative;
   background-color: #fff;
   background-size: cover;
   padding-top: 8rem;
@@ -11405,7 +11404,6 @@ header.masthead {
 }
 header.masthead:before {
   content: "";
-  position: absolute;
   height: 100%;
   width: 100%;
   top: 0;

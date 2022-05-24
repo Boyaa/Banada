@@ -87,17 +87,30 @@ pageContext.setAttribute("list", commList);
                
             </textarea>
             <div class="con">
-                <button type = "button" class= "writeCom" style="margin-top:10px; cursor: pointer;  float: right; background:white;">등록</button>
+                <button type = "button" class= "writeCom" style="margin-top:10px; border-radius:25px; margin-bottom:10px;  cursor: pointer;  float: right; background:white;">등록</button>
             </div>
         
-        <div id="comm_content" style="margin-top:50px; border-top: 1px solid #eaeaea;" >
+        <div id="comm_content" style="margin-top:50px;">
             <c:forEach var="comm" items="${list }"> 
-            <p style="border: 1px solid #eaeaea; padding:5px;">
             
-            <c:out value="${comm.comm_date }"/>
-            <c:out value="${comm.comm_nick }"/>
+            <p style=" border-bottom: 1px solid #eaeaea; padding:5px;">  
+            <button style="float:right; margin-top:10px; border:0.5px solid #eaeaea; border-radius:25%; background-color:white; cursor: pointer;" class = 'removeCom' id = '${comm.comm_seq}'>X</button>         
+			<div>
+            <div class="alticle-image" style="padding-top:10px;">
+                <div style="float:left;">
+                	<img src="assets/post_image/hruru.png" style="width:30px; height:30px; -webkit-border-radius:50%; margin-right:10px"  >
+           		</div>
+           		<div style="padding-bottom:5px; padding-top:2px; font-size:12px;">
+           			<c:out value="${comm.comm_nick }"/>
+           		</div>
+            </div>
+            <div style="font-size:15px;">
             <c:out value="${comm.comm_content }"/>
-            <button style="float:right; border:none; background-color:white; cursor: pointer;" class = 'removeCom' id = '${comm.comm_seq}'>X</button>
+            </div>
+            <div style="font-size:10px; padding-top:5px; float:right;">
+            <c:out  value="${comm.comm_date }"/>
+            </div>
+
             </c:forEach>
       </div>
         
