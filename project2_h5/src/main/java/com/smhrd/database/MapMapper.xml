@@ -8,4 +8,8 @@
  <select id="selectAddr" resultType="String">
    	select user_addr, user_nick from tbl_user 
    </select>
+   
+<select id="selectNick" resultType="String">
+   	select user_nick, user_addr from tbl_user 
+</select>
  </mapper>
