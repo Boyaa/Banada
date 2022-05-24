@@ -240,7 +240,7 @@ for (var i = 0; i < positions.length; i ++) {
            <a href="objectpostview.jsp?pd_seq=$pdBoard.pd_seq}" >
                  <div class = "card" >
                     <div class="img" src=>
-                        <img src="${pdBoard.pd_path}" alt="">
+                        <img src=${pdBoard.pd_path}>
                     </div>
                     <div class = "text">
                         <h2>"${pdBoard.pd_title}"</h2>
