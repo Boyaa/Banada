@@ -4,6 +4,7 @@
 <%@page import="com.smhrd.domain.GradeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -61,11 +62,19 @@
             받은 후기    
           </span>
         </div>
+        <c:forEach var="myreview" items="${myreviewList}" varStatus="status">
         <div style="font-size:40px; color:pink;">
-         
+         	<c:choose>
+         	<c:when test="${myreview.g_grade < 0 }">매너등급 :  💔</c:when>
+ 			<c:when test="${myreview.g_grade < 10 }">매너등급 :  ❤</c:when>
+ 			<c:when test="${myreview.g_grade <= 20 }">매너등급 :🍌🍌</c:when>
+ 			<c:when test="${myreview.g_grade <= 30 }">매너등급 : 🍌🍌🍌</c:when>
+ 			<c:when test="${myreview.g_grade <= 40 }">매너등급 : 🍌🍌🍌🍌</c:when>
+ 			<c:otherwise>매너등급 : 🍌🍌🍌🍌🍌</c:otherwise>
+			</c:choose>	
         </div>
       </form>
-      
+      </c:forEach>
       <!--목록-->
       <div class="List-Box box-height">
         <ul >
