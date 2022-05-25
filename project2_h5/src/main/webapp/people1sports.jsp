@@ -12,8 +12,7 @@
 
 MapDAO dao = new MapDAO();
 
-List<User> markerList = dao.selectAddr();
-
+List<User> markerList = dao.selectAddr();                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 List<User> markerNickList = dao.selectNick();
 
 List<User> productList = dao.selectProduct();
