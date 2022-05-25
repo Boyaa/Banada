@@ -22,8 +22,8 @@ public class GradeCon extends HttpServlet {
 		System.out.println("[GradeCon]");
 		request.setCharacterEncoding("UTF-8");
 		
-		int gseq = Integer.parseInt(request.getParameter("g_seq"));
-		BigDecimal g_seq = new BigDecimal(gseq);
+//		int gseq = Integer.parseInt(request.getParameter("g_seq"));
+//		BigDecimal g_seq = new BigDecimal(gseq);
 		String g_nick = request.getParameter("g_nick");
 		System.out.println(g_nick);
 		String user_nick = request.getParameter("user_nick");
@@ -38,18 +38,19 @@ public class GradeCon extends HttpServlet {
 		if(cnt > 0) {
 			
 			System.out.println(" 리뷰 등록 성공");
-//			if(g_score.equals("banana1")) {
-//				dao.updateScore1(g_seq);
-//				
-//			} else if(g_score.equals("banana2")) {
-//				dao.updateScore2(g_seq);
-//			} else if(g_score.equals("banana4")) {
-//				dao.updateScore4(g_seq);
-//			} else if(g_score.equals("banana5")) {
-//				dao.updateScore5(g_seq);
-//			} 
+			
+			if(g_score.equals("banana1")) {
+				dao.updateScore1(user_nick);
+				
+			} else if(g_score.equals("banana2")) {
+				dao.updateScore2(user_nick);
+			} else if(g_score.equals("banana4")) {
+				dao.updateScore4(user_nick);
+			} else if(g_score.equals("banana5")) {
+				dao.updateScore5(user_nick);
+			} 
 			request.setAttribute("gPost", g_vo);
-			response.sendRedirect("reviewpostview.jsp");
+			response.sendRedirect("reviewpost.jsp");
 		
 		} else {
 			System.out.println("리뷰 등록 실패");
