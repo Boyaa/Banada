@@ -61,6 +61,9 @@
             받은 후기    
           </span>
         </div>
+        <div style="font-size:40px; color:pink;">
+         여기에다가 쓰세용
+        </div>
       </form>
       
       <!--목록-->
