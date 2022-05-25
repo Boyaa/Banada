@@ -291,7 +291,9 @@ $(function () {
       </iframe>
 
   </div>
-
-
+  <div style="text-align:center;">
+  <button style="margin-bottom:40px; background:#ffc107; color:white; cursor:pointer; border-radius:40px; border:none; width:200px; padding:30px; font-size:20px; font-family:jalnan;" type="button" onclick="location.href='main.jsp';">메인으로
+  </button>
+  </div>
 </body>
 </html>
