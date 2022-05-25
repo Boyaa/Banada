@@ -62,18 +62,23 @@
             받은 후기    
           </span>
         </div>
-        <c:forEach var="myreview" items="${myreviewList}" varStatus="status">
-        <div style="font-size:40px; color:pink;">
+
+      <!--  <c:forEach var="myreview" items="${myreviewList}" varStatus="status">-->
+        <div style="font-size:40px;">
          	<c:choose>
-         	<c:when test="${myreview.g_grade < 0 }">매너등급 :  💔</c:when>
- 			<c:when test="${myreview.g_grade < 10 }">매너등급 :  ❤</c:when>
- 			<c:when test="${myreview.g_grade <= 20 }">매너등급 :🍌🍌</c:when>
- 			<c:when test="${myreview.g_grade <= 30 }">매너등급 : 🍌🍌🍌</c:when>
- 			<c:when test="${myreview.g_grade <= 40 }">매너등급 : 🍌🍌🍌🍌</c:when>
- 			<c:otherwise>매너등급 : 🍌🍌🍌🍌🍌</c:otherwise>
+         	<c:when test="${myreview.g_grade < -1 }">매너등급 : warning </c:when>
+         	<c:when test="${myreview.g_grade < 0 }">매너등급 : Lv1 </c:when>
+ 			<c:when test="${myreview.g_grade < 10 }">매너등급 : Lv2 </c:when>
+ 			<c:when test="${myreview.g_grade <= 20 }">매너등급 : Lv3</c:when>
+ 			<c:when test="${myreview.g_grade <= 30 }">매너등급 : Lv4 </c:when>
+ 			<c:otherwise> test="${myreview.g_grade <= 40 }">매너등급 : Lv5 </c:otherwise>
+ 			
 			</c:choose>	
+			
         </div>
+        <c:set var="doneLoop" value="true"/>
       </form>
+      
       </c:forEach>
       <!--목록-->
       <div class="List-Box box-height">
