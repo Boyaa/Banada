@@ -51,7 +51,7 @@ a {text-decoration:none;}
                   <a href="join.jsp">회원가입</a>
                </c:when>
                <c:otherwise>
-               	  <a href="myreview.jsp">내 후기</a>
+               	  <a href="myreview.jsp?user_nick=${loginUser.user_nick }">내 후기</a>
                   <a href="LogoutCon">로그아웃</a>
               </div>
                </c:otherwise>
