@@ -5,7 +5,7 @@
         
 <mapper namespace="com.smhrd.domain.UserDAO">
 	<insert id="insertUser" parameterType="com.smhrd.domain.User">
-		insert into tbl_user values (#{user_id}, #{user_pw}, #{user_nick}, #{user_addr}, 1, sysdate)
+		insert into tbl_user values (#{user_id}, #{user_pw}, #{user_nick}, #{user_addr}, 1, sysdate, #{user_product})
    </insert>
 
 	<select id="selectUser" parameterType="com.smhrd.domain.User" resultType="com.smhrd.domain.User">

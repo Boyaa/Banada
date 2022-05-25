@@ -25,7 +25,32 @@ public class User {
 
 
 	public User(String user_id, String user_pw, String user_nick, String user_addr, BigDecimal user_manner,
-			Timestamp user_joinDate, String a) {
+			Timestamp user_joinDate, String user_product) {
+		super();
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_nick = user_nick;
+		this.user_addr = user_addr;
+		this.user_manner = user_manner;
+		this.user_joinDate = user_joinDate;
+		this.user_product = user_product;
+	}
+
+
+
+	public User(String user_id, String user_pw, String user_nick, String user_addr, String user_product) {
+		super();
+		this.user_id = user_id;
+		this.user_pw = user_pw;
+		this.user_nick = user_nick;
+		this.user_addr = user_addr;
+		this.user_product = user_product;
+	}
+
+
+
+	public User(String user_id, String user_pw, String user_nick, String user_addr, BigDecimal user_manner,
+			Timestamp user_joinDate) {
 		super();
 		this.user_id = user_id;
 		this.user_pw = user_pw;
@@ -123,6 +148,12 @@ public class User {
 
 	public Timestamp getUser_joinDate() {
 		return user_joinDate;
+	}
+
+
+
+	public String getUser_product() {
+		return user_product;
 	}
 
 
