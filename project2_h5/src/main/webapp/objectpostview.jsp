@@ -104,18 +104,7 @@
         <div class="container"style="border-top:none">
              <div class = "item_list" >
  
-                <!-- 이부분 반복 -->               
-                <div class = "card" >
-                	<div class "img">
-                	<img src="assets/post_image/1.png" alt="">
-                	</div>
-                    <div class = "text">
-                        <h2>React</h2>
-                        <p>이물건 어떠세용</p>
-                        <button onclick="location.href='objectpostview.jsp'" type = "submit" style = "cursor:pointer;">보러가기</button>
-                	</div>
-                </div>
-                <!-- 이부분 반복 -->
+              
                 
              </div>   
         </div>

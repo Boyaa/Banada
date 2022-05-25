@@ -196,7 +196,7 @@ a {text-decoration:none;}
          
          	<div class="container">
                    
-                   <h2 class="mb-5 font-paybooc">${loginUser.user_nick}님에게 추천드려요</h2>
+                   <h2 class="mb-5 font-paybooc">${loginUser.user_nick}님에게 추천드려요</h2><br><h2 class="mb-5 font-paybooc">Best3</h2>
                
                 <div class="row">
                     <div class="col-lg-4">
