@@ -69,6 +69,14 @@ public class Grade {
 
 
 	
+	public Grade(String g_nick, Timestamp g_date, String g_title) {
+		super();
+		this.g_nick = g_nick;
+		this.g_date = g_date;
+		this.g_title = g_title;
+	}
+
+
 	public BigDecimal getG_seq() {
 		return g_seq;
 	}

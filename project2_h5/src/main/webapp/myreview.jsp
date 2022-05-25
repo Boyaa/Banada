@@ -58,7 +58,7 @@
       <form  style = "text-align:center; height: 120px;">
         <div class="Title">
           <span style = "font-size:60px; font-family:'ibm'; ">
-            마이리뷰    
+            받은 후기    
           </span>
         </div>
       </form>
@@ -111,11 +111,7 @@
    
     
 </div>
-        <div style="max-width:1000px;margin:auto; text-align:center; margin-top:10px;">
-        	<div class="Up-Btn" style="float:right;">
-        	<input class = "style-bt" type="button" value="글쓰기" name="submit" style="font-family:ibm; width:100px;
-        	border:none; cursor:pointer; border-radius:25px; background:#ffc107; font-size:20px; color:white;" />
-        	</div>  
+       
 		</div>  
 		
 		 <!-- footer -->
