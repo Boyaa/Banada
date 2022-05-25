@@ -107,7 +107,7 @@ a {text-decoration:none;}
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                             <div class="features-icons-icon d-flex">
-                                <img style="margin-left: 100px; margin-bottom:10px; border-radius: 30%;" src="assets/main_img/hobby.png" >
+                                <img style="margin-left: 100px; margin-bottom:10px; border-radius: 30%;" src="assets/main_img/party.png" >
                             </div>
                             <a href="peoplecategory.jsp" class="mini-category"s>취미공유</a>
                         </div>
@@ -115,7 +115,7 @@ a {text-decoration:none;}
                     <div class="col-lg-4">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <div class="features-icons-icon d-flex">
-                                <img style="margin-left: 100px; margin-bottom:10px;border-radius: 30%;" src="assets/main_img/gesi.png" >
+                                <img style="margin-left: 115px; margin-bottom:10px;" src="assets/main_img/resume.png" >
                             </div>
                             <a href="reviewpost.jsp" class="mini-category">나눔후기</a>
                         </div>
@@ -129,25 +129,25 @@ a {text-decoration:none;}
                 <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/main_img/bg-showcase-1.png')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2 class ="font-paybooc"> 소분 할 사람?</h2>
-                        <p class="lead mb-0">물건이 남아서 힘드셨다구요??</p>
-                        <p class="lead mb-0">바나다에서 해결하세요~</p>
+                        <h2 class ="font-paybooc"> 소분 할 사람 ?</h2>
+                        <p class="lead mb-0" style="margin-top:20px";>물건이 남아서 힘드셨다구요?</p>
+                        <p class="lead mb-0">바나다에서 해결하세요.</p>
                     </div>
                 </div>
                 <div class="row g-0" >
                     <div class="col-lg-6 text-white showcase-img" style="background-image: url('assets/main_img/bg-showcase-2.jpg')"></div>
                     <div class="col-lg-6 my-auto showcase-text">
-                        <h2 class ="font-paybooc">취미 공유 할 사람?</h2>
-                        <p class="lead mb-0">혼자서하면 심심하겠지만</p>
-                        <p class="lead mb-0">둘이서 하면 즐거움도 2배!!</p>
+                        <h2 class ="font-paybooc">취미 공유는 어때요 ?</h2>
+                        <p class="lead mb-0" style="margin-top:20px";>혼자서는 심심하겠지만</p>
+                        <p class="lead mb-0">둘이서 하면 즐거움도 2배 !</p>
                     </div>
                 </div>
                 <div class="row g-0">
                     <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('assets/main_img/bg-showcase-3.jpg')"></div>
                     <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-                        <h2 class ="font-paybooc">재능 나눔 할 사람?</h2>
-                        <p class="lead mb-0">능력을 숨기고 사시느라 힘드셨죠?</p>
-                        <p class="lead mb-0">이제 숨기지 말고 보여주세요!!</p>
+                        <h2 class ="font-paybooc">재능 나눔 할 사람 ?</h2>
+                        <p class="lead mb-0" style="margin-top:20px";>능력을 숨기고 사시느라 힘드셨죠?</p>
+                        <p class="lead mb-0">이제 숨기지 말고 보여주세요 !</p>
                     </div>
                 </div>
             </div>
@@ -202,22 +202,22 @@ a {text-decoration:none;}
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="image/cola.png" alt="..." />
-                            <h5>추천 하나</h5>
+                            <h5>추천 1</h5>
                             <p class="font-weight-light mb-0">"콜라..같이사실분?"</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="image/butter.png" alt="..." />
-                            <h5>추천 둘</h5>
-                            <p class="font-weight-light mb-0">"버터가 남았어요~"</p>
+                            <h5>추천 2</h5>
+                            <p class="font-weight-light mb-0">"버터가 남았어요!"</p>
                         </div>
                     </div> 
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
                             <img class="img-fluid rounded-circle mb-3" src="image/flower.png" alt="..." />
-                            <h5>추천 셋</h5>
-                            <p class="font-weight-light mb-0">"꽃 같이 사실분??~"</p>
+                            <h5>추천 3</h5>
+                            <p class="font-weight-light mb-0">"꽃 같이 사실분?"</p>
                         </div>
                     </div>
                 </div>
