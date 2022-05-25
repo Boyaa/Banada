@@ -11,18 +11,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src = "js/jquery-3.6.0.js"></script>
-    <script language="JavaScript">
-	function openNewWindow(window) { 
-		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=550, height=500"); 
-		}
-	</script>
     <link rel="stylesheet" href="assets/chat.css">
 </head>
 <body style="max-width: 523px; height:940px;"> 
     <div class="chat_wrap" >
         <div class="header" style="max-width: 523px; background-color:#ffc107; font-family:'jalnan';'">
             CHAT
-            <button class="safe" onclick="javascript:openNewWindow('ansim.jsp')" style="font-size:14px;  border-radius:25px; border:1px solid black;  background:white; font-family:ibm; color:black;">안심등록</button>
+            <button class="safe" onclick="location.href='ansim.jsp'" style="font-size:14px;  border-radius:25px; border:1px solid black;  background:white; font-family:ibm; color:black;">안심등록</button>
         </div>
         <div class="anotherMsg">
             <br><br><br>

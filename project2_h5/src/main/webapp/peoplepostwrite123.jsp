@@ -51,7 +51,7 @@
         <div id="category" style = "display:flex;">
             <div id = "box">카테고리</div>
             <div id = "right-box">
-                <select name="h_cate" class="select" style="width:100px;height:30px; font-family:ibm">
+                <select name="h_cate" class="select" style="width:100px;height:30px; font-size:12px; font-family:ibm">
                     <option disabled selected>선택</option>
                     <option value="sports">스포츠</option>
                     <option value="game">게임/오락</option>
@@ -77,19 +77,19 @@
         <div id="product-write" style = "display:flex; ">
             <div id = "box">제목</div>
             <div id = "right-box">
-            <input type="text" name="h_title" style="width:200px;height:20px;font-size:20px;"/>
+            <input type="text" name="h_title" placeholder="제목을 입력하세요" style="width:200px;height:20px;font-size:12px;"/>
             </div>
         </div>
         <div id="content" style = "display:flex;">
             <div id = "box" style="margin-right:30px; height: 100px; padding-top:68px;">내용</div>
             <div id = "right box" >
-                <textarea id="write" name="h_content"></textarea>
+                <textarea id="write" name="h_content" placeholder="내용을 입력하세요" style="font-size:12px;"></textarea>
             </div>
         </div>
         <div id="price" style = "display:flex;">
             <div id="box">정원</div>
             <div id = "right-box">
-            <input type="text" name="h_maxpeople" style="width:100px;height:20px;font-size:20px;"/> 명
+            <input type="text" name="h_maxpeople" placeholder="정원을 입력하세요" style="width:100px;height:20px;font-size:12px;"/> 명
             </div>
         </div>
 
