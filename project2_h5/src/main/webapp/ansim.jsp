@@ -12,7 +12,7 @@
 <div style="text-align:center;">
  <div style="width:302px; margin: 0 auto 0 auto;">
  <h1 style="margin: 0 auto; padding:10px 5px; border-top:1px solid #eaeaea; border-left:1px solid #eaeaea; 
- 	border-right:1px solid #eaeaea; font-family:ibms; color:#ffc107">안 심 등 록</h1>
+ 	border-right:1px solid #eaeaea; font-family:ibms; color:#ffc107">스케줄</h1>
 </div>
 </div>
 
