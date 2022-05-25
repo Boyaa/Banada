@@ -57,8 +57,8 @@
           </span>
         </div>
       </form>
-      <!--목록-->
       
+      <!--목록-->
       <div class="box-height" style="display:flex; background:#eaeaea; margin:auto; text-align:center; font-family:ibm;" >
       	<div style="width:50px; margin:auto;">      
             <p>목록</p>

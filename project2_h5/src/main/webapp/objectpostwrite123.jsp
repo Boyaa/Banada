@@ -50,13 +50,13 @@
         <div id="product-write" style = "display:flex; ">
             <div id = "box">제목</div>
             <div id = "right-box">
-            <input type="text" style="width:200px;height:20px;font-size:20px;" name="pd_title" />
+            <input type="text" style="width:200px;height:20px;font-size:12px;" placeholder="제목을 입력하세요." name="pd_title" />
             </div>
         </div>
         
         <div id="category" style = "display:flex;">
             <div id = "box">카테고리</div>
-            <div id = "right-box">
+            <div id = "right-box" style="font-family:ibms; font-size:15px;">
             <input type="radio" name ="pd_cate" value="life"/>생필품
             <input type="radio" name ="pd_cate" value="eat"/>식료품
             </div>
@@ -65,27 +65,27 @@
         <div id="name" style = "display:flex;">
             <div id = "box">상품명</div>
             <div id = "right-box">
-            <input type="text" name="pd_name" style="width:200px;height:20px;font-size:20px;"/>
+            <input type="text" name="pd_name"  placeholder="상품명을 입력하세요." style="width:200px;height:20px;font-size:12px; "/>
             </div>
         </div>
         
         <div id="content" style ="display:flex;">
             <div id = "box" style="margin-right:30px; height: 100px; padding-top:68px;">설명</div>
             <div id = "right box" >
-                <textarea id="write" name="pd_content"></textarea>
+                <textarea id="write" name="pd_content" placeholder="설명을 입력하세요." style="font-size:12px;"></textarea>
             </div>
         </div>
         
         <div id="price" style ="display:flex;">
             <div id="box">가격</div>
             <div id = "right-box">
-            <input type="text" name="pd_price" style="width:100px;height:20px;font-size:20px;"/> 원
+            <input type="text" name="pd_price"  placeholder="가격을 입력하세요." style="width:100px;height:20px;font-size:12px;"/> 원
             </div>
         </div>
         
         <div id="option" style = "display:flex;">
             <div id = "box">결제옵션</div>
-            <div id = "right-box">
+            <div id = "right-box" style="font-family:ibms; font-size:15px;">
             <input type="radio" name ="pd_option" value="together"/>같이내기
             <input type="radio" name ="pd_option" value="solo"/>몰아주기
             <input type="radio" name ="pd_option" value="mannam"/>만나서결정
