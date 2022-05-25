@@ -58,56 +58,64 @@
         </div>
       </form>
       <!--목록-->
-      <div class="List-Box box-height">
-        <ul >
-          <li>
-            <span>목록</span>
-          </li>
-          <li>
-            <span>작성자</span>
-          </li>
-          <li>
-            <span>대상자</span>
-          </li>
-          <li>
-            <span>제목</span>
-          </li>
-          <li>
-            <span>작성일</span>
-          </li>
-        </ul>
+      
+      <div class="box-height" style="display:flex; background:#eaeaea; margin:auto; text-align:center; font-family:ibm;" >
+      	<div style="width:50px; margin:auto;">      
+            <p>목록</p>
+        </div>
+        <div style="width:150px; margin:auto;">
+            <p>글쓴이</p>
+        </div>
+        <div style="width:150px; margin:auto;">
+            <p>상대방</p>
+          </div>
+           <div style="width:300px; margin:auto;">
+            <p>제목</p>
+           </div>
+          <div style="width:150px; margin:auto;">
+          	<p>평점</p>
+          </div>
+           <div style="width:200px; margin:auto;">
+            <p>작성일</p>
+          </div>
+        </div>
+        <div class="box-height" style="margin:auto; text-align:center;">
         <!--1-->
         <!--{{#each contents}}-->
         <c:forEach var="gBoard" items="${gBoardList}" varStatus="status">
-        <a href="reviewpostview.jsp?g_seq=${gBoard.g_seq}" class="List-1 flex">
-          <div style="text-align=center;">
+        <a href="reviewpostview.jsp?g_seq=${gBoard.g_seq}" style="text-decoration:none; color:black;";class="List-1 flex">
+          <div style="display:flex;">
+          <div style="width:50px; margin:auto;">
             <p>
              ${status.count}
             </p>
-          </div>
-          <div style="text-align=center;">
+          </div >
+          <div style="width:150px; margin:auto;">
             <p>
              <c:out value="${gBoard.g_nick}"/>
             </p>
-          </div>
-          <div style="text-align=center;">
+          </div >
+          <div style="width:150px; margin:auto;">
           	<p>
           	<c:out value="${gBoard.user_nick }"/>
           </div>
-          <div style="text-align=center;">
+          <div style="width:300px; margin:auto;">
             <p>
               <c:out value="${gBoard.g_title}"/>
             </p>
           </div>
-          <div style="text-align=center;">
+          <div style="width:150px; margin:auto;">
+          	<p>🍌🍌🍌🍌🍌</p>
+          </div>
+          <div style="width:200px; margin:auto;">
             <p>
               <c:out value="${gBoard.g_date}"/>
             </p>
           </div>
+          </div>
        </c:forEach> 
        </a>
       </div>
-      
       
        <!--숫자-->
       <form class="Form-Box List-Move-Number" method="post">

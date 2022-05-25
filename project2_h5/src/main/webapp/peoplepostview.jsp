@@ -26,13 +26,9 @@
 		}
 	</script>
 	<%
-BoardDAO dao = new BoardDAO();
 
-List<Comm> commList = (List<Comm>) dao.selectAllComm(1); 
 User u_vo = (User)session.getAttribute("loginUser"); //세션에서 로그인한 멤버의 키값 가져오기
 
-
-pageContext.setAttribute("list", commList); 
 %>
 	
 <title>Document</title>
@@ -44,6 +40,9 @@ pageContext.setAttribute("list", commList);
    	  int seq = Integer.parseInt(request.getParameter("h_seq"));
 	  HobbyDAO dao1 = new HobbyDAO();
 	  System.out.println("글번호 Postview: " +seq);
+	  BoardDAO dao = new BoardDAO();
+	List<Comm> commList = (List<Comm>)dao.selectAllComm(seq);
+		pageContext.setAttribute("list", commList);
 	   
 	  BigDecimal h_seq = new BigDecimal(seq);
 	  System.out.println("test"+h_seq);
@@ -173,45 +172,56 @@ pageContext.setAttribute("list", commList);
 		<br>
 		<p>© Your Website 2022. Made by H5</p>
 	</footer>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+        <script>
+	
+        $('.writeCom').click(function() { //클래스가 wirtecom인 버튼을 클릭을했을때  댓글을 작성할겁니다
+            var com = $('#commvalue').val() //이때 사용자가 어떤값을 입력을했는지 가지고오는 문장 ( 사용자가 입력한 댓글 가지고 오기)
+       
+           // let today = new Date();   
 
-	<script>
-        $(document).on("click","#like",function(){ 
-			$.ajax({
-				data : {status : "like", h_seq : ${hobbyPost.h_seq} },
-				url : "HobbyAjaxCon",
-				method : "GET",
-				dataType : "text", 
-				context : this, 
-				success: function(data){
-					$('#like+span').text(data)
-					$(this).text('좋아요 취소') 
-		            $(this).attr('id','dislike')	
-				},
-				error: function(){
-					alert("통신실패!")
-				}
-			})
-        });
+         let nick = "<%=u_vo.getUser_nick()%>"
+         let seq ="<%=hPost.getH_seq()%>"
+            //db서버에다가 등록을 할 수있도록 비동기통신 작성
+            $.ajax({ //어떤게시물에서 작성됫는지랑 작성된댓글 보내주기
+               data : {h_seq : seq ,"comm_content" : com , "comm_nick" : nick}, //보내줄 데이터 정의 ( 사용자가 입력한 댓글, 어떤게시물에서작성되었는지 까지 같이 보내기)
+               url : "AddCommentCon", //어디로 요청하는지  (요청하는 addcommentcon 작성하러가기 )
+               method : "POST", //보내느 방식
+               success : function(data) { // 성공시 작성한 댓글도 밑에 보여질수있도록 작성 / data : 서버가 넘겨준 현재 추가된 댓글의 시퀀스번호
+                        $('#comm_content').prepend('<p>'+nick+ com+ '<button class="removeCom" id='+data+'>삭제</button></p>')
+                        $('#commvalue').val("") //댓글창은 비워주기
+                     },
+                     error : function() {
+                        alert("댓글을 작성해주세요!")
+                     }
+                  })
+         })
+         
+         
 
-        $(document).on("click","#dislike",function(){ 
-            $.ajax({
-				data : {status :                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 "dislike", h_seq : ${hobbyPost.h_seq} },
-				url : "HobbyAjaxCon",
-				method : "GET",
-				dataType : "text",
-				context : this,
-				success: function(data){
-						$('#dislike+span').text(data)
-			            $(this).text('좋아요')
-			            $(this).attr('id','like')
-				},
-				error: function(){
-					alert("통신실패!")
-				}
-			})
-    
-        });
-        
+//댓글 삭제하는거 
+
+		$('#comm_content').on("click", ".removeCom", function() {
+         let comm_seq = $(this).attr('id');
+         console.log(comm_seq)
+         $.ajax({
+            data : {
+               comm_seq : comm_seq
+            },
+            url : "DeleteCommentCon",
+            method : "post",
+            context : this,
+            success : function() {
+               $(this).parent().remove()
+            },
+            error : function() {
+               alert("통신실패!")
+            }
+         })
+      })
+
+
+ 
         </script>
 
 </body>

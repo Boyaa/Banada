@@ -23,18 +23,18 @@
 </head>
 <body>
 
-	<% 
-	
-   	  int seq = Integer.parseInt(request.getParameter("g_seq"));
-	  GradeDAO dao = new GradeDAO();
-	  System.out.println("글번호 Postview: " +seq);
-	   
-	  BigDecimal g_seq = new BigDecimal(seq);
-	  System.out.println("test"+ g_seq);
-	  Grade gPost = dao.selectgpost(g_seq);
-	  
-	%>
-	
+   <% 
+   
+        int seq = Integer.parseInt(request.getParameter("g_seq"));
+     GradeDAO dao = new GradeDAO();
+     System.out.println("글번호 Postview: " +seq);
+      
+     BigDecimal g_seq = new BigDecimal(seq);
+     System.out.println("test"+ g_seq);
+     Grade gPost = dao.selectgpost(g_seq);
+     
+   %>
+   
      <!-- nav -->
      <div class = "nav">
         <div class = "logo" >
@@ -63,20 +63,20 @@
     <alticle >
         <section class="pro" style="border-top:2px solid #eaeaea; ">
            <div class="alticle-image">
-			<img src="assets/post_image/hruru.png"
-				style="width: 50px; height: 50px; -webkit-border-radius: 50%; margin-right: 10px">
-		</div>
-		<div style="width: 250px;">
-			<p id="id"><%=dao.selectgpost(g_seq).getG_nick() %></p>
-			<p id="live">광주광역시 남구 봉선동</p>
-		</div>
-		<div>
-			<button id="like" style="margin-left: 190px;">반하다💗</button>
-		</div>
-		<div>
-			<p class="count">1개</p>
-		</div>
-		</div>
+         <img src="assets/post_image/hruru.png"
+            style="width: 50px; height: 50px; -webkit-border-radius: 50%; margin-right: 10px">
+      </div>
+      <div style="width: 250px;">
+         <p id="id"><%=dao.selectgpost(g_seq).getG_nick() %></p>
+         <p id="live">광주광역시 남구 봉선동</p>
+      </div>
+      <div>
+         <button id="like" style="margin-left: 190px;">반하다💗</button>
+      </div>
+      <div>
+         <p class="count">1개</p>
+      </div>
+      </div>
 
 
         </section>
@@ -92,7 +92,7 @@
         <a href="reviewpost.jsp" style="float:right; color:black; text-decoration:none; font-family:ibm">후기 더 보기</a>
         </div>
         
-      				
+                  
 
    
 
