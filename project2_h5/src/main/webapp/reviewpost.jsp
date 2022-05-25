@@ -1,5 +1,3 @@
-<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
-<%@page import="com.smhrd.domain.User"%>
 <%@page import="com.smhrd.domain.Grade"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.GradeDAO"%>
@@ -16,11 +14,6 @@
     <link rel="stylesheet" href="assets/post.css">
 </head>
 <body>
-    <%// User user = (User)session.getAttribute("loginUser"); 
-    
-    	//System.out.println("로그인 유저" +user.getUser_nick() );
-    %>
-    
     
 <div class="All-box flex text-white">
   <!-- 로고-->
@@ -41,7 +34,7 @@
                <c:otherwise>
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="myreview.jsp?user_nick=${loginUser.user_nick }">내후기</a>
+				<a href ="myreview.jsp?user_nick=${loginUser.user_nick}">내후기</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
             </c:choose>   
@@ -64,8 +57,8 @@
           </span>
         </div>
       </form>
-      <!--목록-->
       
+      <!--목록-->
       <div class="box-height" style="display:flex; background:#eaeaea; margin:auto; text-align:center; font-family:ibm;" >
       	<div style="width:50px; margin:auto;">      
             <p>목록</p>
@@ -111,20 +104,10 @@
               <c:out value="${gBoard.g_title}"/>
             </p>
           </div>
-<%--           <div style="width:150px; margin:auto;">
-          	          	<c:set var="score" value="${gBoard.g_score}" />
-          	<c:choose>   
-          	 <c:when test="${score eq 'banana1'}"> 
-          	       	 </c:when>   
-			  <c:when test="${score eq 'banana2'}">   
-			       홍길동이 아닙니다.    
-			  </c:when>    
-			   <c:otherwise>     
-			     사람이 없습니다 ㅜㅜ 
-			   </c:otherwise>
-			   </c:choose>
+          <div style="width:150px; margin:auto;">
+          	<p>🍌🍌🍌🍌🍌</p>
           </div>
- --%>          <div style="width:200px; margin:auto;">
+          <div style="width:200px; margin:auto;">
             <p>
               <c:out value="${gBoard.g_date}"/>
             </p>
