@@ -158,40 +158,78 @@ a {text-decoration:none;}
             
             <c:choose>
                <c:when test="${empty loginUser}">
-                <h2 class="mb-5 font-paybooc">오늘의 추천 물품</h2>
-               </c:when>
-               <c:otherwise>
-               	  <h2 class="mb-5 font-paybooc">${loginUser.user_nick} 님이 </h2> <h1 class="mb-5 font-paybooc">  반할 물건을 소개해드립니다 </h1>
-              </div>
-               </c:otherwise>
-            </c:choose>
-            <div class="container">
+               <div class="container">
+                <h2 class="mb-5 font-paybooc">좋아요 Best 3</h2>
+               
 
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="image/집게사장.jpg" alt="..." />
-                            <h5>바나나</h5>
-                            <p class="font-weight-light mb-0">"바나나 같이 소분하실분??"</p>
+                            <img class="img-fluid rounded-circle mb-3" src="http://img.danawa.com/prod_img/500000/653/800/img/6800653_1.jpg?shrink=500:500&_v=20211026150548" alt="..." />
+                            <h5>1위</h5>
+                            <p class="font-weight-light mb-0">대용량 윙봉</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/main_img/testimonials-2.jpg" alt="..." />
-                            <h5>연필</h5>
-                            <p class="font-weight-light mb-0">"학용품 같이 소분해요~"</p>
+                            <img class="img-fluid rounded-circle mb-3" src="image/world.png" alt="..." />
+                            <h5>2위</h5>
+                            <p class="font-weight-light mb-0">세계맥주</p>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/main_img/testimonials-3.jpg" alt="..." />
-                            <h5>생수</h5>
-                            <p class="font-weight-light mb-0">"물사면 너무 많은데 같이 사서 나누실분??? 반띵해봐요~"</p>
+                            <img class="img-fluid rounded-circle mb-3" src="image/original.png" alt="..." />
+                            <h5>3위</h5>
+                            <p class="font-weight-light mb-0">크리스피 도넛</p>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+              </div>
+            </section>
+         
+         </c:when>
+               <c:otherwise>
+            
+            
+         
+         
+         	<div class="container">
+                   
+                   <h2 class="mb-5 font-paybooc">${loginUser.user_nick}님에게 추천드려요</h2>
+               
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="image/cola.png" alt="..." />
+                            <h5>추천 하나</h5>
+                            <p class="font-weight-light mb-0">"콜라..같이사실분?"</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="image/butter.png" alt="..." />
+                            <h5>추천 둘</h5>
+                            <p class="font-weight-light mb-0">"버터가 남았어요~"</p>
+                        </div>
+                    </div> 
+                    <div class="col-lg-4">
+                        <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+                            <img class="img-fluid rounded-circle mb-3" src="image/flower.png" alt="..." />
+                            <h5>추천 셋</h5>
+                            <p class="font-weight-light mb-0">"꽃 같이 사실분??~"</p>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </section>
+         
+
+               </c:otherwise>
+            </c:choose>
+         
+
+         
          
         <!-- Footer-->
         <footer class="footer " style="height:150px;"">
