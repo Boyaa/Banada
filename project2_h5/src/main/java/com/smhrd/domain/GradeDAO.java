@@ -67,7 +67,7 @@ public class GradeDAO {
 		}
 		
 		
-		public List<Grade> selectmyreview() {
+		public List<Grade> selectmyreview(String user_nick) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			List<Grade> myreviewList = null;
 			try {

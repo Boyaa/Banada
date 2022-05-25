@@ -170,7 +170,7 @@ a {text-decoration:none;}
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-                            <img class="img-fluid rounded-circle mb-3" src="assets/main_img/testimonials-1.jpg" alt="..." />
+                            <img class="img-fluid rounded-circle mb-3" src="image/집게사장.jpg" alt="..." />
                             <h5>바나나</h5>
                             <p class="font-weight-light mb-0">"바나나 같이 소분하실분??"</p>
                         </div>
