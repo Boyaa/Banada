@@ -226,12 +226,12 @@ a {text-decoration:none;}
           <c:otherwise>   
         <div class="quickmenu" style="top:750px; background:white; border-radius: 25px; border:3px solid #ffc107;"> 
        			<div style="width: 90%;  margin: 10px auto; display: flex;"> 
-       			 <div type="button" style="font-family:ibm; border-radius: 25px; border: 3px solid #ffc107; flex:1; margin: 0 5px; width:30%; box-sizing: border-box;">
+       			 <button type="button" onclick="location.href='chat.jsp';" style="font-family:ibm; border-radius: 25px; border: 3px solid #ffc107; flex:1; margin: 0 5px; width:30%; box-sizing: border-box;">
           			채팅
-          		</div>   
-          		<div type="button" style="font-family:ibm; border-radius: 25px; border: 3px solid #ffc107;flex:1; margin:0 5px; width:30%; box-sizing: border-box;" >
+          		</button>   
+          		<button type="button" onclick="location.href='game.jsp';" style="font-family:ibm; border-radius: 25px; border: 3px solid #ffc107;flex:1; margin:0 5px; width:30%; box-sizing: border-box;" >
           			결제
-          		</div>
+          		</button>
           		</div>
         <div style="font-family:ibm;">약속시간</div>
 		<div id="countdown" style="font-family:ibm;"></div>
