@@ -30,9 +30,10 @@ public class Product {
 
 
 
-	public Product(String pd_title, String pd_content, String pd_nick, String pd_name, BigDecimal pd_price, String pd_cate,
+	public Product(BigDecimal pd_seq, String pd_title, String pd_content, String pd_nick, String pd_name, BigDecimal pd_price, String pd_cate,
 			String pd_option, BigDecimal pd_like, String pd_path) {
 		super();
+		this.pd_seq = pd_seq;
 		this.pd_title = pd_title;
 		this.pd_content = pd_content;
 		this.pd_nick = pd_nick;

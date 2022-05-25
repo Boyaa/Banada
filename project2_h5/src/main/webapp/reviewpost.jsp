@@ -34,7 +34,7 @@
                <c:otherwise>
 				<a href ="object.jsp">소분해요</a>
 				<a href ="peoplecategory.jsp">재능나눔</a>
-				<a href ="myreview.jsp">내후기</a>
+				<a href ="myreview.jsp?user_nick=${loginUser.user_nick}">내후기</a>
 				<a href ="LogoutCon" style ="margin-right:200px">로그아웃</a>
                </c:otherwise>
             </c:choose>   
