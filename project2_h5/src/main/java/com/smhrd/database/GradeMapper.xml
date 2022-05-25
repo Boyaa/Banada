@@ -5,7 +5,7 @@
         
 <mapper namespace="com.smhrd.domain.GradeDAO">
 	<insert id="insertGrade" parameterType="com.smhrd.domain.Grade">
-		insert into tbl_grade values (tbl_grade_seq.nextval, #{g_nick}, #{user_nick}, #{g_review}, sysdate, #{g_score}, #{g_title},1)
+		insert into tbl_grade values (tbl_grade_seq.nextval, #{g_nick}, #{user_nick}, #{g_review}, sysdate, #{g_score}, #{g_title}, 1)
    </insert>
    <select id="selectgpost" parameterType="BigDecimal" resultType="com.smhrd.domain.Grade">
 		select g_title, g_nick, g_review from TBL_grade where g_seq=#{g_seq}
@@ -14,19 +14,19 @@
 		select * from tbl_grade
 	</select>
 	<update id="updateScore1" parameterType="String"> 
-		update TBL_grade set g_grade=g_grade-5 where user_nick=${user_nick}
+		update TBL_grade set g_grade=g_grade-5 where user_nick=#{user_nick}
 	</update>
 	<update id="updateScore2" parameterType="String"> 
-		update TBL_grade set g_grade=g_grade-3 where user_nick=${user_nick}
+		update TBL_grade set g_grade=g_grade-3 where user_nick=#{user_nick}
 	</update>
 	<update id="updateScore4" parameterType="String"> 
-		update TBL_grade set g_grade=g_grade+3 where user_nick=${user_nick}
+		update TBL_grade set g_grade=g_grade+3 where user_nick=#{user_nick}
 	</update>
 	<update id="updateScore5" parameterType="String"> 
-		update TBL_grade set g_grade=g_grade+5 where user_nick=${user_nick}
+		update TBL_grade set g_grade=g_grade+5 where user_nick=#{user_nick}
 	</update>
 	<select id="selectmyreview" parameterType="String" resultType="com.smhrd.domain.Grade">
-		select g_nick, user_nick, g_title, g_date from tbl_grade where user_nick=${user_nick}
+		select g_nick, user_nick, g_date, g_title from tbl_grade where user_nick=#{user_nick}
 	</select>
 	
    

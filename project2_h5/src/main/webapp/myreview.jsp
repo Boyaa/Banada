@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.smhrd.domain.Grade"%>
 <%@page import="java.util.List"%>
 <%@page import="com.smhrd.domain.GradeDAO"%>
@@ -40,11 +41,17 @@
             </c:choose>   
     </div>
 </div>
-<% 
+	
+	<%	
+	
+		String user_nick = request.getParameter("user_nick");
+		System.out.println(user_nick);
 		GradeDAO dao = new GradeDAO();
 		List<Grade> myreviewList = dao.selectmyreview();
 		pageContext.setAttribute("myreviewList",myreviewList);
+		
 	%>
+	
     <!--요소 시작-->
     <div class="Contents-Box" >
       <!--제목-->
@@ -75,7 +82,7 @@
         <!--1-->
         <!--{{#each contents}}-->
         <c:forEach var="myreview" items="${myreviewList}" varStatus="status">
-        <a href="reviewpostview.jsp?user_name=${myreview.user_name}" class="List-1 flex">
+        <a href="reviewpostview.jsp" class="List-1 flex">
           <div>
             <span>
               ${status.count}

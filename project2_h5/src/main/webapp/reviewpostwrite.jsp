@@ -86,7 +86,7 @@
         </div>
 
         <div id="select">
-            <input type="submit" value="등록완료" onclick="alert('등록완료!'); location.href='peoplecategory.jsp'"/>
+            <input type="submit" value="등록완료" >
         </div>
         
     </form>
