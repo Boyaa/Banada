@@ -34,7 +34,7 @@ public class ProductDAO {
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		Product pdPost = null;
 		try {
-			pdPost = sqlSession.selectOne("com.smhrd.domain.HobbyDAO.selecthpost", pd_seq);
+			pdPost = sqlSession.selectOne("com.smhrd.domain.ProductDAO.selectpdpost", pd_seq);
 			if(pdPost != null) {
 				sqlSession.commit();
 			} else {

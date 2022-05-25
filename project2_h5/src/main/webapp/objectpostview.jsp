@@ -34,7 +34,7 @@
 	   
 	   Product pdPost = dao.selectpdpost(pd_seq); // h_seq(BigDeciaml) int로 바꿔야 함
 	 //  System.out.println(hPost.getH_title());
-	 
+	 System.out.println("그림경로 : " + dao.selectpdpost(pd_seq).getPd_name());
 	%>
 	
 	
@@ -64,7 +64,7 @@
     </div>
     <div>
         <div class = "img">
-            <img class = "img-con" src="<%=dao.selectpdpost(pd_seq).getPd_path()%>" style="cursor:pointer; max-height: 200%; width: auto;WIDTH: 650px" onclick="window.open(this.src)">
+            <img class = "img-con" src="<%=pdPost.getPd_path()%>" style="cursor:pointer; max-height: 200%; width: auto;WIDTH: 650px" onclick="window.open(this.src)">
       								<!-- 업로드한 사진 올리고 싶음 -->
         </div>
     </div>
@@ -76,7 +76,7 @@
                 <img src="assets/post_image/hruru.png" style="width:50px; height:50px; border-radius:50%; margin-right:10px"/>
             </div>
             <div style="width:250px;">
-                <p id = "id"><%=dao.selectpdpost(pd_seq).getPd_nick() %></p>
+                <p id = "id"><%=pdPost.getPd_nick() %></p>
                 <p id = "live">광주광역시 남구 봉선동</p>
             </div>
             <div>
@@ -91,12 +91,12 @@
         </section>
 
         <section class = "article-description">
-            <h1 id="content">제목칸</h1>
+            <h1 id="content"><%=pdPost.getPd_title() %></h1>
             <div id = "price">
-                <p><%=dao.selectpdpost(pd_seq).getPd_price()%></p>
+                <p>가격 : <%=pdPost.getPd_price()%>원</p>
             </div>
             <div id ="article-detail">
-            <p><%=dao.selectpdpost(pd_seq).getPd_content()%></p>
+            <p><%=pdPost.getPd_content()%></p>
            
             </div>
         </section>

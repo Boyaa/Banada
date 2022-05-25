@@ -62,11 +62,11 @@ public class ProductCon extends HttpServlet {
 	      filename = multpartRequest.getFilesystemName("uploadImg");
 	     // form내의 input name="photo" 인 요소의 값을 가져옴 
 	           
-	       System.out.println(filename);
+	       System.out.println("1"+filename);
 	       String change = realPath+filename; // 사진 경로 
-	       String pd_pathonce = change.replace('\\', '/');
-	       String pd_path = change.replace('C:/Users/smhrd/git/project2_h5/project2_h5/src/main/webapp/', '' );
-	       System.out.println(pd_path);
+	       String pd_pathonce = change.replace("\\", "/");
+	       String pd_path = pd_pathonce.replace("C:/Users/smhrd/git/project2_h5/project2_h5/src/main/webapp/", "" );
+	       System.out.println("2"+pd_path);
 	     
 	       
 	      // pd_path를 받아와야 하는데 빨간줄 뜸 ! int 못 받는건 모두 BigDecimal로 바꿔서 해결 

@@ -70,8 +70,9 @@ public class GradeDAO {
 		public List<Grade> selectmyreview(String user_nick) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			List<Grade> myreviewList = null;
+			System.out.println("넘어온 닉네임 : "+ user_nick);
 			try {
-				myreviewList = sqlSession.selectList("com.smhrd.domain.GradeDAO.selectmyreview");
+				myreviewList = sqlSession.selectList("com.smhrd.domain.GradeDAO.selectmyreview",user_nick);
 				if (myreviewList != null) {
 					sqlSession.commit();
 				} else {
