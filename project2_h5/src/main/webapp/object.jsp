@@ -192,7 +192,7 @@ geocoder.addressSearch(addr[i], function(result, status) {
    
             <!-- 여기 안에 작성-->
             <c:forEach var="pdBoard" items="${pdBoardList}" varStatus="status">
-           <a href="objectpostview.jsp?pd_seq=$pdBoard.pd_seq}" >
+           <a href="objectpostview.jsp?pd_seq=$pdBoard.pd_seq}" style="cursor:pointer; text-decoration : none; color:#000;">
                  <div class = "card" >
                     <div class="img" src=>
                         <img src="${pdBoard.pd_path}" alt="">

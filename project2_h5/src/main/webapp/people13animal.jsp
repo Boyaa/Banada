@@ -287,7 +287,7 @@ geocoder.addressSearch(addr[i], function(result, status) {
        </section>
       </div>
 
-        
+        </div>
 </div>
     <!-- footer -->
     <footer class = "footer">
