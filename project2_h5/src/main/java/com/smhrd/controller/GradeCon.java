@@ -38,16 +38,16 @@ public class GradeCon extends HttpServlet {
 		if(cnt > 0) {
 			
 			System.out.println(" 리뷰 등록 성공");
-			if(g_score.equals("banana1")) {
-				dao.updateScore1(g_seq);
-				
-			} else if(g_score.equals("banana2")) {
-				dao.updateScore2(g_seq);
-			} else if(g_score.equals("banana4")) {
-				dao.updateScore4(g_seq);
-			} else if(g_score.equals("banana5")) {
-				dao.updateScore5(g_seq);
-			} 
+//			if(g_score.equals("banana1")) {
+//				dao.updateScore1(g_seq);
+//				
+//			} else if(g_score.equals("banana2")) {
+//				dao.updateScore2(g_seq);
+//			} else if(g_score.equals("banana4")) {
+//				dao.updateScore4(g_seq);
+//			} else if(g_score.equals("banana5")) {
+//				dao.updateScore5(g_seq);
+//			} 
 			request.setAttribute("gPost", g_vo);
 			response.sendRedirect("reviewpostview.jsp");
 		
