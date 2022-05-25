@@ -28,7 +28,7 @@ public class ProductCon extends HttpServlet {
 
 		  String filename = "";
 	      int sizeLimit = 15 * 1024 * 1024; // 한번에 올릴 수 있는 파일 용량 : 15M로 제한
-	      
+	      // String realPath = "C:\\\\Users\\smhrd\\git\\project2_h5\\project2_h5\\src\\main\\webapp\\image\\";
 	      
 	      String realPath = "image/"; // <질문> + filename을 해주면 그 사진 경로 ?? 
 	      System.out.println("인서트" + realPath); // 저장된 공간 

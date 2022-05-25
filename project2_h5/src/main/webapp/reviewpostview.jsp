@@ -24,6 +24,7 @@
 <body>
 
 	<% 
+	
    	  int seq = Integer.parseInt(request.getParameter("g_seq"));
 	  GradeDAO dao = new GradeDAO();
 	  System.out.println("글번호 Postview: " +seq);
