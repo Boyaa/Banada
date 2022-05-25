@@ -70,6 +70,9 @@
             <span>제목</span>
           </li>
           <li>
+          	<span style="width:100px;">평점</span>
+          </li>
+          <li>
             <span>작성일</span>
           </li>
         </ul>
@@ -91,6 +94,9 @@
             <p>
               <c:out value="${gBoard.g_review}"/>
             </p>
+          </div>
+          <div style="text-align=center;">
+          	<p>🍌🍌🍌🍌🍌</p>
           </div>
           <div style="text-align=center;">
             <p>
