@@ -208,8 +208,8 @@
        </section>
       </div>
 
-        
-
+        </div>
+</div>
     <!-- footer -->
     <footer class = "footer">
         <ul class = "list" style="width:max-content">
