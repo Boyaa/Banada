@@ -36,6 +36,7 @@ public class SafetyCon extends HttpServlet {
 			System.out.println("안심등록 성공");
 			RequestDispatcher rd = request.getRequestDispatcher("main.jsp");
 			request.setAttribute("MT", meetingTime2);
+			request.setAttribute("nick", safetyUser1);
 			rd.forward(request, response);
 
 		} else { 

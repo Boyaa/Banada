@@ -1,3 +1,6 @@
+<%@page import="com.smhrd.domain.Hobby"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="com.smhrd.domain.HobbyDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
@@ -15,8 +18,7 @@
 	</script>
     <link rel="stylesheet" href="assets/chat.css">
 </head>
-<body style="max-width: 523px; height:940px;">
-    
+<body style="max-width: 523px; height:940px;"> 
     <div class="chat_wrap" >
         <div class="header" style="max-width: 523px; background-color:#ffc107; font-family:'jalnan';'">
             CHAT
