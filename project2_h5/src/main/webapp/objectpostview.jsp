@@ -11,11 +11,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/objectpostview.css">
     <title>Document</title>
-    <script language="JavaScript">
-	function openNewWindow(window) { 
-		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=640, height=940"); 
-		}
-	</script>
 </head>
 <body>
 <% 
@@ -86,7 +81,7 @@
             <p class ="count">2</p>
             </div>
             <div>
-            <a type = "button" class="btn" style="cursor:pointer;"" onclick="javascript:openNewWindow('chat.jsp')">채팅요청</a>
+            <a type = "button" class="btn" style="cursor:pointer;"" onclick="location.href='chat.jsp'">채팅요청</a>
             </div>
         </section>
 

@@ -233,7 +233,7 @@ geocoder.addressSearch(addr[i], function(result, status) {
             <li>
               <span>작성일</span>
             </li>
-          </ul>h
+          </ul>
 
 				<!-- <a href="HobbyreadOne?h_seq=${h_vo.h_seq}" class="List-1 flex">		 --> 	
           <!--{{#each contents}}-->
@@ -304,7 +304,7 @@ geocoder.addressSearch(addr[i], function(result, status) {
 	</c:otherwise>
 	</c:choose>
 
-        </div>
+      </div>
 </div>
     <!-- footer -->
     <footer class = "footer">

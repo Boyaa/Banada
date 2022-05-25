@@ -20,11 +20,6 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="assets/peoplepostview.css">
-<script language="JavaScript">
-	function openNewWindow(window) { 
-		open (window,"Mail","toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, width=620, height=940"); 
-		}
-	</script>
 	<%
 
 User u_vo = (User)session.getAttribute("loginUser"); //세션에서 로그인한 멤버의 키값 가져오기
@@ -100,7 +95,7 @@ User u_vo = (User)session.getAttribute("loginUser"); //세션에서 로그인한
 		</div>
 		<div>
 			<a type="button" class="btn" style="cursor: pointer;"
-				" onclick="javascript:openNewWindow('chat.jsp')">채팅요청</a>
+				" onclick="location.href='chat.jsp'">채팅요청</a>
 		</div>
 	</section>
 
