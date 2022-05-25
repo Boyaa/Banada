@@ -4,6 +4,7 @@
 <%@page import="com.smhrd.domain.User"%>
 <%
 String MT = (String)request.getAttribute("MT");
+String nick = (String)request.getAttribute("nick");
 %>
 <html lang="en">
     <head>
@@ -233,10 +234,11 @@ a {text-decoration:none;}
           			결제
           		</button>
           		</div>
+          		<c:if test="${loginUser.user_nick eq nick}">
         <div style="font-family:ibm;">약속시간</div>
 		<div id="countdown" style="font-family:ibm;"></div>
 		<div style="font-family:ibm">남았습니다.</div>
-
+				</c:if>
         <script src = "https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script type="text/javascript">
 
