@@ -99,7 +99,7 @@ a {text-decoration:none;}
                     <div class="col-lg-4 " >
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3" style="align-items:center;">
                             <div class="features-icons-icon d-flex" ">
-                                <img style="margin-left: 100px; margin-bottom:10px; border-radius: 30%;" src="assets/main_img/nanum.png" >
+                                <img style="margin-left: 100px; margin-bottom:10px; border-radius: 30%;" src="assets/main_img/free-icon-fruits-3524528.png" >
                             </div>
                             <a href="object.jsp" class="mini-category">소분해요</a>
                         </div>
