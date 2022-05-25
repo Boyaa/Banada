@@ -141,7 +141,7 @@ session.setAttribute("productList", productList);
 
   <!-- maps -->
 
-    <section class ="header">
+    <section class ="header" style="border-radius:25px;">
      <div id="map" style="width: 800px; height: 450px; border-radius:25px;"></div>  
       <script type="text/javascript"src="//dapi.kakao.com/v2/maps/sdk.js?appkey=67a460358a31f67cda76cd800e168b40&libraries=services"></script>
 	<script>
@@ -260,9 +260,8 @@ geocoder.addressSearch(addr[i], function(result, status) {
             <a href="peoplepostwrite123.jsp">글쓰기</a>
        </section>
       </div>
-
-        
-
+       
+  </div>
     <!-- footer -->
     <footer class = "footer">
         <ul class = "list" style="width:max-content">
