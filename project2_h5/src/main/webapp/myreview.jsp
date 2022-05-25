@@ -47,7 +47,7 @@
 		String user_nick = request.getParameter("user_nick");
 		System.out.println(user_nick);
 		GradeDAO dao = new GradeDAO();
-		List<Grade> myreviewList = dao.selectmyreview();
+		List<Grade> myreviewList = dao.selectmyreview(user_nick);
 		pageContext.setAttribute("myreviewList",myreviewList);
 		
 	%>

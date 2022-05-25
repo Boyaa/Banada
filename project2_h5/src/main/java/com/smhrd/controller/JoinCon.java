@@ -23,8 +23,9 @@ public class JoinCon extends HttpServlet {
 		String user_pw = request.getParameter("pw");
 		String user_nick = request.getParameter("nick");
 		String user_addr = request.getParameter("address");
+		String user_product = request.getParameter("product");
 		
-		User u_vo = new User(user_id, user_pw, user_nick, user_addr);
+		User u_vo = new User(user_id, user_pw, user_nick, user_addr, user_product);
 
 		UserDAO dao = new UserDAO();
 		int cnt = dao.insertUser(u_vo);
