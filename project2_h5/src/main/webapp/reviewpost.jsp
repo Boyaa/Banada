@@ -64,7 +64,10 @@
             <span>목록</span>
           </li>
           <li>
-            <span>닉네임</span>
+            <span>작성자</span>
+          </li>
+          <li>
+            <span>대상자</span>
           </li>
           <li>
             <span>제목</span>
@@ -91,8 +94,12 @@
             </p>
           </div>
           <div style="text-align=center;">
+          	<p>
+          	<c:out value="${gBoard.user_nick }"/>
+          </div>
+          <div style="text-align=center;">
             <p>
-              <c:out value="${gBoard.g_review}"/>
+              <c:out value="${gBoard.g_title}"/>
             </p>
           </div>
           <div style="text-align=center;">
@@ -103,9 +110,10 @@
               <c:out value="${gBoard.g_date}"/>
             </p>
           </div>
-        </a>
+       </c:forEach> 
+       </a>
       </div>
-      </c:forEach>
+      
       
        <!--숫자-->
       <form class="Form-Box List-Move-Number" method="post">
@@ -152,7 +160,7 @@
     padding-bottom: 4rem;
     box-sizing: border-box;
     text-align :center;
-    margin-top: 250px;">
+    margin-top: 400px;">
         <ul class = "list" style="color:black; text-align:center; margin:auto; width:max-content; text-align:center; text-decoration: none; color: #000;  list-style:none;">
             <li class = "list-object" style="float:left; padding: 0 5px;"><a href = "#" style="text-decoration: none; color:black;">About</a></li>
             <li class = "list-object" style="float:left; padding: 0 5px;">⋅</li>

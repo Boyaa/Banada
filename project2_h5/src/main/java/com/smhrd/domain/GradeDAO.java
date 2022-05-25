@@ -85,13 +85,13 @@ public class GradeDAO {
 		
 		
 		
-		public int updateScore1(BigDecimal g_seq) {
+		public int updateScore1(String user_nick) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			int cnt = 0;
 
 			try {
 	
-				 cnt = sqlSession.update("com.smhrd.domain.GradeDAO.updateScore1", g_seq);
+				 cnt = sqlSession.update("com.smhrd.domain.GradeDAO.updateScore1", user_nick);
 				if(cnt!=0) {
 					sqlSession.commit();
 				}else {
@@ -102,13 +102,13 @@ public class GradeDAO {
 			}
 			return cnt; // 점수 수정
 		}
-		public int updateScore2(BigDecimal g_seq) {
+		public int updateScore2(String user_nick) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			int cnt = 0;
 			
 			try {
 				
-				cnt = sqlSession.update("com.smhrd.domain.GradeDAO.updateScore2", g_seq);
+				cnt = sqlSession.update("com.smhrd.domain.GradeDAO.updateScore2", user_nick);
 				if(cnt!=0) {
 					sqlSession.commit();
 				}else {
@@ -119,13 +119,13 @@ public class GradeDAO {
 			}
 			return cnt; // 점수 수정
 		}
-		public int updateScore4(BigDecimal g_seq) {
+		public int updateScore4(String user_nick) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			int cnt = 0;
 			
 			try {
 				
-				cnt = sqlSession.update("com.smhrd.domain.GradeDAO.updateScore4", g_seq);
+				cnt = sqlSession.update("com.smhrd.domain.GradeDAO.updateScore4", user_nick);
 				if(cnt!=0) {
 					sqlSession.commit();
 				}else {
@@ -136,13 +136,13 @@ public class GradeDAO {
 			}
 			return cnt; // 점수 수정
 		}
-		public int updateScore5(BigDecimal g_seq) {
+		public int updateScore5(String user_nick) {
 			SqlSession sqlSession = sqlSessionFactory.openSession();
 			int cnt = 0;
 			
 			try {
 				
-				cnt = sqlSession.update("com.smhrd.domain.GradeDAO.updateScore5", g_seq);
+				cnt = sqlSession.update("com.smhrd.domain.GradeDAO.updateScore5", user_nick);
 				if(cnt!=0) {
 					sqlSession.commit();
 				}else {
