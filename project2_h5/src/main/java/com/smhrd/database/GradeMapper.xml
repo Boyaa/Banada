@@ -26,7 +26,7 @@
 		update TBL_grade set g_grade=g_grade+5 where user_nick=#{user_nick}
 	</update>
 	<select id="selectmyreview" parameterType="String" resultType="com.smhrd.domain.Grade">
-		select user_nick, g_date, g_title from tbl_grade where user_nick=#{user_nick}
+		select g_nick, g_date, g_title from tbl_grade where user_nick=#{user_nick}
 	</select>
 	
    

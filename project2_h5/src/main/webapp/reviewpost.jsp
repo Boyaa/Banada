@@ -111,20 +111,18 @@
               <c:out value="${gBoard.g_title}"/>
             </p>
           </div>
-<%--           <div style="width:150px; margin:auto;">
-          	          	<c:set var="score" value="${gBoard.g_score}" />
-          	<c:choose>   
-          	 <c:when test="${score eq 'banana1'}"> 
-          	       	 </c:when>   
-			  <c:when test="${score eq 'banana2'}">   
-			       홍길동이 아닙니다.    
-			  </c:when>    
-			   <c:otherwise>     
-			     사람이 없습니다 ㅜㅜ 
-			   </c:otherwise>
-			   </c:choose>
+          <div style="width:150px; margin:auto;">
+          <c:choose>
+ 			<c:when test="${gBoard.g_score == 'banana1' }"> 🍌 </c:when>
+ 			<c:when test="${gBoard.g_score == 'banana2' }">🍌🍌</c:when>
+ 			<c:when test="${gBoard.g_score == 'banana3' }">🍌🍌🍌</c:when>
+ 			<c:when test="${gBoard.g_score == 'banana4' }">🍌🍌🍌🍌</c:when>
+ 			<c:otherwise>🍌🍌🍌🍌🍌</c:otherwise>
+		</c:choose>
+			
+			  
           </div>
- --%>          <div style="width:200px; margin:auto;">
+          <div style="width:200px; margin:auto;">
             <p>
               <c:out value="${gBoard.g_date}"/>
             </p>
