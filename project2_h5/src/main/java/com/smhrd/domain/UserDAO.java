@@ -99,5 +99,17 @@ public class UserDAO {
 	      }
 	      return check;
 	   }
+	
+	public int selectmygrade(String user_nick) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int grade = 0;
+		try {
+			grade = sqlSession.selectOne("com.smhrd.domain.UserDAO.selectmygrade", user_nick);
+			sqlSession.commit();
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		 return grade;
+	}
 
 }

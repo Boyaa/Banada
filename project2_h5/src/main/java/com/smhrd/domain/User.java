@@ -24,6 +24,14 @@ public class User {
 
 
 
+	public User(String user_nick, BigDecimal user_manner) {
+		super();
+		this.user_nick = user_nick;
+		this.user_manner = user_manner;
+	}
+
+
+
 	public User(String user_id, String user_pw, String user_nick, String user_addr, BigDecimal user_manner,
 			Timestamp user_joinDate, String user_product) {
 		super();

@@ -14,22 +14,20 @@
 		select * from tbl_grade
 	</select>
 	<update id="updateScore1" parameterType="String"> 
-		update TBL_grade set g_grade=g_grade-5 where user_nick=#{user_nick}
+		update TBL_user set user_manner=user_manner-5 where user_nick=#{user_nick}
 	</update>
 	<update id="updateScore2" parameterType="String"> 
-		update TBL_grade set g_grade=g_grade-3 where user_nick=#{user_nick}
+		update TBL_user set user_manner=user_manner-3 where user_nick=#{user_nick}
 	</update>
 	<update id="updateScore4" parameterType="String"> 
-		update TBL_grade set g_grade=g_grade+3 where user_nick=#{user_nick}
+		update TBL_user set user_manner=user_manner+3 where user_nick=#{user_nick}
 	</update>
 	<update id="updateScore5" parameterType="String"> 
-		update TBL_grade set g_grade=g_grade+5 where user_nick=#{user_nick}
+		update TBL_user set user_manner=user_manner+5 where user_nick=#{user_nick}
 	</update>
 	<select id="selectmyreview" parameterType="String" resultType="com.smhrd.domain.Grade">
 		select g_nick, g_date, g_title, g_grade from tbl_grade where user_nick=#{user_nick}
 	</select>
-	<select id="selectmygrade" parameterType="String">
-		select g.g_grade from g.tbl_grade, u.tbl_user where g.user_nick=u.#{user_nick}   
-	</select>
+	
    
 </mapper>

@@ -19,7 +19,9 @@
 	<select id="selectNick" parameterType="String" resultType="String">
       select user_nick from tbl_user where user_nick=#{user_nick}
    </select>
-   
+   <select id="selectmygrade" parameterType="String" resultType="int">
+		select distinct u.user_manner, u.user_nick from tbl_grade g, tbl_user u where g.user_nick=u.user_nick and u.user_nick=#{user_nick}
+	</select>
   
    
-</mapper>
+</mapper> 
