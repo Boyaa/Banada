@@ -28,11 +28,11 @@
 ## 5. 기능 흐름도
 ### 서비스 흐름도(유스케이스)
 #### SW 유스케이스
-![image](https://user-images.githubusercontent.com/99248886/166611717-6a761c62-393f-444b-9945-34d5533b50dc.png)
+![image](https://user-images.githubusercontent.com/104408835/170645435-25218319-3d37-4aaa-9404-60cc2d012a5f.png)
 #### 서비스 흐름도(웹 화면설계서)
-![image](https://user-images.githubusercontent.com/99248886/166611795-b01ddc4f-8236-4955-ae77-be4b576025d7.png)
+![image](https://user-images.githubusercontent.com/104408835/170645174-0056bb01-c27e-400a-8f8b-64f2eac20236.png)
 #### ER 다이어그램
-![image](https://user-images.githubusercontent.com/25995055/169925318-102784c2-893f-4fd7-bec9-a54c44b669d4.png)
+![image](https://user-images.githubusercontent.com/104408835/170645558-9d0269d8-8628-4c66-883b-67dda823ec17.png)
 
 ## 6 SW 동작 화면
 
@@ -49,7 +49,7 @@
 ![image](https://user-images.githubusercontent.com/104408835/170643486-7fbd60cb-f5ba-4b66-b81a-3ae0f9b29904.png)
 
 ## 8 팀원 단위 업무 분장 및 결과표
-![image](https://user-images.githubusercontent.com/99248886/166613023-0cd70ef4-9f0d-4f6c-b8b1-7395e67684a1.png)
+![image](https://user-images.githubusercontent.com/104408835/170645342-2de2d43b-6585-48ac-b374-f77bdfa035e2.png)
 
 ## 9 트러블슈팅
 
