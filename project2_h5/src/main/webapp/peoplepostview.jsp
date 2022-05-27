@@ -36,7 +36,7 @@ User u_vo = (User)session.getAttribute("loginUser"); //세션에서 로그인한
 	  HobbyDAO dao1 = new HobbyDAO();
 	  System.out.println("글번호 Postview: " +seq);
 	  BoardDAO dao = new BoardDAO();
-	List<Comm> commList = (List<Comm>)dao.selectAllComm(seq);
+	  List<Comm> commList = (List<Comm>)dao.selectAllComm(seq);
 		pageContext.setAttribute("list", commList);
 	   
 	  BigDecimal h_seq = new BigDecimal(seq);

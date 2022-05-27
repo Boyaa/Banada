@@ -21,6 +21,23 @@ public class Grade {
 		this.g_date = g_date;
 		this.g_title = g_title;
 	}
+	
+
+
+	
+
+
+	public Grade(BigDecimal g_seq, String g_nick, String g_review, String g_title) {
+		super();
+		this.g_seq = g_seq;
+		this.g_nick = g_nick;
+		this.g_review = g_review;
+		this.g_title = g_title;
+	}
+
+
+
+
 
 
 	public Grade(BigDecimal g_seq, String g_nick, String user_nick, String g_review, Timestamp g_date, String g_score,
