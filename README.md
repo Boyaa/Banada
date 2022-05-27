@@ -1,5 +1,5 @@
 # 서비스명(팀명: MATCH&FIX)
-![image](https://user-images.githubusercontent.com/99248886/166611412-9fc116d1-6efe-40ea-acc6-2ddd7b4f26e7.png)
+![image](https://user-images.githubusercontent.com/104408835/170642816-90164c0b-bf5a-4447-8fe3-501554076e9c.png)
 
 ## 1. 프로젝트명
 * 지역기반으로한 물건 소분 및 취미 나누기 서비스
@@ -22,7 +22,7 @@
 |데이터베이스| oracle 11g / etc..|
 
 ## 4. 아키텍처(구조)
-![서비스 아키텍처](https://user-images.githubusercontent.com/25995055/169925538-15867bd9-aa0b-42fc-a39b-88981e926e51.png)
+![서비스 아키텍처](https://user-images.githubusercontent.com/104408835/170643488-a5c0b008-c4e3-4d0f-8b6e-d175bac5bd2b.png)
 
 
 ## 5. 기능 흐름도
@@ -46,7 +46,7 @@
 ![image](https://user-images.githubusercontent.com/99248886/166612374-a2f6d85b-501d-4a51-a0d1-8cde0c07ebf2.png)
 
 ## 7 제작 일정
-![image](https://user-images.githubusercontent.com/99248886/166612988-dc4d1968-a694-456c-b7fe-b65feef835bb.png)
+![image](https://user-images.githubusercontent.com/104408835/170643486-7fbd60cb-f5ba-4b66-b81a-3ae0f9b29904.png)
 
 ## 8 팀원 단위 업무 분장 및 결과표
 ![image](https://user-images.githubusercontent.com/99248886/166613023-0cd70ef4-9f0d-4f6c-b8b1-7395e67684a1.png)
