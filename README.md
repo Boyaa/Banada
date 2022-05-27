@@ -1,4 +1,4 @@
-# 서비스명(팀명: MATCH&FIX)
+# 서비스명(팀명: <h5> )
 ![image](https://user-images.githubusercontent.com/104408835/170642816-90164c0b-bf5a-4447-8fe3-501554076e9c.png)
 
 ## 1. 프로젝트명
