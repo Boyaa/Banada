@@ -3,7 +3,7 @@
 
 ## 1. 프로젝트명
 * 지역기반으로한 물건 소분 및 취미 나누기 서비스
-* 서비스설명: 
+* 서비스설명: 그 동안 남아서 버리게 된 상품과 포기했던 취미 생활을 내 주변에 있는 사람과 같이 나누고 즐길 수 있는 1인가구를 위한 서비스입니다.
 
 ## 2. 주요기능
 * 지도에 사용자위치, 상품목록 마커 생성
@@ -36,14 +36,26 @@
 
 ## 6 SW 동작 화면
 
-### 로그인/회원가입/회원괸리/회원수정/회원탈퇴
-![image](https://user-images.githubusercontent.com/99248886/166612486-a17733a6-a3bb-4fd5-873f-57020ab80a16.png)
+### 메인페이지/로그인/회원가입
+![image](https://user-images.githubusercontent.com/104408835/170654096-26729d9f-a49a-444e-93f5-967eee135251.png)
 
-### 옷 정보/코디 추천(날씨, 팁, 오늘의 코디, 참고할 수 있는 코디)
-![image](https://user-images.githubusercontent.com/99248886/166612875-aee9b25d-00ff-4c07-a21f-975ccd8e6a0f.png)
+### 지도기능
+![image](https://user-images.githubusercontent.com/104408835/170654122-5fc6f0b1-5f00-4834-9fcc-9701f3773b5a.png)
 
-### 일정/고객센터
-![image](https://user-images.githubusercontent.com/99248886/166612374-a2f6d85b-501d-4a51-a0d1-8cde0c07ebf2.png)
+### 게시글목록
+![image](https://user-images.githubusercontent.com/104408835/170654182-e6cbb12d-5647-406c-a6c4-7e417bc2bb3c.png)
+
+### 게시글 작성 및 댓글작성
+![image](https://user-images.githubusercontent.com/104408835/170654189-3cd42664-e765-4093-8748-5f482fcd0a2a.png)
+
+### 채팅 및 안심등록
+![image](https://user-images.githubusercontent.com/104408835/170653534-56dc650d-1373-4255-93ec-97f90f38b4ad.png)
+
+### 약속 알림 타이머기능
+![image](https://user-images.githubusercontent.com/104408835/170653540-5b5b58ae-b75d-47ea-b429-84b709131039.png)
+
+### 후기 및 매너등급
+![image](https://user-images.githubusercontent.com/104408835/170654193-e084bd17-6ad1-4932-a912-fd632b6ba879.png)
 
 ## 7 제작 일정
 ![image](https://user-images.githubusercontent.com/104408835/170643486-7fbd60cb-f5ba-4b66-b81a-3ae0f9b29904.png)
