@@ -40,6 +40,20 @@ public class Grade {
 
 
 
+	public Grade(BigDecimal g_seq, String g_nick, Timestamp g_date, String g_title, BigDecimal g_grade) {
+		super();
+		this.g_seq = g_seq;
+		this.g_nick = g_nick;
+		this.g_date = g_date;
+		this.g_title = g_title;
+		this.g_grade = g_grade;
+	}
+
+
+
+
+
+
 	public Grade(BigDecimal g_seq, String g_nick, String user_nick, String g_review, Timestamp g_date, String g_score,
 			String g_title, BigDecimal g_grade) {
 		super();
