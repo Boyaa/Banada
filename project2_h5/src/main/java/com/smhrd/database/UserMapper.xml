@@ -9,8 +9,7 @@
    </insert>
 
 	<select id="selectUser" parameterType="com.smhrd.domain.User" resultType="com.smhrd.domain.User">
-		select * from tbl_user where user_id=#{user_id} and user_pw=#{user_pw}
-   </select>
+		select * from tbl_user where user_id=#{user_id} and user_pw=#{user_pw}   </select>
 
 	<select id="selectId" parameterType="String" resultType="String">
       select user_id from tbl_user where user_id=#{user_id}
@@ -20,7 +19,7 @@
       select user_nick from tbl_user where user_nick=#{user_nick}
    </select>
    <select id="selectmygrade" parameterType="String" resultType="int">
-		select distinct u.user_manner, u.user_nick from tbl_grade g, tbl_user u where g.user_nick=u.user_nick and u.user_nick=#{user_nick}
+	  select user_manner, user_nick from tbl_user where user_nick=#{user_nick}
 	</select>
   
    

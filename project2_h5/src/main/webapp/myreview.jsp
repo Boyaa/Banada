@@ -74,10 +74,10 @@
          	<c:set var="mygrade" value="grade"/>
          	<c:choose>
          	<c:when test="${loginUser.user_manner < -20}">매너등급 : warning </c:when>
-         	<c:when test="${loginUser.user_manner < 5}">매너등급 : Lv1 </c:when>
- 			<c:when test="${loginUser.user_manner < 7}">매너등급 : Lv2 </c:when>
- 			<c:when test="${loginUser.user_manner < 10}">매너등급 : Lv3</c:when>
- 			<c:when test="${loginUser.user_manner < 15}">매너등급 : Lv4 </c:when>
+         	<c:when test="${loginUser.user_manner < 20}">매너등급 : Lv1 </c:when>
+ 			<c:when test="${loginUser.user_manner < 60}">매너등급 : Lv2 </c:when>
+ 			<c:when test="${loginUser.user_manner < 100}">매너등급 : Lv3</c:when>
+ 			<c:when test="${loginUser.user_manner < 170}">매너등급 : Lv4 </c:when>
  			<c:otherwise> 매너등급 : Lv5 </c:otherwise>
  			
 			</c:choose>	
