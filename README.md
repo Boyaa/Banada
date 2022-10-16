@@ -71,9 +71,9 @@
  
 * 문제2<br>
  모든 팀원들이 Github 사용에 익숙치 않아서 충돌이 계속 생겼었다. 특히 Servlet클래스를 만들면 web.xml파일에 mapping값이 자동으로 추가되어 여러명이 동시에 다른 파일을 만지더라도
- 같은 web.xml파일이 변경되어서 충돌이 일어났다. 그래서 이를 방지하기 위해서 새로운 규칙들을 만들었다. 
- -GitHub 규칙-
-  -push하기전에 단톡에 꼭 말하기 ! push하기전에 꼭 commit하기 !
-  -Servlet 만들때 말하고 만들고 바로 commit/ push하고 작업하는사람들 다 중단하고 pull받고 작업 진행하기 
+ 같은 web.xml파일이 변경되어서 충돌이 일어났다. 그래서 이를 방지하기 위해서 새로운 규칙들을 만들었다. <br>
+ -GitHub 규칙- <br>
+  -push하기전에 단톡에 꼭 말하기 ! push하기전에 꼭 commit하기 ! <br>
+  -Servlet 만들때 말하고 만들고 바로 commit/ push하고 작업하는사람들 다 중단하고 pull받고 작업 진행하기 <br>
   -XML파일 dependency 추가할 때도 마찬가지 !!
 
